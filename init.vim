@@ -1,0 +1,1 @@
+/Users/meuserj/.vimrc
