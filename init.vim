@@ -5,7 +5,12 @@
 set nocompatible	" Use Vim defaults instead of 100% vi compatibility
 
 filetype off
-set runtimepath+=~/.vim/bundle/vundle
+if has('unix')
+  set runtimepath+=$HOME/.vim/bundle/vundle
+elseif has('win32')
+  set runtimepath+=$HOME/vimfiles/bundle/vundle
+endif
+
 call vundle#rc()
 
 Plugin 'gmarik/vundle'
