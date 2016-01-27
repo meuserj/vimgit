@@ -167,7 +167,7 @@ let g:session_extension = '.vis'
 let g:session_autosave = 'yes'
 let g:session_autosave_periodic = 30
 let g:session_autosave_silent = 1
-let g:session_autoload = 'yes'
+let g:session_autoload = 'no'
 let g:session_default_to_last = 0
 
 let g:indent_guides_enable_on_vim_startup = 1
