@@ -17,7 +17,9 @@ Plugin 'gmarik/vundle'
 
 Plugin 'PProvost/vim-ps1'
 Plugin 'Raimondi/delimitMate.git'
-Plugin 'Valloric/YouCompleteMe'
+if has('unix')
+    Plugin 'Valloric/YouCompleteMe'
+endif
 Plugin 'aklt/plantuml-syntax.git'
 Plugin 'bling/vim-airline'
 Plugin 'christoomey/vim-tmux-navigator'
