@@ -5,14 +5,21 @@
 set nocompatible	" Use Vim defaults instead of 100% vi compatibility
 
 filetype off
-set runtimepath+=~/.vim/bundle/vundle
+if has('unix')
+  set runtimepath+=$HOME/.vim/bundle/vundle
+elseif has('win32')
+  set runtimepath+=$HOME/vimfiles/bundle/vundle
+endif
+
 call vundle#rc()
 
 Plugin 'gmarik/vundle'
 
 Plugin 'PProvost/vim-ps1'
 Plugin 'Raimondi/delimitMate.git'
-Plugin 'Valloric/YouCompleteMe'
+if has('unix')
+    Plugin 'Valloric/YouCompleteMe'
+endif
 Plugin 'aklt/plantuml-syntax.git'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
