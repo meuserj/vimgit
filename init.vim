@@ -19,6 +19,7 @@ Plugin 'PProvost/vim-ps1'
 Plugin 'Raimondi/delimitMate.git'
 if has('unix')
     Plugin 'Valloric/YouCompleteMe'
+    Plugin 'ternjs/tern_for_vim'
 endif
 Plugin 'aklt/plantuml-syntax.git'
 Plugin 'vim-airline/vim-airline'
@@ -28,7 +29,6 @@ Plugin 'dbakker/vim-lint.git'
 Plugin 'digitaltoad/vim-jade.git'
 Plugin 'edkolev/promptline.vim'
 Plugin 'edkolev/tmuxline.vim'
-Plugin 'gmarik/Vundle.vim'
 Plugin 'tommcdo/vim-fubitive'
 Plugin 'hallison/vim-markdown.git'
 Plugin 'helino/vim-json.git'
@@ -36,7 +36,7 @@ Plugin 'jamessan/vim-gnupg.git'
 Plugin 'jelera/vim-javascript-syntax'
 Plugin 'jlanzarotta/bufexplorer.git'
 Plugin 'junegunn/vim-easy-align.git'
-Plugin 'kien/ctrlp.vim.git'
+Plugin 'ctrlpvim/ctrlp.vim.git'
 Plugin 'luochen1990/rainbow'
 Plugin 'moll/vim-node.git'
 Plugin 'mtth/scratch.vim.git'
@@ -45,7 +45,6 @@ Plugin 'pangloss/vim-javascript'
 Plugin 'rking/ag.vim.git'
 Plugin 'scrooloose/nerdtree.git'
 Plugin 'scrooloose/syntastic.git'
-Plugin 'ternjs/tern_for_vim'
 Plugin 'tmhedberg/matchit.git'
 Plugin 'tpope/vim-afterimage'
 Plugin 'tpope/vim-commentary.git'
@@ -168,6 +167,7 @@ let g:xml_syntax_folding = 1
 
 let g:DirDiffExcludes = "*.un~,*.bak,*.sw?,.SyncIgnore,node_modules,.SyncArchive,.SyncID,.sync,results,Thumbs.db,uploads,*.orig,media,.DS_Store,staticConfig.json,edgesToRestart.json,201[4-9]-[0-9][0-9]-[0-9][0-9]-CL*-*[0-9],buildMap.json"
 let g:DirDiffAddArgs = "-w"
+let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
 let g:ctrlp_custom_ignore = {
   \ 'dir':  'results'
   \ }
