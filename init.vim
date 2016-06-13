@@ -21,8 +21,12 @@ if has('unix')
     Plugin 'Valloric/YouCompleteMe'
     Plugin 'ternjs/tern_for_vim'
 endif
+
+Plugin 'airblade/vim-gitgutter'
 Plugin 'aklt/plantuml-syntax.git'
+Plugin 'rizzatti/dash.vim'
 Plugin 'vim-airline/vim-airline'
+Plugin 'vim-scripts/confluencewiki.vim'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'dbakker/vim-lint.git'
@@ -46,13 +50,16 @@ Plugin 'rking/ag.vim.git'
 Plugin 'scrooloose/nerdtree.git'
 Plugin 'scrooloose/syntastic.git'
 Plugin 'tmhedberg/matchit.git'
+Plugin 'tpope/vim-abolish'
 Plugin 'tpope/vim-afterimage'
 Plugin 'tpope/vim-commentary.git'
 Plugin 'tpope/vim-eunuch'
 Plugin 'tpope/vim-fugitive.git'
 Plugin 'tpope/vim-jdaddy'
 Plugin 'tpope/vim-sensible'
+Plugin 'tpope/vim-sleuth'
 Plugin 'tpope/vim-speeddating'
+Plugin 'vim-scripts/BufOnly.vim'
 Plugin 'vim-scripts/CSApprox.git'
 Plugin 'vim-scripts/DirDiff.vim.git'
 Plugin 'vim-scripts/Gundo.git'
@@ -66,6 +73,7 @@ Plugin 'xolox/vim-session'
 Plugin 'xolox/vim-shell'
 Plugin 'yegappan/mru.git'
 Plugin 'Yggdroot/indentLine'
+Plugin 'majutsushi/tagbar'
 
 " Themes
 
@@ -81,6 +89,7 @@ Plugin 'Donearm/Laederon'
 Plugin 'Pychimp/vim-luna'
 Plugin 'Pychimp/vim-sol'
 Plugin 'Donearm/Ubaryd'
+Plugin 'tpope/vim-vividchalk'
 
 
 call vundle#end()
@@ -171,6 +180,7 @@ let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclu
 let g:ctrlp_custom_ignore = {
   \ 'dir':  'results'
   \ }
+let g:ctrlp_clear_cache_on_exit = 0
 set clipboard=unnamed
 set guifont=Anonymice\ Powerline:h12
 set hidden
@@ -214,6 +224,9 @@ nmap <F3> :NERDTreeFocus<CR>
 imap <F3> <ESC>:NERDTreeFocus<CR>
 nmap <F4> :NERDTreeToggle<CR>
 imap <F4> <ESC>:NERDTreeToggle<CR>
+map <F7> <C-P><C-\>f<CR>
+map <F9> <C-w><C-w><C-w><C-w>-D
+map <F10> <C-w><C-w><C-w><C-w>jD
 
 nmap <C-S-tab> :bprevious<cr>
 nmap <C-tab> :bnext<cr>
@@ -274,6 +287,7 @@ nmap <leader>bq :bp <BAR> bd #<CR>
 " Show all open buffers and their status
 nmap <leader>bl :ls<CR>
 
+nmap <silent> <leader>d <Plug>DashSearch
 
 
 " function! WriteSession()
