@@ -18,10 +18,11 @@ Plugin 'gmarik/vundle'
 Plugin 'PProvost/vim-ps1'
 Plugin 'Raimondi/delimitMate.git'
 if has('unix')
-    Plugin 'Valloric/YouCompleteMe'
-    Plugin 'ternjs/tern_for_vim'
+  Plugin 'Valloric/YouCompleteMe'
+  Plugin 'ternjs/tern_for_vim'
 endif
 
+Plugin 'oplatek/Conque-Shell'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'aklt/plantuml-syntax.git'
 Plugin 'rizzatti/dash.vim'
@@ -90,6 +91,11 @@ Plugin 'Pychimp/vim-luna'
 Plugin 'Pychimp/vim-sol'
 Plugin 'Donearm/Ubaryd'
 Plugin 'tpope/vim-vividchalk'
+Plugin 'vim-scripts/Wombat'
+Plugin 'nanotech/jellybeans.vim'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'ciaranm/inkpot'
+Plugin 'zeis/vim-kolor'
 
 
 call vundle#end()
@@ -97,7 +103,7 @@ filetype plugin indent on
 
 set backspace=indent,eol,start	" more powerful backspacing
 
-" Now we set some defaults for the editor 
+" Now we set some defaults for the editor
 set textwidth=0		" Don't wrap words by default
 set nobackup		" Don't keep a backup file
 "Make p in Visual mode replace the selected text with the "" register.
@@ -186,7 +192,7 @@ set guifont=Anonymice\ Powerline:h12
 set hidden
 let NERDTreeIgnore = ['\.bak$', '\.orig$']
 let NERDTreeChDirMode = 2
-let NERDTreeStatusline = -1 
+let NERDTreeStatusline = -1
 colo molokai
 
 let g:syntastic_always_populate_loc_list = 1
@@ -206,11 +212,16 @@ let g:indent_guides_exclude_filetypes = ['help', 'nerdtree', 'man']
 let g:indent_guides_color_change_percent = 2
 
 let g:airline_powerline_fonts = 1
+let g:airline_theme = 'base16_monokai'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#fnamemod = ':t'
 
+let g:promptline_theme = 'airline'
+
 let g:indentLine_char = '|'
 let g:indentLine_color_gui = '#333333'
+
+let g:SrcExpl_isUpdateTags = 0 
 
 set directory=~/.vim/swapdir
 set undodir=~/.vim/undodir
@@ -227,6 +238,8 @@ imap <F4> <ESC>:NERDTreeToggle<CR>
 map <F7> <C-P><C-\>f<CR>
 map <F9> <C-w><C-w><C-w><C-w>-D
 map <F10> <C-w><C-w><C-w><C-w>jD
+nmap <F12> :TagbarToggle<CR>
+imap <F12> <ESC>:TagbarToggle<CR>
 
 nmap <C-S-tab> :bprevious<cr>
 nmap <C-tab> :bnext<cr>
