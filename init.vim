@@ -31,7 +31,7 @@ Plugin 'vim-scripts/confluencewiki.vim'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'dbakker/vim-lint.git'
-Plugin 'digitaltoad/vim-jade.git'
+Plugin 'digitaltoad/vim-pug'
 Plugin 'edkolev/promptline.vim'
 Plugin 'edkolev/tmuxline.vim'
 Plugin 'tommcdo/vim-fubitive'
@@ -184,7 +184,7 @@ let g:DirDiffExcludes = "*.un~,*.bak,*.sw?,.SyncIgnore,node_modules,.SyncArchive
 let g:DirDiffAddArgs = "-w"
 let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
 let g:ctrlp_custom_ignore = {
-  \ 'dir':  'results'
+  \ 'dir':  '^(results|node_modules)$'
   \ }
 let g:ctrlp_clear_cache_on_exit = 0
 set clipboard=unnamed
@@ -221,7 +221,7 @@ let g:promptline_theme = 'airline'
 let g:indentLine_char = '|'
 let g:indentLine_color_gui = '#333333'
 
-let g:SrcExpl_isUpdateTags = 0 
+let g:SrcExpl_isUpdateTags = 0
 
 set directory=~/.vim/swapdir
 set undodir=~/.vim/undodir
@@ -252,8 +252,6 @@ imap <C-tab> <ESC>:bnext<cr>i
 imap <C-t> <ESC>:enew<cr>
 imap <C-z> <ESC>:bp <BAR> bd #<cr>
 nmap <C-t> :enew<cr>
-
-cmap CD cd %:p:h<cr>
 
 autocmd FileType ruby,eruby set omnifunc=rubycomplete#Complete
 autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
