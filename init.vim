@@ -188,7 +188,11 @@ let g:ctrlp_custom_ignore = {
   \ }
 let g:ctrlp_clear_cache_on_exit = 0
 set clipboard=unnamed
-set guifont=Anonymice\ Powerline:h12
+if has('unix')
+  set guifont=Anonymice\ Powerline:h12
+elseif has('win32')
+  set guifont=Anonymice_Powerline:h10:cANSI
+endif
 set hidden
 let NERDTreeIgnore = ['\.bak$', '\.orig$']
 let NERDTreeChDirMode = 2
