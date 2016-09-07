@@ -75,6 +75,7 @@ Plugin 'xolox/vim-shell'
 Plugin 'yegappan/mru.git'
 Plugin 'Yggdroot/indentLine'
 Plugin 'majutsushi/tagbar'
+Plugin 'michalliu/sourcebeautify.vim'
 
 " Themes
 
