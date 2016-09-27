@@ -36,15 +36,11 @@ Plugin 'garbas/vim-snipmate'                    " snipMate.vim aims to be a conc
 Plugin 'hallison/vim-markdown.git'              " Markdown syntax highlight for Vim editor with snippets support http://www.vim.org/scripts/script.php?script_id=2882
 Plugin 'helino/vim-json.git'                    " filetype detection and syntax highlightnig for JSON in Vim
 Plugin 'honza/vim-snippets'                     " vim-snipmate default snippets (Previously snipmate-snippets)
-Plugin 'jamessan/vim-gnupg.git'                 " This script implements transparent editing of gpg encrypted files.
 Plugin 'jelera/vim-javascript-syntax'           " Enhanced javascript syntax file for Vim http://www.vim.org/scripts/script.php?script_id=3425
-Plugin 'jlanzarotta/bufexplorer.git'            " BufExplorer Plugin for Vim
 Plugin 'junegunn/vim-easy-align.git'            " 🌻 A Vim alignment plugin
 Plugin 'luochen1990/rainbow'                    " rainbow parentheses improved, shorter code, no level limit, smooth and fast, powerful configuration.
-Plugin 'majutsushi/tagbar'                      " Vim plugin that displays tags in a window, ordered by scope http://majutsushi.github.com/tagbar/
-Plugin 'michalliu/sourcebeautify.vim'           " Beautify your javascript,html,css source code inside Vim
+Plugin 'marcweber/vim-addon-mw-utils'           " vim: interpret a file by function and cache file automatically
 Plugin 'moll/vim-node.git'                      " Tools and environment to make Vim superb for developing with Node.js. Like Rails.vim for Node. http://www.vim.org/scripts/script.php?script_id=4674
-Plugin 'mtth/scratch.vim.git'                   " Unobtrusive scratch window
 Plugin 'othree/javascript-libraries-syntax.vim' " Syntax for JavaScript libraries http://www.vim.org/scripts/script.php?script_id=4428
 Plugin 'pangloss/vim-javascript'                " Vastly improved Javascript indentation and syntax support in Vim. http://www.vim.org/scripts/script.php?script_id=4452
 Plugin 'rizzatti/dash.vim'                      " Search Dash.app from Vim
@@ -55,8 +51,6 @@ Plugin 'terryma/vim-multiple-cursors'           " True Sublime Text style multip
 Plugin 'tmhedberg/matchit.git'                  " extended % matching for HTML, LaTeX, and many other languages http://www.vim.org/scripts/script.php?script_id=39
 Plugin 'tommcdo/vim-fubitive'                   " Add Bitbucket URL support to fugitive.vim's :Gbrowse command
 Plugin 'tomtom/tlib_vim'                        " Some utility functions for VIM http://www.vim.org/scripts/script.php?script_id=1863
-Plugin 'tpope/vim-abolish'                      " abolish.vim: easily search for, substitute, and abbreviate multiple variants of a word http://www.vim.org/scripts/script.php?script_id=1545
-Plugin 'tpope/vim-afterimage'                   " afterimage.vim: edit binary files by converting them to text equivalents http://www.vim.org/scripts/script.php?script_id=1617
 Plugin 'tpope/vim-commentary.git'               " commentary.vim: comment stuff out http://www.vim.org/scripts/script.php?script_id=3695
 Plugin 'tpope/vim-eunuch'                       " eunuch.vim: helpers for UNIX http://www.vim.org/scripts/script.php?script_id=4300
 Plugin 'tpope/vim-fugitive.git'                 " fugitive.vim: a Git wrapper so awesome, it should be illegal http://www.vim.org/scripts/script.php?script_id=2975
@@ -67,19 +61,17 @@ Plugin 'tpope/vim-speeddating'                  " speeddating.vim: use CTRL-A/CT
 Plugin 'vim-airline/vim-airline'                " lean & mean status/tabline for vim that's light as air
 Plugin 'vim-airline/vim-airline-themes'         " A collection of themes for vim-airline
 Plugin 'vim-scripts/bufonly.vim'                " Delete all the buffers except the current/named buffer http://www.vim.org/scripts/script.php?script_id=1071
+Plugin 'vim-scripts/csv.vim.git'                " A Filetype plugin for csv files. http://www.vim.org/scripts/script.php?script_id=2830
 Plugin 'vim-scripts/dirdiff.vim.git'            " A plugin to diff and merge two directories recursively. http://www.vim.org/scripts/script.php?script_id=102
 Plugin 'vim-scripts/gundo.git'                  " Visualize your undo tree. http://www.vim.org/scripts/script.php?script_id=3304
 Plugin 'vim-scripts/l9.git'                     " Vim-script library http://www.vim.org/scripts/script.php?script_id=3252
 Plugin 'vim-scripts/modeliner.git'              " Generates modeline according to the current settings. http://www.vim.org/scripts/script.php?script_id=1477
-Plugin 'vim-scripts/confluencewiki.vim'         " Confluence WIKI syntax http://www.vim.org/scripts/script.php?script_id=1994
-Plugin 'vim-scripts/csv.vim.git'                " A Filetype plugin for csv files. http://www.vim.org/scripts/script.php?script_id=2830
 Plugin 'vim-scripts/vim-coffee-script.git'      " CoffeeScript support for vim http://www.vim.org/scripts/script.php?script_id=3590
 Plugin 'vim-utils/vim-man'                      " View and grep man pages in vim
 Plugin 'xolox/vim-misc'                         " Miscellaneous auto-load Vim scripts http://peterodding.com/code/vim/misc/
 Plugin 'xolox/vim-session'                      " Extended session management for Vim (:mksession on steroids) http://peterodding.com/code/vim/session/
 Plugin 'xolox/vim-shell'                        " Improved integration between Vim and its environment (fullscreen, open URL, background command execution) http://peterodding.com/code/vim/shell/
 Plugin 'yegappan/mru.git'                       " Most Recently Used (MRU) Vim Plugin
-Plugin 'marcweber/vim-addon-mw-utils'           " vim: interpret a file by function and cache file automatically
 Plugin 'yggdroot/indentline'                    " A vim plugin to display the indention levels with thin vertical lines
 
 " Themes
