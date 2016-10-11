@@ -20,6 +20,7 @@ Plugin 'Raimondi/delimitMate.git'
 if has('unix')
   Plugin 'Valloric/YouCompleteMe'
   Plugin 'ternjs/tern_for_vim'
+  Plugin 'vim-scripts/csapprox.git'               " Make gvim-only colorschemes work transparently in terminal vim http://www.vim.org/scripts/script.php?script_id=2390
 endif
 
 Plugin 'airblade/vim-gitgutter'                 " A Vim plugin which shows a git diff in the gutter (sign column) and stages/undoes hunks.
@@ -66,7 +67,6 @@ Plugin 'tpope/vim-speeddating'                  " speeddating.vim: use CTRL-A/CT
 Plugin 'vim-airline/vim-airline'                " lean & mean status/tabline for vim that's light as air
 Plugin 'vim-airline/vim-airline-themes'         " A collection of themes for vim-airline
 Plugin 'vim-scripts/bufonly.vim'                " Delete all the buffers except the current/named buffer http://www.vim.org/scripts/script.php?script_id=1071
-Plugin 'vim-scripts/csapprox.git'               " Make gvim-only colorschemes work transparently in terminal vim http://www.vim.org/scripts/script.php?script_id=2390
 Plugin 'vim-scripts/dirdiff.vim.git'            " A plugin to diff and merge two directories recursively. http://www.vim.org/scripts/script.php?script_id=102
 Plugin 'vim-scripts/gundo.git'                  " Visualize your undo tree. http://www.vim.org/scripts/script.php?script_id=3304
 Plugin 'vim-scripts/l9.git'                     " Vim-script library http://www.vim.org/scripts/script.php?script_id=3252
