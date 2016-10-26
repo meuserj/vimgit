@@ -25,6 +25,7 @@ endif
 
 Plugin 'airblade/vim-gitgutter'                 " A Vim plugin which shows a git diff in the gutter (sign column) and stages/undoes hunks.
 Plugin 'aklt/plantuml-syntax.git'               " vim syntax file for plantuml
+Plugin 'bogado/file-line'                       " Plugin for vim to enabling opening a file in a given line http://www.vim.org/scripts/script.php?script_id=2184
 Plugin 'bronson/vim-trailing-whitespace'        " Highlights trailing whitespace in red and provides :FixWhitespace to fix it.
 Plugin 'christoomey/vim-tmux-navigator'         " Seamless navigation between tmux panes and vim splits
 Plugin 'ctrlpvim/ctrlp.vim.git'                 " Active fork of kien/ctrlp.vim—Fuzzy file, buffer, mru, tag, etc finder. http://ctrlpvim.github.com/ctrlp.vim
