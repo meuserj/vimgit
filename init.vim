@@ -37,11 +37,13 @@ Plugin 'garbas/vim-snipmate'                    " snipMate.vim aims to be a conc
 Plugin 'hallison/vim-markdown.git'              " Markdown syntax highlight for Vim editor with snippets support http://www.vim.org/scripts/script.php?script_id=2882
 Plugin 'helino/vim-json.git'                    " filetype detection and syntax highlightnig for JSON in Vim
 Plugin 'honza/vim-snippets'                     " vim-snipmate default snippets (Previously snipmate-snippets)
+Plugin 'jeetsukumaran/vim-buffergator'          " Vim plugin to list, select and switch between buffers.
 Plugin 'jelera/vim-javascript-syntax'           " Enhanced javascript syntax file for Vim http://www.vim.org/scripts/script.php?script_id=3425
 Plugin 'junegunn/vim-easy-align.git'            " 🌻 A Vim alignment plugin
 Plugin 'luochen1990/rainbow'                    " rainbow parentheses improved, shorter code, no level limit, smooth and fast, powerful configuration.
 Plugin 'marcweber/vim-addon-mw-utils'           " vim: interpret a file by function and cache file automatically
 Plugin 'moll/vim-node.git'                      " Tools and environment to make Vim superb for developing with Node.js. Like Rails.vim for Node. http://www.vim.org/scripts/script.php?script_id=4674
+Plugin 'myusuf3/numbers.vim'                    " numbers.vim is a vim plugin for better line numbers http://myusuf3.github.com/numbers.vim/
 Plugin 'othree/javascript-libraries-syntax.vim' " Syntax for JavaScript libraries http://www.vim.org/scripts/script.php?script_id=4428
 Plugin 'pangloss/vim-javascript'                " Vastly improved Javascript indentation and syntax support in Vim. http://www.vim.org/scripts/script.php?script_id=4452
 Plugin 'rizzatti/dash.vim'                      " Search Dash.app from Vim
@@ -196,6 +198,8 @@ else
 endif
 
 set hidden
+let g:loaded_netrw       = 1
+let g:loaded_netrwPlugin = 1
 let NERDTreeIgnore = ['\.bak$', '\.orig$']
 let NERDTreeChDirMode = 2
 let NERDTreeStatusline = -1
@@ -238,24 +242,22 @@ set undoreload=10000
 
 nmap <F2> :w<CR>
 imap <F2> <ESC>:w<CR>a
-nmap <F3> :NERDTreeFocus<CR>
-imap <F3> <ESC>:NERDTreeFocus<CR>
+nmap <F3> :NERDTreeFind<CR>
+imap <F3> <ESC>:NERDTreeFind<CR>
 nmap <F4> :NERDTreeToggle<CR>
 imap <F4> <ESC>:NERDTreeToggle<CR>
-map <F7> <C-P><C-\>f<CR>
+map <F5> <C-P><C-\>f<CR>
 map <F9> <C-w><C-w><C-w><C-w>-D
 map <F10> <C-w><C-w><C-w><C-w>jD
-nmap <F12> :TagbarToggle<CR>
-imap <F12> <ESC>:TagbarToggle<CR>
 
-nmap <C-S-tab> :bprevious<cr>
-nmap <C-tab> :bnext<cr>
+nmap <F7> :bprevious<cr>
+nmap <F8> :bnext<cr>
 nmap <C-z> :bp <BAR> bd #<cr>
-map <C-S-tab> :bprevious<cr>
-map <C-tab> :bnext<cr>
+map <F7> :bprevious<cr>
+map <F8> :bnext<cr>
 map <C-z> :bp <BAR> bd #<cr>
-imap <C-S-tab> <ESC>:bprevious<cr>i
-imap <C-tab> <ESC>:bnext<cr>i
+imap <F7> <ESC>:bprevious<cr>i
+imap <F8> <ESC>:bnext<cr>i
 imap <C-t> <ESC>:enew<cr>
 imap <C-z> <ESC>:bp <BAR> bd #<cr>
 nmap <C-t> :enew<cr>
@@ -293,23 +295,6 @@ if has("multi_byte")
 ""  setglobal bomb
   set fileencodings=ucs-bom,utf-8,latin1
 endif
-
-" To open a new empty buffer
-" This replaces :tabnew which I used to bind to this mapping
-nmap <leader>T :enew<cr>
-
-" Move to the next buffer
-nmap <leader>l :bnext<CR>
-
-" Move to the previous buffer
-nmap <leader>h :bprevious<CR>
-
-" Close the current buffer and move to the previous one
-" This replicates the idea of closing a tab
-nmap <leader>bq :bp <BAR> bd #<CR>
-
-" Show all open buffers and their status
-nmap <leader>bl :ls<CR>
 
 nmap <silent> <leader>d <Plug>DashSearch
 
