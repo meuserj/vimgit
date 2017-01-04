@@ -221,7 +221,7 @@ let g:indent_guides_exclude_filetypes = ['help', 'nerdtree', 'man']
 let g:indent_guides_color_change_percent = 2
 
 let g:airline_powerline_fonts = 1
-let g:airline_theme = 'base16_google'
+let g:airline_theme = 'molokai'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#fnamemod = ':t'
 
@@ -300,6 +300,6 @@ nmap <silent> <leader>d <Plug>DashSearch
 
 set background=dark
 syntax on
-colorscheme base16-google-dark
+colorscheme molokai
 
 " vim: set et fenc=utf-8 ff=unix sts=4 sw=4 ts=4 :
