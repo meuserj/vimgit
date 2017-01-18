@@ -17,7 +17,7 @@ Plugin 'gmarik/vundle'
 
 Plugin 'PProvost/vim-ps1'
 Plugin 'Raimondi/delimitMate.git'
-if has('unix')
+if has('unix') && !has("win32unix")
   Plugin 'Valloric/YouCompleteMe'
   Plugin 'ternjs/tern_for_vim'
   Plugin 'vim-scripts/csapprox.git'               " Make gvim-only colorschemes work transparently in terminal vim http://www.vim.org/scripts/script.php?script_id=2390
