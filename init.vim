@@ -35,11 +35,11 @@ Plugin 'edkolev/promptline.vim'                 " Generate a fast shell prompt w
 Plugin 'edkolev/tmuxline.vim'                   " Simple tmux statusline generator with support for powerline symbols and statusline / airline / lightline integration
 Plugin 'garbas/vim-snipmate'                    " snipMate.vim aims to be a concise vim script that implements some of TextMate's snippets features in Vim. http://www.vim.org/scripts/script.php?script_id=2540
 Plugin 'hallison/vim-markdown.git'              " Markdown syntax highlight for Vim editor with snippets support http://www.vim.org/scripts/script.php?script_id=2882
-Plugin 'helino/vim-json.git'                    " filetype detection and syntax highlightnig for JSON in Vim
 Plugin 'honza/vim-snippets'                     " vim-snipmate default snippets (Previously snipmate-snippets)
 Plugin 'jeetsukumaran/vim-buffergator'          " Vim plugin to list, select and switch between buffers.
 Plugin 'jelera/vim-javascript-syntax'           " Enhanced javascript syntax file for Vim http://www.vim.org/scripts/script.php?script_id=3425
 Plugin 'junegunn/vim-easy-align.git'            " 🌻 A Vim alignment plugin
+Plugin 'leshill/vim-json'
 Plugin 'luochen1990/rainbow'                    " rainbow parentheses improved, shorter code, no level limit, smooth and fast, powerful configuration.
 Plugin 'marcweber/vim-addon-mw-utils'           " vim: interpret a file by function and cache file automatically
 Plugin 'moll/vim-node.git'                      " Tools and environment to make Vim superb for developing with Node.js. Like Rails.vim for Node. http://www.vim.org/scripts/script.php?script_id=4674
