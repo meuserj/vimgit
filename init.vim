@@ -23,6 +23,7 @@ if has('unix')
   Plugin 'vim-scripts/csapprox.git'               " Make gvim-only colorschemes work transparently in terminal vim http://www.vim.org/scripts/script.php?script_id=2390
 endif
 
+
 Plugin 'airblade/vim-gitgutter'                 " A Vim plugin which shows a git diff in the gutter (sign column) and stages/undoes hunks.
 Plugin 'aklt/plantuml-syntax.git'               " vim syntax file for plantuml
 Plugin 'bogado/file-line'                       " Plugin for vim to enabling opening a file in a given line http://www.vim.org/scripts/script.php?script_id=2184
@@ -52,6 +53,7 @@ Plugin 'scrooloose/nerdtree.git'                " A tree explorer plugin for vim
 Plugin 'scrooloose/syntastic.git'               " Syntax checking hacks for vim
 Plugin 'terryma/vim-multiple-cursors'           " True Sublime Text style multiple selections for Vim
 Plugin 'tmhedberg/matchit.git'                  " extended % matching for HTML, LaTeX, and many other languages http://www.vim.org/scripts/script.php?script_id=39
+Plugin 'tmux-plugins/vim-tmux'                  " vim plugin for tmux.conf
 Plugin 'tommcdo/vim-fubitive'                   " Add Bitbucket URL support to fugitive.vim's :Gbrowse command
 Plugin 'tomtom/tlib_vim'                        " Some utility functions for VIM http://www.vim.org/scripts/script.php?script_id=1863
 Plugin 'tpope/vim-commentary.git'               " commentary.vim: comment stuff out http://www.vim.org/scripts/script.php?script_id=3695
