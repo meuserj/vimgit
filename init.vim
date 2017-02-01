@@ -49,7 +49,6 @@ Plugin 'othree/javascript-libraries-syntax.vim' " Syntax for JavaScript librarie
 Plugin 'pangloss/vim-javascript'                " Vastly improved Javascript indentation and syntax support in Vim. http://www.vim.org/scripts/script.php?script_id=4452
 Plugin 'rizzatti/dash.vim'                      " Search Dash.app from Vim
 Plugin 'rking/ag.vim.git'                       " Vim plugin for the_silver_searcher, 'ag', a replacement for the Perl module / CLI script 'ack'
-Plugin 'roxma/vim-paste-easy'                   " Automatically set paste for you
 Plugin 'scrooloose/nerdtree.git'                " A tree explorer plugin for vim.
 Plugin 'scrooloose/syntastic.git'               " Syntax checking hacks for vim
 Plugin 'terryma/vim-multiple-cursors'           " True Sublime Text style multiple selections for Vim
