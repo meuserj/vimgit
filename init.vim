@@ -23,7 +23,6 @@ if has('unix') && !has("win32unix")
   Plugin 'vim-scripts/csapprox.git'               " Make gvim-only colorschemes work transparently in terminal vim http://www.vim.org/scripts/script.php?script_id=2390
 endif
 
-
 Plugin 'airblade/vim-gitgutter'                 " A Vim plugin which shows a git diff in the gutter (sign column) and stages/undoes hunks.
 Plugin 'aklt/plantuml-syntax.git'               " vim syntax file for plantuml
 Plugin 'bogado/file-line'                       " Plugin for vim to enabling opening a file in a given line http://www.vim.org/scripts/script.php?script_id=2184
@@ -34,6 +33,7 @@ Plugin 'dbakker/vim-lint.git'                   " Check your .vimrc for errors
 Plugin 'digitaltoad/vim-pug'                    " Vim Pug (formerly Jade) template engine syntax highlighting and indention
 Plugin 'edkolev/promptline.vim'                 " Generate a fast shell prompt with powerline symbols and airline colors
 Plugin 'edkolev/tmuxline.vim'                   " Simple tmux statusline generator with support for powerline symbols and statusline / airline / lightline integration
+Plugin 'fidian/hexmode'                         " Vim plugin to edit binary files in a hex mode automatically.
 Plugin 'garbas/vim-snipmate'                    " snipMate.vim aims to be a concise vim script that implements some of TextMate's snippets features in Vim. http://www.vim.org/scripts/script.php?script_id=2540
 Plugin 'hallison/vim-markdown.git'              " Markdown syntax highlight for Vim editor with snippets support http://www.vim.org/scripts/script.php?script_id=2882
 Plugin 'honza/vim-snippets'                     " vim-snipmate default snippets (Previously snipmate-snippets)
@@ -49,6 +49,7 @@ Plugin 'othree/javascript-libraries-syntax.vim' " Syntax for JavaScript librarie
 Plugin 'pangloss/vim-javascript'                " Vastly improved Javascript indentation and syntax support in Vim. http://www.vim.org/scripts/script.php?script_id=4452
 Plugin 'rizzatti/dash.vim'                      " Search Dash.app from Vim
 Plugin 'rking/ag.vim.git'                       " Vim plugin for the_silver_searcher, 'ag', a replacement for the Perl module / CLI script 'ack'
+Plugin 'roxma/vim-paste-easy'                   " Automatically set paste for you
 Plugin 'scrooloose/nerdtree.git'                " A tree explorer plugin for vim.
 Plugin 'scrooloose/syntastic.git'               " Syntax checking hacks for vim
 Plugin 'terryma/vim-multiple-cursors'           " True Sublime Text style multiple selections for Vim
@@ -73,6 +74,7 @@ Plugin 'vim-scripts/l9.git'                     " Vim-script library http://www.
 Plugin 'vim-scripts/modeliner.git'              " Generates modeline according to the current settings. http://www.vim.org/scripts/script.php?script_id=1477
 Plugin 'vim-scripts/vim-coffee-script.git'      " CoffeeScript support for vim http://www.vim.org/scripts/script.php?script_id=3590
 Plugin 'vim-utils/vim-man'                      " View and grep man pages in vim
+Plugin 'wincent/vim-clipper'                    " Clipper integration for Vim
 Plugin 'xolox/vim-misc'                         " Miscellaneous auto-load Vim scripts http://peterodding.com/code/vim/misc/
 Plugin 'xolox/vim-session'                      " Extended session management for Vim (:mksession on steroids) http://peterodding.com/code/vim/session/
 Plugin 'xolox/vim-shell'                        " Improved integration between Vim and its environment (fullscreen, open URL, background command execution) http://peterodding.com/code/vim/shell/
