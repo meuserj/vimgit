@@ -7,8 +7,10 @@ set nocompatible    " Use Vim defaults instead of 100% vi compatibility
 filetype off
 if has('unix')
   set runtimepath+=$HOME/.vim/bundle/vundle
+  let vimhome="$HOME/.vim"
 elseif has('win32')
   set runtimepath+=$HOME/vimfiles/bundle/vundle
+  let vimhome="$HOME/vimfiles"
 endif
 
 call vundle#rc()
@@ -43,12 +45,14 @@ Plugin 'junegunn/vim-easy-align.git'            " 🌻 A Vim alignment plugin
 Plugin 'leshill/vim-json'
 Plugin 'luochen1990/rainbow'                    " rainbow parentheses improved, shorter code, no level limit, smooth and fast, powerful configuration.
 Plugin 'marcweber/vim-addon-mw-utils'           " vim: interpret a file by function and cache file automatically
+Plugin 'mhinz/vim-startify'                     " The fancy start screen for Vim.
 Plugin 'moll/vim-node.git'                      " Tools and environment to make Vim superb for developing with Node.js. Like Rails.vim for Node. http://www.vim.org/scripts/script.php?script_id=4674
 Plugin 'myusuf3/numbers.vim'                    " numbers.vim is a vim plugin for better line numbers http://myusuf3.github.com/numbers.vim/
 Plugin 'othree/javascript-libraries-syntax.vim' " Syntax for JavaScript libraries http://www.vim.org/scripts/script.php?script_id=4428
 Plugin 'pangloss/vim-javascript'                " Vastly improved Javascript indentation and syntax support in Vim. http://www.vim.org/scripts/script.php?script_id=4452
 Plugin 'rizzatti/dash.vim'                      " Search Dash.app from Vim
 Plugin 'rking/ag.vim.git'                       " Vim plugin for the_silver_searcher, 'ag', a replacement for the Perl module / CLI script 'ack'
+Plugin 'ryanoasis/vim-devicons'                 " Adds file type glyphs/icons to many popular Vim plugins such as: NERDTree, vim-airline, unite, vim-startify and many more
 Plugin 'scrooloose/nerdtree.git'                " A tree explorer plugin for vim.
 Plugin 'scrooloose/syntastic.git'               " Syntax checking hacks for vim
 Plugin 'terryma/vim-multiple-cursors'           " True Sublime Text style multiple selections for Vim
@@ -212,12 +216,14 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
-let g:session_extension = '.vis'
+
 let g:session_autosave = 'yes'
 let g:session_autosave_periodic = 30
 let g:session_autosave_silent = 1
 let g:session_autoload = 'no'
 let g:session_default_to_last = 0
+let g:startify_session_dir = vimhome."/sessions"
+let g:startify_list_order = ['sessions', 'files', 'dir', 'bookmarks', 'commands']
 
 let g:indent_guides_enable_on_vim_startup = 1
 let g:indent_guides_exclude_filetypes = ['help', 'nerdtree', 'man']
@@ -230,8 +236,9 @@ let g:airline#extensions#tabline#fnamemod = ':t'
 
 let g:promptline_theme = 'airline'
 
-let g:indentLine_char = '|'
+let g:indentLine_char = '│'
 let g:indentLine_color_gui = '#333333'
+let g:indentLine_color_tty_dark = 1
 
 let g:SrcExpl_isUpdateTags = 0
 
