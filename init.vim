@@ -199,7 +199,7 @@ set clipboard=unnamed
 if has("gui_gtk3")
   set guifont=Anonymous\ Pro\ for\ Powerline\ 10
 elseif has('gui_win32')
-  set guifont=Anonymice_Powerline:h10:cANSI
+  set guifont=MesloLGSDZ_Nerd_Font:h8:cANSI
 else
   set guifont=Meslo\ LG\ S\ DZ\ Regular\ for\ Powerline\ Nerd\ Font\ Complete:h11
 endif
