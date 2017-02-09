@@ -35,7 +35,6 @@ Plugin 'dbakker/vim-lint.git'                   " Check your .vimrc for errors
 Plugin 'digitaltoad/vim-pug'                    " Vim Pug (formerly Jade) template engine syntax highlighting and indention
 Plugin 'edkolev/promptline.vim'                 " Generate a fast shell prompt with powerline symbols and airline colors
 Plugin 'edkolev/tmuxline.vim'                   " Simple tmux statusline generator with support for powerline symbols and statusline / airline / lightline integration
-Plugin 'fidian/hexmode'                         " Vim plugin to edit binary files in a hex mode automatically.
 Plugin 'garbas/vim-snipmate'                    " snipMate.vim aims to be a concise vim script that implements some of TextMate's snippets features in Vim. http://www.vim.org/scripts/script.php?script_id=2540
 Plugin 'hallison/vim-markdown.git'              " Markdown syntax highlight for Vim editor with snippets support http://www.vim.org/scripts/script.php?script_id=2882
 Plugin 'honza/vim-snippets'                     " vim-snipmate default snippets (Previously snipmate-snippets)
