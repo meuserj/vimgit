@@ -201,7 +201,7 @@ if has("gui_gtk3")
 elseif has('gui_win32')
   set guifont=Anonymice_Powerline:h10:cANSI
 else
-  set guifont=Anonymice\ Powerline:h12
+  set guifont=Meslo\ LG\ S\ DZ\ Regular\ for\ Powerline\ Nerd\ Font\ Complete:h11
 endif
 
 set hidden
