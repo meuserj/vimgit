@@ -6,106 +6,102 @@ set nocompatible    " Use Vim defaults instead of 100% vi compatibility
 
 filetype off
 if has('unix')
-  set runtimepath+=$HOME/.vim/bundle/vundle
   let vimhome="$HOME/.vim"
 elseif has('win32')
-  set runtimepath+=$HOME/vimfiles/bundle/vundle
   let vimhome="$HOME/vimfiles"
 endif
 
-call vundle#rc()
+call plug#begin()
 
-Plugin 'gmarik/vundle'
-
-Plugin 'PProvost/vim-ps1'
-Plugin 'Raimondi/delimitMate.git'
+Plug 'PProvost/vim-ps1'
+Plug 'Raimondi/delimitMate'
 if has('unix') && !has("win32unix")
-  Plugin 'Valloric/YouCompleteMe'
-  Plugin 'ternjs/tern_for_vim'
-  Plugin 'vim-scripts/csapprox.git'               " Make gvim-only colorschemes work transparently in terminal vim http://www.vim.org/scripts/script.php?script_id=2390
+  Plug 'Valloric/YouCompleteMe'
+  Plug 'ternjs/tern_for_vim'
+  Plug 'vim-scripts/csapprox'               " Make gvim-only colorschemes work transparently in terminal vim http://www.vim.org/scripts/script.php?script_id=2390
 endif
 
-Plugin 'airblade/vim-gitgutter'                 " A Vim plugin which shows a git diff in the gutter (sign column) and stages/undoes hunks.
-Plugin 'aklt/plantuml-syntax.git'               " vim syntax file for plantuml
-Plugin 'bogado/file-line'                       " Plugin for vim to enabling opening a file in a given line http://www.vim.org/scripts/script.php?script_id=2184
-Plugin 'bronson/vim-trailing-whitespace'        " Highlights trailing whitespace in red and provides :FixWhitespace to fix it.
-Plugin 'christoomey/vim-tmux-navigator'         " Seamless navigation between tmux panes and vim splits
-Plugin 'ctrlpvim/ctrlp.vim.git'                 " Active fork of kien/ctrlp.vim—Fuzzy file, buffer, mru, tag, etc finder. http://ctrlpvim.github.com/ctrlp.vim
-Plugin 'dbakker/vim-lint.git'                   " Check your .vimrc for errors
-Plugin 'digitaltoad/vim-pug'                    " Vim Pug (formerly Jade) template engine syntax highlighting and indention
-Plugin 'edkolev/promptline.vim'                 " Generate a fast shell prompt with powerline symbols and airline colors
-Plugin 'edkolev/tmuxline.vim'                   " Simple tmux statusline generator with support for powerline symbols and statusline / airline / lightline integration
-Plugin 'garbas/vim-snipmate'                    " snipMate.vim aims to be a concise vim script that implements some of TextMate's snippets features in Vim. http://www.vim.org/scripts/script.php?script_id=2540
-Plugin 'hallison/vim-markdown.git'              " Markdown syntax highlight for Vim editor with snippets support http://www.vim.org/scripts/script.php?script_id=2882
-Plugin 'honza/vim-snippets'                     " vim-snipmate default snippets (Previously snipmate-snippets)
-Plugin 'jeetsukumaran/vim-buffergator'          " Vim plugin to list, select and switch between buffers.
-Plugin 'jelera/vim-javascript-syntax'           " Enhanced javascript syntax file for Vim http://www.vim.org/scripts/script.php?script_id=3425
-Plugin 'junegunn/vim-easy-align.git'            " 🌻 A Vim alignment plugin
-Plugin 'leshill/vim-json'
-Plugin 'luochen1990/rainbow'                    " rainbow parentheses improved, shorter code, no level limit, smooth and fast, powerful configuration.
-Plugin 'marcweber/vim-addon-mw-utils'           " vim: interpret a file by function and cache file automatically
-Plugin 'mhinz/vim-startify'                     " The fancy start screen for Vim.
-Plugin 'moll/vim-node.git'                      " Tools and environment to make Vim superb for developing with Node.js. Like Rails.vim for Node. http://www.vim.org/scripts/script.php?script_id=4674
-Plugin 'myusuf3/numbers.vim'                    " numbers.vim is a vim plugin for better line numbers http://myusuf3.github.com/numbers.vim/
-Plugin 'othree/javascript-libraries-syntax.vim' " Syntax for JavaScript libraries http://www.vim.org/scripts/script.php?script_id=4428
-Plugin 'pangloss/vim-javascript'                " Vastly improved Javascript indentation and syntax support in Vim. http://www.vim.org/scripts/script.php?script_id=4452
-Plugin 'rizzatti/dash.vim'                      " Search Dash.app from Vim
-Plugin 'rking/ag.vim.git'                       " Vim plugin for the_silver_searcher, 'ag', a replacement for the Perl module / CLI script 'ack'
-Plugin 'ryanoasis/vim-devicons'                 " Adds file type glyphs/icons to many popular Vim plugins such as: NERDTree, vim-airline, unite, vim-startify and many more
-Plugin 'scrooloose/nerdtree.git'                " A tree explorer plugin for vim.
-Plugin 'scrooloose/syntastic.git'               " Syntax checking hacks for vim
-Plugin 'terryma/vim-multiple-cursors'           " True Sublime Text style multiple selections for Vim
-Plugin 'tmhedberg/matchit.git'                  " extended % matching for HTML, LaTeX, and many other languages http://www.vim.org/scripts/script.php?script_id=39
-Plugin 'tmux-plugins/vim-tmux'                  " vim plugin for tmux.conf
-Plugin 'tommcdo/vim-fubitive'                   " Add Bitbucket URL support to fugitive.vim's :Gbrowse command
-Plugin 'tomtom/tlib_vim'                        " Some utility functions for VIM http://www.vim.org/scripts/script.php?script_id=1863
-Plugin 'tpope/vim-commentary.git'               " commentary.vim: comment stuff out http://www.vim.org/scripts/script.php?script_id=3695
-Plugin 'tpope/vim-eunuch'                       " eunuch.vim: helpers for UNIX http://www.vim.org/scripts/script.php?script_id=4300
-Plugin 'tpope/vim-fugitive.git'                 " fugitive.vim: a Git wrapper so awesome, it should be illegal http://www.vim.org/scripts/script.php?script_id=2975
-Plugin 'tpope/vim-jdaddy'                       " jdaddy.vim: JSON manipulation and pretty printing http://www.vim.org/scripts/script.php?script_id=4863
-Plugin 'tpope/vim-sensible'                     " sensible.vim: Defaults everyone can agree on http://www.vim.org/scripts/script.php?script_id=4391
-Plugin 'tpope/vim-sleuth'                       " sleuth.vim: Heuristically set buffer options http://www.vim.org/scripts/script.php?script_id=4375
-Plugin 'tpope/vim-speeddating'                  " speeddating.vim: use CTRL-A/CTRL-X to increment dates, times, and more http://www.vim.org/scripts/script.php?script_id=2120
-Plugin 'vim-airline/vim-airline'                " lean & mean status/tabline for vim that's light as air
-Plugin 'vim-airline/vim-airline-themes'         " A collection of themes for vim-airline
-Plugin 'vim-scripts/bufonly.vim'                " Delete all the buffers except the current/named buffer http://www.vim.org/scripts/script.php?script_id=1071
-Plugin 'vim-scripts/csv.vim.git'                " A Filetype plugin for csv files. http://www.vim.org/scripts/script.php?script_id=2830
-Plugin 'vim-scripts/dirdiff.vim.git'            " A plugin to diff and merge two directories recursively. http://www.vim.org/scripts/script.php?script_id=102
-Plugin 'vim-scripts/gundo.git'                  " Visualize your undo tree. http://www.vim.org/scripts/script.php?script_id=3304
-Plugin 'vim-scripts/l9.git'                     " Vim-script library http://www.vim.org/scripts/script.php?script_id=3252
-Plugin 'vim-scripts/modeliner.git'              " Generates modeline according to the current settings. http://www.vim.org/scripts/script.php?script_id=1477
-Plugin 'vim-scripts/vim-coffee-script.git'      " CoffeeScript support for vim http://www.vim.org/scripts/script.php?script_id=3590
-Plugin 'vim-utils/vim-man'                      " View and grep man pages in vim
-Plugin 'wincent/vim-clipper'                    " Clipper integration for Vim
-Plugin 'xolox/vim-misc'                         " Miscellaneous auto-load Vim scripts http://peterodding.com/code/vim/misc/
-Plugin 'xolox/vim-session'                      " Extended session management for Vim (:mksession on steroids) http://peterodding.com/code/vim/session/
-Plugin 'xolox/vim-shell'                        " Improved integration between Vim and its environment (fullscreen, open URL, background command execution) http://peterodding.com/code/vim/shell/
-Plugin 'yegappan/mru.git'                       " Most Recently Used (MRU) Vim Plugin
-Plugin 'yggdroot/indentline'                    " A vim plugin to display the indention levels with thin vertical lines
+Plug 'airblade/vim-gitgutter'                 " A Vim plugin which shows a git diff in the gutter (sign column) and stages/undoes hunks.
+Plug 'aklt/plantuml-syntax'                   " vim syntax file for plantuml
+Plug 'bogado/file-line'                       " Plugin for vim to enabling opening a file in a given line http://www.vim.org/scripts/script.php?script_id=2184
+Plug 'bronson/vim-trailing-whitespace'        " Highlights trailing whitespace in red and provides :FixWhitespace to fix it.
+Plug 'christoomey/vim-tmux-navigator'         " Seamless navigation between tmux panes and vim splits
+Plug 'ctrlpvim/ctrlp.vim'                     " Active fork of kien/ctrlp.vim—Fuzzy file, buffer, mru, tag, etc finder. http://ctrlpvim.github.com/ctrlp.vim
+Plug 'dbakker/vim-lint'                       " Check your .vimrc for errors
+Plug 'digitaltoad/vim-pug'                    " Vim Pug (formerly Jade) template engine syntax highlighting and indention
+Plug 'edkolev/promptline.vim'                 " Generate a fast shell prompt with powerline symbols and airline colors
+Plug 'edkolev/tmuxline.vim'                   " Simple tmux statusline generator with support for powerline symbols and statusline / airline / lightline integration
+Plug 'garbas/vim-snipmate'                    " snipMate.vim aims to be a concise vim script that implements some of TextMate's snippets features in Vim. http://www.vim.org/scripts/script.php?script_id=2540
+Plug 'hallison/vim-markdown'                  " Markdown syntax highlight for Vim editor with snippets support http://www.vim.org/scripts/script.php?script_id=2882
+Plug 'honza/vim-snippets'                     " vim-snipmate default snippets (Previously snipmate-snippets)
+Plug 'jeetsukumaran/vim-buffergator'          " Vim plugin to list, select and switch between buffers.
+Plug 'jelera/vim-javascript-syntax'           " Enhanced javascript syntax file for Vim http://www.vim.org/scripts/script.php?script_id=3425
+Plug 'junegunn/vim-easy-align'                " 🌻 A Vim alignment plugin
+Plug 'leshill/vim-json'
+Plug 'luochen1990/rainbow'                    " rainbow parentheses improved, shorter code, no level limit, smooth and fast, powerful configuration.
+Plug 'marcweber/vim-addon-mw-utils'           " vim: interpret a file by function and cache file automatically
+Plug 'mhinz/vim-startify'                     " The fancy start screen for Vim.
+Plug 'moll/vim-node'                          " Tools and environment to make Vim superb for developing with Node.js. Like Rails.vim for Node. http://www.vim.org/scripts/script.php?script_id=4674
+Plug 'myusuf3/numbers.vim'                    " numbers.vim is a vim plugin for better line numbers http://myusuf3.github.com/numbers.vim/
+Plug 'othree/javascript-libraries-syntax.vim' " Syntax for JavaScript libraries http://www.vim.org/scripts/script.php?script_id=4428
+Plug 'pangloss/vim-javascript'                " Vastly improved Javascript indentation and syntax support in Vim. http://www.vim.org/scripts/script.php?script_id=4452
+Plug 'rizzatti/dash.vim'                      " Search Dash.app from Vim
+Plug 'rking/ag.vim'                           " Vim plugin for the_silver_searcher, 'ag', a replacement for the Perl module / CLI script 'ack'
+Plug 'ryanoasis/vim-devicons'                 " Adds file type glyphs/icons to many popular Vim plugins such as: NERDTree, vim-airline, unite, vim-startify and many more
+Plug 'scrooloose/nerdtree'                    " A tree explorer plugin for vim.
+Plug 'scrooloose/syntastic'                   " Syntax checking hacks for vim
+Plug 'terryma/vim-multiple-cursors'           " True Sublime Text style multiple selections for Vim
+Plug 'tmhedberg/matchit'                      " extended % matching for HTML, LaTeX, and many other languages http://www.vim.org/scripts/script.php?script_id=39
+Plug 'tmux-plugins/vim-tmux'                  " vim plugin for tmux.conf
+Plug 'tommcdo/vim-fubitive'                   " Add Bitbucket URL support to fugitive.vim's :Gbrowse command
+Plug 'tomtom/tlib_vim'                        " Some utility functions for VIM http://www.vim.org/scripts/script.php?script_id=1863
+Plug 'tpope/vim-commentary'                   " commentary.vim: comment stuff out http://www.vim.org/scripts/script.php?script_id=3695
+Plug 'tpope/vim-eunuch'                       " eunuch.vim: helpers for UNIX http://www.vim.org/scripts/script.php?script_id=4300
+Plug 'tpope/vim-fugitive'                     " fugitive.vim: a Git wrapper so awesome, it should be illegal http://www.vim.org/scripts/script.php?script_id=2975
+Plug 'tpope/vim-jdaddy'                       " jdaddy.vim: JSON manipulation and pretty printing http://www.vim.org/scripts/script.php?script_id=4863
+Plug 'tpope/vim-sensible'                     " sensible.vim: Defaults everyone can agree on http://www.vim.org/scripts/script.php?script_id=4391
+Plug 'tpope/vim-sleuth'                       " sleuth.vim: Heuristically set buffer options http://www.vim.org/scripts/script.php?script_id=4375
+Plug 'tpope/vim-speeddating'                  " speeddating.vim: use CTRL-A/CTRL-X to increment dates, times, and more http://www.vim.org/scripts/script.php?script_id=2120
+Plug 'vim-airline/vim-airline'                " lean & mean status/tabline for vim that's light as air
+Plug 'vim-airline/vim-airline-themes'         " A collection of themes for vim-airline
+Plug 'vim-scripts/bufonly.vim'                " Delete all the buffers except the current/named buffer http://www.vim.org/scripts/script.php?script_id=1071
+Plug 'vim-scripts/csv.vim'                    " A Filetype plugin for csv files. http://www.vim.org/scripts/script.php?script_id=2830
+Plug 'vim-scripts/dirdiff.vim'                " A plugin to diff and merge two directories recursively. http://www.vim.org/scripts/script.php?script_id=102
+Plug 'vim-scripts/gundo'                      " Visualize your undo tree. http://www.vim.org/scripts/script.php?script_id=3304
+Plug 'vim-scripts/l9'                         " Vim-script library http://www.vim.org/scripts/script.php?script_id=3252
+Plug 'vim-scripts/modeliner'                  " Generates modeline according to the current settings. http://www.vim.org/scripts/script.php?script_id=1477
+Plug 'vim-scripts/vim-coffee-script'          " CoffeeScript support for vim http://www.vim.org/scripts/script.php?script_id=3590
+Plug 'vim-utils/vim-man'                      " View and grep man pages in vim
+Plug 'wincent/vim-clipper'                    " Clipper integration for Vim
+Plug 'xolox/vim-misc'                         " Miscellaneous auto-load Vim scripts http://peterodding.com/code/vim/misc/
+Plug 'xolox/vim-session'                      " Extended session management for Vim (:mksession on steroids) http://peterodding.com/code/vim/session/
+Plug 'xolox/vim-shell'                        " Improved integration between Vim and its environment (fullscreen, open URL, background command execution) http://peterodding.com/code/vim/shell/
+Plug 'yegappan/mru'                           " Most Recently Used (MRU) Vim Plugin
+Plug 'yggdroot/indentline'                    " A vim plugin to display the indention levels with thin vertical lines
 
 " Themes
 
-Plugin 'altercation/vim-colors-solarized' " precision colorscheme for the vim text editor http://ethanschoonover.com/solarized
-Plugin 'atweiden/vim-colors-behelit'      " @oblique's colorscheme for Vim
-Plugin 'baskerville/bubblegum'            " A vim color scheme based on xoria256
-Plugin 'chriskempson/base16-vim'          " Base16 for Vim https://github.com/chriskempson/base16
-Plugin 'ciaranm/inkpot'                   " Inkpot 88/256 Colour Scheme for Vim
-Plugin 'donearm/laederon'                 " A Vim color scheme with cold, tundra-like, colours
-Plugin 'donearm/ubaryd'                   " A Vim color scheme with warm, Mediterranean-like, colours
-Plugin 'google/vim-colorscheme-primary'   " Primary, a Vim color scheme based on Google's colors
-Plugin 'jacoborus/tender.vim'             " A 24bit colorscheme for Vim, Airline and Lightline
-Plugin 'lokaltog/vim-distinguished'       " A dark vim color scheme for 256-color terminals.
-Plugin 'nanotech/jellybeans.vim'          " A colorful, dark color scheme for Vim. http://www.vim.org/scripts/script.php?script_id=2555
-Plugin 'pychimp/vim-luna'                 " Touchdown on Lunar Surface ! :)
-Plugin 'pychimp/vim-sol'                  " On the Path of Illumination ! :)
-Plugin 'sjl/badwolf'                      " A Vim color scheme. http://stevelosh.com/projects/badwolf/
-Plugin 'tomasr/molokai'                   " Molokai color scheme for Vim
-Plugin 'tpope/vim-vividchalk'             " vividchalk.vim: a colorscheme strangely reminiscent of Vibrant Ink for a certain OS X editor http://www.vim.org/scripts/script.php?script_id=1891
-Plugin 'vim-scripts/wombat'               " Dark gray color scheme sharing some similarities with Desert http://www.vim.org/scripts/script.php?script_id=1778
-Plugin 'w0ng/vim-hybrid'                  " A dark color scheme for Vim & gVim
-Plugin 'zeis/vim-kolor'                   " Vim color scheme.
+Plug 'altercation/vim-colors-solarized' " precision colorscheme for the vim text editor http://ethanschoonover.com/solarized
+Plug 'atweiden/vim-colors-behelit'      " @oblique's colorscheme for Vim
+Plug 'baskerville/bubblegum'            " A vim color scheme based on xoria256
+Plug 'chriskempson/base16-vim'          " Base16 for Vim https://github.com/chriskempson/base16
+Plug 'ciaranm/inkpot'                   " Inkpot 88/256 Colour Scheme for Vim
+Plug 'donearm/laederon'                 " A Vim color scheme with cold, tundra-like, colours
+Plug 'donearm/ubaryd'                   " A Vim color scheme with warm, Mediterranean-like, colours
+Plug 'google/vim-colorscheme-primary'   " Primary, a Vim color scheme based on Google's colors
+Plug 'jacoborus/tender.vim'             " A 24bit colorscheme for Vim, Airline and Lightline
+Plug 'lokaltog/vim-distinguished'       " A dark vim color scheme for 256-color terminals.
+Plug 'nanotech/jellybeans.vim'          " A colorful, dark color scheme for Vim. http://www.vim.org/scripts/script.php?script_id=2555
+Plug 'pychimp/vim-luna'                 " Touchdown on Lunar Surface ! :)
+Plug 'pychimp/vim-sol'                  " On the Path of Illumination ! :)
+Plug 'sjl/badwolf'                      " A Vim color scheme. http://stevelosh.com/projects/badwolf/
+Plug 'tomasr/molokai'                   " Molokai color scheme for Vim
+Plug 'tpope/vim-vividchalk'             " vividchalk.vim: a colorscheme strangely reminiscent of Vibrant Ink for a certain OS X editor http://www.vim.org/scripts/script.php?script_id=1891
+Plug 'vim-scripts/wombat'               " Dark gray color scheme sharing some similarities with Desert http://www.vim.org/scripts/script.php?script_id=1778
+Plug 'w0ng/vim-hybrid'                  " A dark color scheme for Vim & gVim
+Plug 'zeis/vim-kolor'                   " Vim color scheme.
 
-call vundle#end()
+call plug#end()
 filetype plugin indent on
 
 set backspace=indent,eol,start  " more powerful backspacing
