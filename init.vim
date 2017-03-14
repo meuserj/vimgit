@@ -49,7 +49,6 @@ Plug 'pangloss/vim-javascript'                " Vastly improved Javascript inden
 Plug 'rizzatti/dash.vim'                      " Search Dash.app from Vim
 Plug 'rking/ag.vim'                           " Vim plugin for the_silver_searcher, 'ag', a replacement for the Perl module / CLI script 'ack'
 Plug 'ryanoasis/vim-devicons'                 " Adds file type glyphs/icons to many popular Vim plugins such as: NERDTree, vim-airline, unite, vim-startify and many more
-Plug 'scrooloose/nerdtree'                    " A tree explorer plugin for vim.
 Plug 'scrooloose/syntastic'                   " Syntax checking hacks for vim
 Plug 'terryma/vim-multiple-cursors'           " True Sublime Text style multiple selections for Vim
 Plug 'tmhedberg/matchit'                      " extended % matching for HTML, LaTeX, and many other languages http://www.vim.org/scripts/script.php?script_id=39
@@ -63,6 +62,7 @@ Plug 'tpope/vim-jdaddy'                       " jdaddy.vim: JSON manipulation an
 Plug 'tpope/vim-sensible'                     " sensible.vim: Defaults everyone can agree on http://www.vim.org/scripts/script.php?script_id=4391
 Plug 'tpope/vim-sleuth'                       " sleuth.vim: Heuristically set buffer options http://www.vim.org/scripts/script.php?script_id=4375
 Plug 'tpope/vim-speeddating'                  " speeddating.vim: use CTRL-A/CTRL-X to increment dates, times, and more http://www.vim.org/scripts/script.php?script_id=2120
+Plug 'tpope/vim-vinegar'                      " vinegar.vim: combine with netrw to create a delicious salad dressing
 Plug 'vim-airline/vim-airline'                " lean & mean status/tabline for vim that's light as air
 Plug 'vim-airline/vim-airline-themes'         " A collection of themes for vim-airline
 Plug 'vim-scripts/bufonly.vim'                " Delete all the buffers except the current/named buffer http://www.vim.org/scripts/script.php?script_id=1071
@@ -201,11 +201,14 @@ else
 endif
 
 set hidden
-let g:loaded_netrw       = 1
-let g:loaded_netrwPlugin = 1
-let NERDTreeIgnore = ['\.bak$', '\.orig$']
-let NERDTreeChDirMode = 2
-let NERDTreeStatusline = -1
+let g:netrw_winsize = -28
+let g:netrw_liststyle = 3
+let g:netrw_browse_split = 4
+" let g:loaded_netrw       = 1
+" let g:loaded_netrwPlugin = 1
+" let NERDTreeIgnore = ['\.bak$', '\.orig$']
+" let NERDTreeChDirMode = 2
+" let NERDTreeStatusline = -1
 
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
@@ -248,10 +251,8 @@ set undoreload=10000
 
 nmap <F2> :w<CR>
 imap <F2> <ESC>:w<CR>a
-nmap <F3> :NERDTreeFind<CR>
-imap <F3> <ESC>:NERDTreeFind<CR>
-nmap <F4> :NERDTreeToggle<CR>
-imap <F4> <ESC>:NERDTreeToggle<CR>
+nmap <F4> :Lexplore<CR>
+imap <F4> <ESC>:Lexplore<CR>
 map <F5> <C-P><C-\>f<CR>
 map <F9> <C-w><C-w><C-w><C-w>-D
 map <F10> <C-w><C-w><C-w><C-w>jD
