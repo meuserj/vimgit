@@ -31,7 +31,6 @@ Plug 'dbakker/vim-lint'                       " Check your .vimrc for errors
 Plug 'digitaltoad/vim-pug'                    " Vim Pug (formerly Jade) template engine syntax highlighting and indention
 Plug 'edkolev/promptline.vim'                 " Generate a fast shell prompt with powerline symbols and airline colors
 Plug 'edkolev/tmuxline.vim'                   " Simple tmux statusline generator with support for powerline symbols and statusline / airline / lightline integration
-Plug 'eiginn/netrw'                           " Mirror of Dr. Chip's netrw vim plugin for vundle
 Plug 'ervandew/screen'                        " Simulate a split shell in vim using gnu screen or tmux
 Plug 'garbas/vim-snipmate'                    " snipMate.vim aims to be a concise vim script that implements some of TextMate's snippets features in Vim. http://www.vim.org/scripts/script.php?script_id=2540
 Plug 'hallison/vim-markdown'                  " Markdown syntax highlight for Vim editor with snippets support http://www.vim.org/scripts/script.php?script_id=2882
@@ -51,6 +50,7 @@ Plug 'pangloss/vim-javascript'                " Vastly improved Javascript inden
 Plug 'rizzatti/dash.vim'                      " Search Dash.app from Vim
 Plug 'rking/ag.vim'                           " Vim plugin for the_silver_searcher, 'ag', a replacement for the Perl module / CLI script 'ack'
 Plug 'ryanoasis/vim-devicons'                 " Adds file type glyphs/icons to many popular Vim plugins such as: NERDTree, vim-airline, unite, vim-startify and many more
+Plug 'scrooloose/nerdtree'                    " A tree explorer plugin for vim.
 Plug 'scrooloose/syntastic'                   " Syntax checking hacks for vim
 Plug 'terryma/vim-multiple-cursors'           " True Sublime Text style multiple selections for Vim
 Plug 'tmhedberg/matchit'                      " extended % matching for HTML, LaTeX, and many other languages http://www.vim.org/scripts/script.php?script_id=39
@@ -64,7 +64,6 @@ Plug 'tpope/vim-jdaddy'                       " jdaddy.vim: JSON manipulation an
 Plug 'tpope/vim-sensible'                     " sensible.vim: Defaults everyone can agree on http://www.vim.org/scripts/script.php?script_id=4391
 Plug 'tpope/vim-sleuth'                       " sleuth.vim: Heuristically set buffer options http://www.vim.org/scripts/script.php?script_id=4375
 Plug 'tpope/vim-speeddating'                  " speeddating.vim: use CTRL-A/CTRL-X to increment dates, times, and more http://www.vim.org/scripts/script.php?script_id=2120
-Plug 'tpope/vim-vinegar'                      " vinegar.vim: combine with netrw to create a delicious salad dressing
 Plug 'vim-airline/vim-airline'                " lean & mean status/tabline for vim that's light as air
 Plug 'vim-airline/vim-airline-themes'         " A collection of themes for vim-airline
 Plug 'vim-scripts/bufonly.vim'                " Delete all the buffers except the current/named buffer http://www.vim.org/scripts/script.php?script_id=1071
@@ -192,7 +191,7 @@ let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclu
 let g:ctrlp_custom_ignore = {
   \ 'dir':  '^(results|node_modules)$'
   \ }
-let g:ctrlp_clear_cache_on_exit = 0
+let g:ctrlp_clear_cache_on_exit = 1
 set clipboard=unnamed
 if has("gui_gtk3")
   set guifont=Anonymous\ Pro\ for\ Powerline\ 10
@@ -203,19 +202,12 @@ else
 endif
 
 set hidden
-let g:netrw_winsize        = -28
-let g:netrw_liststyle      = 3
-let g:netrw_browse_split   = 4
-let g:netrw_fastbrowse     = 2
-let g:netrw_redmap         = 1
-let g:netrw_silent         = 1
-let g:netrw_special_syntax = 1
 
-" let g:loaded_netrw       = 1
-" let g:loaded_netrwPlugin = 1
-" let NERDTreeIgnore = ['\.bak$', '\.orig$']
-" let NERDTreeChDirMode = 2
-" let NERDTreeStatusline = -1
+let g:loaded_netrw       = 1
+let g:loaded_netrwPlugin = 1
+let NERDTreeIgnore = ['\.bak$', '\.orig$']
+let NERDTreeChDirMode = 2
+let NERDTreeStatusline = -1
 
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
@@ -258,8 +250,10 @@ set undoreload=10000
 
 nmap <F2> :w<CR>
 imap <F2> <ESC>:w<CR>a
-nmap <F4> :Lexplore<CR>
-imap <F4> <ESC>:Lexplore<CR>
+nmap <F4> :NERDTreeToggle<CR>
+imap <F4> <ESC>:NERDTreeToggle<CR>
+nmap <F3> :NERDTreeFocus<CR>
+imap <F3> <ESC>:NERDTreeFocus<CR>
 map <F5> <C-P><C-\>f<CR>
 map <F9> <C-w><C-w><C-w><C-w>-D
 map <F10> <C-w><C-w><C-w><C-w>jD
