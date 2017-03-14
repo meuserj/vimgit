@@ -38,6 +38,7 @@ Plug 'hallison/vim-markdown'                  " Markdown syntax highlight for Vi
 Plug 'honza/vim-snippets'                     " vim-snipmate default snippets (Previously snipmate-snippets)
 Plug 'jeetsukumaran/vim-buffergator'          " Vim plugin to list, select and switch between buffers.
 Plug 'jelera/vim-javascript-syntax'           " Enhanced javascript syntax file for Vim http://www.vim.org/scripts/script.php?script_id=3425
+Plug 'jlanzarotta/bufexplorer'                " BufExplorer Plugin for Vim
 Plug 'junegunn/vim-easy-align'                " 🌻 A Vim alignment plugin
 Plug 'leshill/vim-json'
 Plug 'luochen1990/rainbow'                    " rainbow parentheses improved, shorter code, no level limit, smooth and fast, powerful configuration.
