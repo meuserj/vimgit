@@ -31,6 +31,7 @@ Plug 'dbakker/vim-lint'                       " Check your .vimrc for errors
 Plug 'digitaltoad/vim-pug'                    " Vim Pug (formerly Jade) template engine syntax highlighting and indention
 Plug 'edkolev/promptline.vim'                 " Generate a fast shell prompt with powerline symbols and airline colors
 Plug 'edkolev/tmuxline.vim'                   " Simple tmux statusline generator with support for powerline symbols and statusline / airline / lightline integration
+Plug 'eiginn/netrw'                           " Mirror of Dr. Chip's netrw vim plugin for vundle
 Plug 'ervandew/screen'                        " Simulate a split shell in vim using gnu screen or tmux
 Plug 'garbas/vim-snipmate'                    " snipMate.vim aims to be a concise vim script that implements some of TextMate's snippets features in Vim. http://www.vim.org/scripts/script.php?script_id=2540
 Plug 'hallison/vim-markdown'                  " Markdown syntax highlight for Vim editor with snippets support http://www.vim.org/scripts/script.php?script_id=2882
@@ -201,9 +202,13 @@ else
 endif
 
 set hidden
-let g:netrw_winsize = -28
-let g:netrw_liststyle = 3
-let g:netrw_browse_split = 4
+let g:netrw_winsize        = -28
+let g:netrw_liststyle      = 3
+let g:netrw_browse_split   = 4
+let g:netrw_fastbrowse     = 2
+let g:netrw_redmap         = 1
+let g:netrw_silent         = 1
+let g:netrw_special_syntax = 1
 " let g:loaded_netrw       = 1
 " let g:loaded_netrwPlugin = 1
 " let NERDTreeIgnore = ['\.bak$', '\.orig$']
