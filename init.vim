@@ -210,6 +210,7 @@ let g:netrw_fastbrowse     = 2
 let g:netrw_redmap         = 1
 let g:netrw_silent         = 1
 let g:netrw_special_syntax = 1
+
 " let g:loaded_netrw       = 1
 " let g:loaded_netrwPlugin = 1
 " let NERDTreeIgnore = ['\.bak$', '\.orig$']
