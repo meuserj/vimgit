@@ -37,6 +37,7 @@ Plug 'hallison/vim-markdown'                  " Markdown syntax highlight for Vi
 Plug 'honza/vim-snippets'                     " vim-snipmate default snippets (Previously snipmate-snippets)
 Plug 'jeetsukumaran/vim-buffergator'          " Vim plugin to list, select and switch between buffers.
 Plug 'jelera/vim-javascript-syntax'           " Enhanced javascript syntax file for Vim http://www.vim.org/scripts/script.php?script_id=3425
+Plug 'jlanzarotta/bufexplorer'                " BufExplorer Plugin for Vim
 Plug 'junegunn/vim-easy-align'                " 🌻 A Vim alignment plugin
 Plug 'leshill/vim-json'
 Plug 'luochen1990/rainbow'                    " rainbow parentheses improved, shorter code, no level limit, smooth and fast, powerful configuration.
@@ -190,7 +191,7 @@ let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclu
 let g:ctrlp_custom_ignore = {
   \ 'dir':  '^(results|node_modules)$'
   \ }
-let g:ctrlp_clear_cache_on_exit = 0
+let g:ctrlp_clear_cache_on_exit = 1
 set clipboard=unnamed
 if has("gui_gtk3")
   set guifont=Anonymous\ Pro\ for\ Powerline\ 10
@@ -201,6 +202,7 @@ else
 endif
 
 set hidden
+
 let g:loaded_netrw       = 1
 let g:loaded_netrwPlugin = 1
 let NERDTreeIgnore = ['\.bak$', '\.orig$']
@@ -248,10 +250,10 @@ set undoreload=10000
 
 nmap <F2> :w<CR>
 imap <F2> <ESC>:w<CR>a
-nmap <F3> :NERDTreeFind<CR>
-imap <F3> <ESC>:NERDTreeFind<CR>
 nmap <F4> :NERDTreeToggle<CR>
 imap <F4> <ESC>:NERDTreeToggle<CR>
+nmap <F3> :NERDTreeFocus<CR>
+imap <F3> <ESC>:NERDTreeFocus<CR>
 map <F5> <C-P><C-\>f<CR>
 map <F9> <C-w><C-w><C-w><C-w>-D
 map <F10> <C-w><C-w><C-w><C-w>jD
