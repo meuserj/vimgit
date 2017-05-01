@@ -13,8 +13,6 @@ endif
 
 call plug#begin()
 
-Plug 'PProvost/vim-ps1'
-Plug 'Raimondi/delimitMate'
 if has('unix') && !has("win32unix")
   Plug 'Valloric/YouCompleteMe'
   Plug 'ternjs/tern_for_vim'
@@ -32,14 +30,11 @@ Plug 'digitaltoad/vim-pug'                    " Vim Pug (formerly Jade) template
 Plug 'edkolev/promptline.vim'                 " Generate a fast shell prompt with powerline symbols and airline colors
 Plug 'edkolev/tmuxline.vim'                   " Simple tmux statusline generator with support for powerline symbols and statusline / airline / lightline integration
 Plug 'ervandew/screen'                        " Simulate a split shell in vim using gnu screen or tmux
-Plug 'garbas/vim-snipmate'                    " snipMate.vim aims to be a concise vim script that implements some of TextMate's snippets features in Vim. http://www.vim.org/scripts/script.php?script_id=2540
 Plug 'hallison/vim-markdown'                  " Markdown syntax highlight for Vim editor with snippets support http://www.vim.org/scripts/script.php?script_id=2882
-Plug 'honza/vim-snippets'                     " vim-snipmate default snippets (Previously snipmate-snippets)
-Plug 'jeetsukumaran/vim-buffergator'          " Vim plugin to list, select and switch between buffers.
 Plug 'jelera/vim-javascript-syntax'           " Enhanced javascript syntax file for Vim http://www.vim.org/scripts/script.php?script_id=3425
 Plug 'jlanzarotta/bufexplorer'                " BufExplorer Plugin for Vim
 Plug 'junegunn/vim-easy-align'                " 🌻 A Vim alignment plugin
-Plug 'leshill/vim-json'
+Plug 'leshill/vim-json'                       " Syntax highlighting for JSON in Vim
 Plug 'luochen1990/rainbow'                    " rainbow parentheses improved, shorter code, no level limit, smooth and fast, powerful configuration.
 Plug 'marcweber/vim-addon-mw-utils'           " vim: interpret a file by function and cache file automatically
 Plug 'mhinz/vim-startify'                     " The fancy start screen for Vim.
@@ -47,12 +42,12 @@ Plug 'moll/vim-node'                          " Tools and environment to make Vi
 Plug 'myusuf3/numbers.vim'                    " numbers.vim is a vim plugin for better line numbers http://myusuf3.github.com/numbers.vim/
 Plug 'othree/javascript-libraries-syntax.vim' " Syntax for JavaScript libraries http://www.vim.org/scripts/script.php?script_id=4428
 Plug 'pangloss/vim-javascript'                " Vastly improved Javascript indentation and syntax support in Vim. http://www.vim.org/scripts/script.php?script_id=4452
+Plug 'pprovost/vim-ps1'                       " A Vim plugin for Windows PowerShell support
 Plug 'rizzatti/dash.vim'                      " Search Dash.app from Vim
 Plug 'rking/ag.vim'                           " Vim plugin for the_silver_searcher, 'ag', a replacement for the Perl module / CLI script 'ack'
 Plug 'ryanoasis/vim-devicons'                 " Adds file type glyphs/icons to many popular Vim plugins such as: NERDTree, vim-airline, unite, vim-startify and many more
 Plug 'scrooloose/nerdtree'                    " A tree explorer plugin for vim.
 Plug 'scrooloose/syntastic'                   " Syntax checking hacks for vim
-Plug 'terryma/vim-multiple-cursors'           " True Sublime Text style multiple selections for Vim
 Plug 'tmhedberg/matchit'                      " extended % matching for HTML, LaTeX, and many other languages http://www.vim.org/scripts/script.php?script_id=39
 Plug 'tmux-plugins/vim-tmux'                  " vim plugin for tmux.conf
 Plug 'tommcdo/vim-fubitive'                   " Add Bitbucket URL support to fugitive.vim's :Gbrowse command
@@ -63,6 +58,7 @@ Plug 'tpope/vim-fugitive'                     " fugitive.vim: a Git wrapper so a
 Plug 'tpope/vim-jdaddy'                       " jdaddy.vim: JSON manipulation and pretty printing http://www.vim.org/scripts/script.php?script_id=4863
 Plug 'tpope/vim-sensible'                     " sensible.vim: Defaults everyone can agree on http://www.vim.org/scripts/script.php?script_id=4391
 Plug 'tpope/vim-sleuth'                       " sleuth.vim: Heuristically set buffer options http://www.vim.org/scripts/script.php?script_id=4375
+Plug 'tpope/vim-surround'                     " surround.vim: quoting/parenthesizing made simple
 Plug 'tpope/vim-speeddating'                  " speeddating.vim: use CTRL-A/CTRL-X to increment dates, times, and more http://www.vim.org/scripts/script.php?script_id=2120
 Plug 'vim-airline/vim-airline'                " lean & mean status/tabline for vim that's light as air
 Plug 'vim-airline/vim-airline-themes'         " A collection of themes for vim-airline
@@ -71,7 +67,6 @@ Plug 'vim-scripts/csv.vim'                    " A Filetype plugin for csv files.
 Plug 'vim-scripts/dirdiff.vim'                " A plugin to diff and merge two directories recursively. http://www.vim.org/scripts/script.php?script_id=102
 Plug 'vim-scripts/gundo'                      " Visualize your undo tree. http://www.vim.org/scripts/script.php?script_id=3304
 Plug 'vim-scripts/l9'                         " Vim-script library http://www.vim.org/scripts/script.php?script_id=3252
-Plug 'vim-scripts/modeliner'                  " Generates modeline according to the current settings. http://www.vim.org/scripts/script.php?script_id=1477
 Plug 'vim-scripts/vim-coffee-script'          " CoffeeScript support for vim http://www.vim.org/scripts/script.php?script_id=3590
 Plug 'vim-utils/vim-man'                      " View and grep man pages in vim
 Plug 'wincent/vim-clipper'                    " Clipper integration for Vim
@@ -252,11 +247,11 @@ nmap <F2> :w<CR>
 imap <F2> <ESC>:w<CR>a
 nmap <F4> :NERDTreeToggle<CR>
 imap <F4> <ESC>:NERDTreeToggle<CR>
-nmap <F3> :NERDTreeFocus<CR>
-imap <F3> <ESC>:NERDTreeFocus<CR>
+nmap <F3> :NERDTreeFind<CR>
+imap <F3> <ESC>:NERDTreeFind<CR>
 map <F5> <C-P><C-\>f<CR>
-map <F9> <C-w><C-w><C-w><C-w>-D
-map <F10> <C-w><C-w><C-w><C-w>jD
+map <F9> <C-j>-D
+map <F10> <C-j>jD
 
 nmap <F7> :bprevious<cr>
 nmap <F8> :bnext<cr>
