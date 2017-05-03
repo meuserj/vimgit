@@ -50,6 +50,7 @@ Plug 'scrooloose/nerdtree'                    " A tree explorer plugin for vim.
 Plug 'scrooloose/syntastic'                   " Syntax checking hacks for vim
 Plug 'tmhedberg/matchit'                      " extended % matching for HTML, LaTeX, and many other languages http://www.vim.org/scripts/script.php?script_id=39
 Plug 'tmux-plugins/vim-tmux'                  " vim plugin for tmux.conf
+Plug 'tmux-plugins/vim-tmux-focus-events'     " Make terminal vim and tmux work better together.
 Plug 'tommcdo/vim-fubitive'                   " Add Bitbucket URL support to fugitive.vim's :Gbrowse command
 Plug 'tomtom/tlib_vim'                        " Some utility functions for VIM http://www.vim.org/scripts/script.php?script_id=1863
 Plug 'tpope/vim-commentary'                   " commentary.vim: comment stuff out http://www.vim.org/scripts/script.php?script_id=3695
@@ -58,8 +59,8 @@ Plug 'tpope/vim-fugitive'                     " fugitive.vim: a Git wrapper so a
 Plug 'tpope/vim-jdaddy'                       " jdaddy.vim: JSON manipulation and pretty printing http://www.vim.org/scripts/script.php?script_id=4863
 Plug 'tpope/vim-sensible'                     " sensible.vim: Defaults everyone can agree on http://www.vim.org/scripts/script.php?script_id=4391
 Plug 'tpope/vim-sleuth'                       " sleuth.vim: Heuristically set buffer options http://www.vim.org/scripts/script.php?script_id=4375
-Plug 'tpope/vim-surround'                     " surround.vim: quoting/parenthesizing made simple
 Plug 'tpope/vim-speeddating'                  " speeddating.vim: use CTRL-A/CTRL-X to increment dates, times, and more http://www.vim.org/scripts/script.php?script_id=2120
+Plug 'tpope/vim-surround'                     " surround.vim: quoting/parenthesizing made simple
 Plug 'vim-airline/vim-airline'                " lean & mean status/tabline for vim that's light as air
 Plug 'vim-airline/vim-airline-themes'         " A collection of themes for vim-airline
 Plug 'vim-scripts/bufonly.vim'                " Delete all the buffers except the current/named buffer http://www.vim.org/scripts/script.php?script_id=1071
