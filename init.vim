@@ -24,6 +24,7 @@ Plug 'aklt/plantuml-syntax'                   " vim syntax file for plantuml
 Plug 'bogado/file-line'                       " Plugin for vim to enabling opening a file in a given line http://www.vim.org/scripts/script.php?script_id=2184
 Plug 'bronson/vim-trailing-whitespace'        " Highlights trailing whitespace in red and provides :FixWhitespace to fix it.
 Plug 'christoomey/vim-tmux-navigator'         " Seamless navigation between tmux panes and vim splits
+Plug 'crusoexia/vim-javascript-lib'           " companion of vim-javascript, provide syntax highlight of javascript libraries
 Plug 'ctrlpvim/ctrlp.vim'                     " Active fork of kien/ctrlp.vim—Fuzzy file, buffer, mru, tag, etc finder. http://ctrlpvim.github.com/ctrlp.vim
 Plug 'dbakker/vim-lint'                       " Check your .vimrc for errors
 Plug 'digitaltoad/vim-pug'                    " Vim Pug (formerly Jade) template engine syntax highlighting and indention
@@ -47,7 +48,6 @@ Plug 'othree/javascript-libraries-syntax.vim' " Syntax for JavaScript libraries 
 Plug 'pangloss/vim-javascript'                " Vastly improved Javascript indentation and syntax support in Vim. http://www.vim.org/scripts/script.php?script_id=4452
 Plug 'pprovost/vim-ps1'                       " A Vim plugin for Windows PowerShell support
 Plug 'rizzatti/dash.vim'                      " Search Dash.app from Vim
-Plug 'rking/ag.vim'                           " Vim plugin for the_silver_searcher, 'ag', a replacement for the Perl module / CLI script 'ack'
 Plug 'ryanoasis/vim-devicons'                 " Adds file type glyphs/icons to many popular Vim plugins such as: NERDTree, vim-airline, unite, vim-startify and many more
 Plug 'scrooloose/nerdtree'                    " A tree explorer plugin for vim.
 Plug 'scrooloose/syntastic'                   " Syntax checking hacks for vim
@@ -87,6 +87,7 @@ Plug 'atweiden/vim-colors-behelit'      " @oblique's colorscheme for Vim
 Plug 'baskerville/bubblegum'            " A vim color scheme based on xoria256
 Plug 'chriskempson/base16-vim'          " Base16 for Vim https://github.com/chriskempson/base16
 Plug 'ciaranm/inkpot'                   " Inkpot 88/256 Colour Scheme for Vim
+Plug 'crusoexia/vim-monokai'            " Refined Monokai color scheme for vim
 Plug 'donearm/laederon'                 " A Vim color scheme with cold, tundra-like, colours
 Plug 'donearm/ubaryd'                   " A Vim color scheme with warm, Mediterranean-like, colours
 Plug 'google/vim-colorscheme-primary'   " Primary, a Vim color scheme based on Google's colors
@@ -227,7 +228,7 @@ let g:indent_guides_exclude_filetypes = ['help', 'nerdtree', 'man']
 let g:indent_guides_color_change_percent = 2
 
 let g:airline_powerline_fonts = 1
-let g:airline_theme = 'molokai'
+let g:airline_theme = 'base16_monokai'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#fnamemod = ':t'
 
@@ -308,6 +309,6 @@ nmap <silent> <leader>d <Plug>DashSearch
 
 set background=dark
 syntax on
-colorscheme molokai
+colorscheme monokai
 
 " vim: set et fenc=utf-8 ff=unix sts=4 sw=4 ts=4 :
