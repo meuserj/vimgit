@@ -193,7 +193,7 @@ if has("gui_gtk3")
 elseif has('gui_win32')
   set guifont=MesloLGSDZ_Nerd_Font:h8:cANSI
 else
-  set guifont=Meslo\ LG\ S\ DZ\ Regular\ for\ Powerline\ Nerd\ Font\ Complete:h11
+  set guifont=Terminess\ (TTF)\ Nerd\ Font\ Complete:h12
 endif
 
 set hidden
@@ -234,8 +234,6 @@ let g:indentLine_color_gui = '#333333'
 let g:indentLine_color_tty_dark = 1
 
 let g:SrcExpl_isUpdateTags = 0
-
-let macvim_skip_colorscheme=1
 
 set directory=~/.vim/swapdir
 set undodir=~/.vim/undodir
