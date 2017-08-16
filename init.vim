@@ -24,18 +24,22 @@ Plug 'aklt/plantuml-syntax'                   " vim syntax file for plantuml
 Plug 'bogado/file-line'                       " Plugin for vim to enabling opening a file in a given line http://www.vim.org/scripts/script.php?script_id=2184
 Plug 'bronson/vim-trailing-whitespace'        " Highlights trailing whitespace in red and provides :FixWhitespace to fix it.
 Plug 'christoomey/vim-tmux-navigator'         " Seamless navigation between tmux panes and vim splits
+Plug 'crusoexia/vim-javascript-lib'           " companion of vim-javascript, provide syntax highlight of javascript libraries
 Plug 'ctrlpvim/ctrlp.vim'                     " Active fork of kien/ctrlp.vim—Fuzzy file, buffer, mru, tag, etc finder. http://ctrlpvim.github.com/ctrlp.vim
 Plug 'dbakker/vim-lint'                       " Check your .vimrc for errors
 Plug 'digitaltoad/vim-pug'                    " Vim Pug (formerly Jade) template engine syntax highlighting and indention
 Plug 'edkolev/promptline.vim'                 " Generate a fast shell prompt with powerline symbols and airline colors
 Plug 'edkolev/tmuxline.vim'                   " Simple tmux statusline generator with support for powerline symbols and statusline / airline / lightline integration
 Plug 'ervandew/screen'                        " Simulate a split shell in vim using gnu screen or tmux
+Plug 'frioux/vim-lost'                        " Vim plugin to provide a command to help you orient yourself when editing a large chunk of code.
 Plug 'hallison/vim-markdown'                  " Markdown syntax highlight for Vim editor with snippets support http://www.vim.org/scripts/script.php?script_id=2882
 Plug 'jelera/vim-javascript-syntax'           " Enhanced javascript syntax file for Vim http://www.vim.org/scripts/script.php?script_id=3425
 Plug 'jlanzarotta/bufexplorer'                " BufExplorer Plugin for Vim
+Plug 'jremmen/vim-ripgrep'                    " Use RipGrep in Vim and display results in a quickfix list
 Plug 'junegunn/vim-easy-align'                " 🌻 A Vim alignment plugin
 Plug 'leshill/vim-json'                       " Syntax highlighting for JSON in Vim
 Plug 'luochen1990/rainbow'                    " rainbow parentheses improved, shorter code, no level limit, smooth and fast, powerful configuration.
+Plug 'machakann/vim-highlightedyank'          " Make the yanked region apparent!
 Plug 'marcweber/vim-addon-mw-utils'           " vim: interpret a file by function and cache file automatically
 Plug 'mhinz/vim-startify'                     " The fancy start screen for Vim.
 Plug 'moll/vim-node'                          " Tools and environment to make Vim superb for developing with Node.js. Like Rails.vim for Node. http://www.vim.org/scripts/script.php?script_id=4674
@@ -44,12 +48,12 @@ Plug 'othree/javascript-libraries-syntax.vim' " Syntax for JavaScript libraries 
 Plug 'pangloss/vim-javascript'                " Vastly improved Javascript indentation and syntax support in Vim. http://www.vim.org/scripts/script.php?script_id=4452
 Plug 'pprovost/vim-ps1'                       " A Vim plugin for Windows PowerShell support
 Plug 'rizzatti/dash.vim'                      " Search Dash.app from Vim
-Plug 'rking/ag.vim'                           " Vim plugin for the_silver_searcher, 'ag', a replacement for the Perl module / CLI script 'ack'
 Plug 'ryanoasis/vim-devicons'                 " Adds file type glyphs/icons to many popular Vim plugins such as: NERDTree, vim-airline, unite, vim-startify and many more
 Plug 'scrooloose/nerdtree'                    " A tree explorer plugin for vim.
 Plug 'scrooloose/syntastic'                   " Syntax checking hacks for vim
 Plug 'tmhedberg/matchit'                      " extended % matching for HTML, LaTeX, and many other languages http://www.vim.org/scripts/script.php?script_id=39
 Plug 'tmux-plugins/vim-tmux'                  " vim plugin for tmux.conf
+Plug 'tmux-plugins/vim-tmux-focus-events'     " Make terminal vim and tmux work better together.
 Plug 'tommcdo/vim-fubitive'                   " Add Bitbucket URL support to fugitive.vim's :Gbrowse command
 Plug 'tomtom/tlib_vim'                        " Some utility functions for VIM http://www.vim.org/scripts/script.php?script_id=1863
 Plug 'tpope/vim-commentary'                   " commentary.vim: comment stuff out http://www.vim.org/scripts/script.php?script_id=3695
@@ -58,8 +62,8 @@ Plug 'tpope/vim-fugitive'                     " fugitive.vim: a Git wrapper so a
 Plug 'tpope/vim-jdaddy'                       " jdaddy.vim: JSON manipulation and pretty printing http://www.vim.org/scripts/script.php?script_id=4863
 Plug 'tpope/vim-sensible'                     " sensible.vim: Defaults everyone can agree on http://www.vim.org/scripts/script.php?script_id=4391
 Plug 'tpope/vim-sleuth'                       " sleuth.vim: Heuristically set buffer options http://www.vim.org/scripts/script.php?script_id=4375
-Plug 'tpope/vim-surround'                     " surround.vim: quoting/parenthesizing made simple
 Plug 'tpope/vim-speeddating'                  " speeddating.vim: use CTRL-A/CTRL-X to increment dates, times, and more http://www.vim.org/scripts/script.php?script_id=2120
+Plug 'tpope/vim-surround'                     " surround.vim: quoting/parenthesizing made simple
 Plug 'vim-airline/vim-airline'                " lean & mean status/tabline for vim that's light as air
 Plug 'vim-airline/vim-airline-themes'         " A collection of themes for vim-airline
 Plug 'vim-scripts/bufonly.vim'                " Delete all the buffers except the current/named buffer http://www.vim.org/scripts/script.php?script_id=1071
@@ -83,6 +87,7 @@ Plug 'atweiden/vim-colors-behelit'      " @oblique's colorscheme for Vim
 Plug 'baskerville/bubblegum'            " A vim color scheme based on xoria256
 Plug 'chriskempson/base16-vim'          " Base16 for Vim https://github.com/chriskempson/base16
 Plug 'ciaranm/inkpot'                   " Inkpot 88/256 Colour Scheme for Vim
+Plug 'crusoexia/vim-monokai'            " Refined Monokai color scheme for vim
 Plug 'donearm/laederon'                 " A Vim color scheme with cold, tundra-like, colours
 Plug 'donearm/ubaryd'                   " A Vim color scheme with warm, Mediterranean-like, colours
 Plug 'google/vim-colorscheme-primary'   " Primary, a Vim color scheme based on Google's colors
@@ -223,7 +228,7 @@ let g:indent_guides_exclude_filetypes = ['help', 'nerdtree', 'man']
 let g:indent_guides_color_change_percent = 2
 
 let g:airline_powerline_fonts = 1
-let g:airline_theme = 'molokai'
+let g:airline_theme = 'base16_monokai'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#fnamemod = ':t'
 
@@ -241,6 +246,7 @@ set undofile
 set undolevels=1000
 set undoreload=10000
 
+map y <Plug>(highlightedyank)
 nmap <F2> :w<CR>
 imap <F2> <ESC>:w<CR>a
 nmap <F4> :NERDTreeToggle<CR>
@@ -301,6 +307,6 @@ nmap <silent> <leader>d <Plug>DashSearch
 
 set background=dark
 syntax on
-colorscheme molokai
+colorscheme monokai
 
 " vim: set et fenc=utf-8 ff=unix sts=4 sw=4 ts=4 :
