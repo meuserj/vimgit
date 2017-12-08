@@ -14,7 +14,9 @@ endif
 call plug#begin()
 
 if has('unix') && !has("win32unix")
-  Plug 'Valloric/YouCompleteMe'
+  if !has('nvim')
+      Plug 'Valloric/YouCompleteMe'
+  endif
   Plug 'ternjs/tern_for_vim'
   Plug 'vim-scripts/csapprox'               " Make gvim-only colorschemes work transparently in terminal vim http://www.vim.org/scripts/script.php?script_id=2390
 endif
@@ -198,7 +200,7 @@ if has("gui_gtk3")
 elseif has('gui_win32')
   set guifont=MesloLGSDZ_Nerd_Font:h8:cANSI
 else
-  set guifont=Terminess\ (TTF)\ Nerd\ Font\ Complete:h12
+  set guifont=Roboto\ Mono\ Medium\ Nerd\ Font\ Complete:h12
 endif
 
 set hidden
