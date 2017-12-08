@@ -85,7 +85,6 @@ Plug 'yggdroot/indentline'                    " A vim plugin to display the inde
 " Themes
 
 Plug 'altercation/vim-colors-solarized' " precision colorscheme for the vim text editor http://ethanschoonover.com/solarized
-Plug 'atweiden/vim-colors-behelit'      " @oblique's colorscheme for Vim
 Plug 'baskerville/bubblegum'            " A vim color scheme based on xoria256
 Plug 'chriskempson/base16-vim'          " Base16 for Vim https://github.com/chriskempson/base16
 Plug 'ciaranm/inkpot'                   " Inkpot 88/256 Colour Scheme for Vim
@@ -168,6 +167,7 @@ set nu
 set mouse=a
 set list
 set listchars=tab:>.,trail:.
+set equalalways
 
 set popt=paper:letter,syntax:y
 set foldmethod=indent
@@ -216,6 +216,7 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
+let g:completor_node_binary = '/cygdrive/c/Program Files/nodejs/node.exe'
 
 let g:session_autosave = 'yes'
 let g:session_autosave_periodic = 30
@@ -233,6 +234,11 @@ let g:airline_powerline_fonts = 1
 let g:airline_theme = 'base16_monokai'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#fnamemod = ':t'
+let g:airline#extensions#tabline#buffer_min_count             = 1
+let g:airline#extensions#tabline#tab_min_count                = 1
+let g:airline#extensions#tabline#buffer_idx_mode              = 1
+let g:airline#extensions#tabline#buffer_nr_show               = 0
+let g:airline#extensions#tabline#show_buffers = 1
 
 let g:promptline_theme = 'airline'
 
