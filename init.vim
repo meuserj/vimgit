@@ -230,19 +230,41 @@ let g:indent_guides_enable_on_vim_startup = 1
 let g:indent_guides_exclude_filetypes = ['help', 'nerdtree', 'man']
 let g:indent_guides_color_change_percent = 2
 
-let g:airline_powerline_fonts = 1
-let g:airline_theme = 'base16_monokai'
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#fnamemod = ':t'
-let g:airline#extensions#tabline#buffer_min_count             = 1
-let g:airline#extensions#tabline#tab_min_count                = 1
-let g:airline#extensions#tabline#buffer_idx_mode              = 1
-let g:airline#extensions#tabline#buffer_nr_show               = 0
-let g:airline#extensions#tabline#show_buffers = 1
+
+let g:airline_left_sep                            = "\uE0B8"
+let g:airline_left_alt_sep                        = "\uE0B9"
+let g:airline_right_sep                           = "\uE0BA"
+let g:airline_right_alt_sep                       = "\uE0BB"
+let g:airline_powerline_fonts                     = 1
+let g:airline_theme                               = 'base16_monokai'
+let g:airline#extensions#tabline#enabled          = 1
+let g:airline#extensions#tabline#fnamemod         = ':t'
+let g:airline#extensions#tabline#buffer_min_count = 1
+let g:airline#extensions#tabline#tab_min_count    = 1
+let g:airline#extensions#tabline#buffer_idx_mode  = 1
+let g:airline#extensions#tabline#buffer_nr_show   = 0
+let g:airline#extensions#tabline#show_buffers     = 1
+
+let g:tmuxline_separators = {
+  \ 'left' : "\uE0B8",
+  \ 'left_alt': "\uE0B9",
+  \ 'right' : "\uE0BA",
+  \ 'right_alt' : "\uE0BB",
+  \ 'space' : ' '}
+
+let g:promptline_symbols = {
+  \ 'left'           : "\uE0B8",
+  \ 'right'          : "\uE0BA",
+  \ 'left_alt'       : "\uE0B9",
+  \ 'right_alt'      : "\uE0BB",
+  \ 'dir_sep'        : "\uE0B9  ",
+  \ 'truncation'     : '...',
+  \ 'battery'        : "\uF242",
+  \ 'space'          : ' '}
 
 let g:promptline_theme = 'airline'
 
-let g:indentLine_char = '│'
+let g:indentLine_char = "\u250A"
 let g:indentLine_color_gui = '#333333'
 let g:indentLine_color_tty_dark = 1
 
