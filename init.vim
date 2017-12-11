@@ -231,10 +231,10 @@ let g:indent_guides_exclude_filetypes = ['help', 'nerdtree', 'man']
 let g:indent_guides_color_change_percent = 2
 
 
-let g:airline_left_sep                            = "\uE0B8"
-let g:airline_left_alt_sep                        = "\uE0B9"
-let g:airline_right_sep                           = "\uE0BA"
-let g:airline_right_alt_sep                       = "\uE0BB"
+let g:airline_left_sep                            = "\uE0B4"
+let g:airline_left_alt_sep                        = "\uE0B5"
+let g:airline_right_sep                           = "\uE0B6"
+let g:airline_right_alt_sep                       = "\uE0B7"
 let g:airline_powerline_fonts                     = 1
 let g:airline_theme                               = 'base16_monokai'
 let g:airline#extensions#tabline#enabled          = 1
@@ -246,19 +246,19 @@ let g:airline#extensions#tabline#buffer_nr_show   = 0
 let g:airline#extensions#tabline#show_buffers     = 1
 
 let g:tmuxline_separators = {
-  \ 'left' : "\uE0B8",
-  \ 'left_alt': "\uE0B9",
-  \ 'right' : "\uE0BA",
-  \ 'right_alt' : "\uE0BB",
+  \ 'left' : "\uE0B4",
+  \ 'left_alt': "\uE0B5",
+  \ 'right' : "\uE0B6",
+  \ 'right_alt' : "\uE0B7",
   \ 'space' : ' '}
 
 let g:promptline_symbols = {
-  \ 'left'           : "\uE0B8",
-  \ 'right'          : "\uE0BA",
-  \ 'left_alt'       : "\uE0B9",
-  \ 'right_alt'      : "\uE0BB",
-  \ 'dir_sep'        : "\uE0B9  ",
-  \ 'truncation'     : '...',
+  \ 'left'           : "\uE0B4",
+  \ 'right'          : "\uE0B6",
+  \ 'left_alt'       : "\uE0B5",
+  \ 'right_alt'      : "\uE0B7",
+  \ 'dir_sep'        : " \uE0B5 ",
+  \ 'truncation'     : "\u22EF",
   \ 'battery'        : "\uF242",
   \ 'space'          : ' '}
 
