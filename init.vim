@@ -28,6 +28,7 @@ Plug 'bronson/vim-trailing-whitespace'        " Highlights trailing whitespace i
 Plug 'christoomey/vim-tmux-navigator'         " Seamless navigation between tmux panes and vim splits
 Plug 'crusoexia/vim-javascript-lib'           " companion of vim-javascript, provide syntax highlight of javascript libraries
 Plug 'ctrlpvim/ctrlp.vim'                     " Active fork of kien/ctrlp.vim—Fuzzy file, buffer, mru, tag, etc finder. http://ctrlpvim.github.com/ctrlp.vim
+Plug 'danro/rename.vim'                       " Rename the current file in the vim buffer + retain relative path. http://www.vim.org/scripts/script.php…
 Plug 'dbakker/vim-lint'                       " Check your .vimrc for errors
 Plug 'digitaltoad/vim-pug'                    " Vim Pug (formerly Jade) template engine syntax highlighting and indention
 Plug 'edkolev/promptline.vim'                 " Generate a fast shell prompt with powerline symbols and airline colors
