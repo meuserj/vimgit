@@ -51,7 +51,6 @@ Plug 'othree/javascript-libraries-syntax.vim' " Syntax for JavaScript libraries 
 Plug 'pangloss/vim-javascript'                " Vastly improved Javascript indentation and syntax support in Vim. http://www.vim.org/scripts/script.php?script_id=4452
 Plug 'pprovost/vim-ps1'                       " A Vim plugin for Windows PowerShell support
 Plug 'rizzatti/dash.vim'                      " Search Dash.app from Vim
-Plug 'ryanoasis/vim-devicons'                 " Adds file type glyphs/icons to many popular Vim plugins such as: NERDTree, vim-airline, unite, vim-startify and many more
 Plug 'scrooloose/nerdtree'                    " A tree explorer plugin for vim.
 Plug 'scrooloose/syntastic'                   " Syntax checking hacks for vim
 Plug 'tmhedberg/matchit'                      " extended % matching for HTML, LaTeX, and many other languages http://www.vim.org/scripts/script.php?script_id=39
@@ -82,6 +81,10 @@ Plug 'xolox/vim-session'                      " Extended session management for 
 Plug 'xolox/vim-shell'                        " Improved integration between Vim and its environment (fullscreen, open URL, background command execution) http://peterodding.com/code/vim/shell/
 Plug 'yegappan/mru'                           " Most Recently Used (MRU) Vim Plugin
 Plug 'yggdroot/indentline'                    " A vim plugin to display the indention levels with thin vertical lines
+
+" Load devicons last
+
+Plug 'ryanoasis/vim-devicons'                 " Adds file type glyphs/icons to many popular Vim plugins such as: NERDTree, vim-airline, unite, vim-startify and many more
 
 " Themes
 
@@ -209,8 +212,8 @@ set hidden
 let g:loaded_netrw       = 1
 let g:loaded_netrwPlugin = 1
 let NERDTreeIgnore = ['\.bak$', '\.orig$']
-let NERDTreeChDirMode = 2
-let NERDTreeStatusline = -1
+" let NERDTreeChDirMode = 2
+" let NERDTreeStatusline = -1
 
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
