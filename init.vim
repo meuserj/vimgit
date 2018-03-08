@@ -68,6 +68,7 @@ Plug 'tpope/vim-speeddating'                  " speeddating.vim: use CTRL-A/CTRL
 Plug 'tpope/vim-surround'                     " surround.vim: quoting/parenthesizing made simple
 Plug 'vim-airline/vim-airline'                " lean & mean status/tabline for vim that's light as air
 Plug 'vim-airline/vim-airline-themes'         " A collection of themes for vim-airline
+Plug 'vim-scripts/AnsiEsc.vim'                " ansi escape sequences concealed, but highlighted as specified (conceal) http://www.vim.org/scripts/script.php…
 Plug 'vim-scripts/bufonly.vim'                " Delete all the buffers except the current/named buffer http://www.vim.org/scripts/script.php?script_id=1071
 Plug 'vim-scripts/csv.vim'                    " A Filetype plugin for csv files. http://www.vim.org/scripts/script.php?script_id=2830
 Plug 'vim-scripts/dirdiff.vim'                " A plugin to diff and merge two directories recursively. http://www.vim.org/scripts/script.php?script_id=102
