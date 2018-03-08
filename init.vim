@@ -28,6 +28,7 @@ Plug 'bronson/vim-trailing-whitespace'        " Highlights trailing whitespace i
 Plug 'christoomey/vim-tmux-navigator'         " Seamless navigation between tmux panes and vim splits
 Plug 'crusoexia/vim-javascript-lib'           " companion of vim-javascript, provide syntax highlight of javascript libraries
 Plug 'ctrlpvim/ctrlp.vim'                     " Active fork of kien/ctrlp.vim—Fuzzy file, buffer, mru, tag, etc finder. http://ctrlpvim.github.com/ctrlp.vim
+Plug 'danro/rename.vim'                       " Rename the current file in the vim buffer + retain relative path. http://www.vim.org/scripts/script.php…
 Plug 'dbakker/vim-lint'                       " Check your .vimrc for errors
 Plug 'digitaltoad/vim-pug'                    " Vim Pug (formerly Jade) template engine syntax highlighting and indention
 Plug 'edkolev/promptline.vim'                 " Generate a fast shell prompt with powerline symbols and airline colors
@@ -190,8 +191,11 @@ let g:xml_syntax_folding = 1
 
 let g:DirDiffExcludes = "*.un~,*.bak,*.sw?,.SyncIgnore,node_modules,.SyncArchive,.SyncID,.sync,results,Thumbs.db,uploads,*.orig,media,.DS_Store,staticConfig.json,edgesToRestart.json,201[4-9]-[0-9][0-9]-[0-9][0-9]-CL*-*[0-9],buildMap.json"
 let g:DirDiffAddArgs = "-w"
-let g:ctrlp_user_command = 'rg %s --files --color=never --glob ""'
-let g:ctrlp_use_caching = 0
+let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '^(results|node_modules)$'
+  \ }
+let g:ctrlp_clear_cache_on_exit = 1
 set clipboard=unnamed
 if has("gui_gtk3")
   set guifont=Anonymous\ Pro\ for\ Powerline\ 10
