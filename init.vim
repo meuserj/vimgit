@@ -13,13 +13,8 @@ endif
 
 call plug#begin()
 
-if has('unix') && !has("win32unix")
-  if !has('nvim')
-      Plug 'Valloric/YouCompleteMe'
-  endif
-  Plug 'ternjs/tern_for_vim'
-endif
-
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
 Plug 'vim-scripts/csapprox'               " Make gvim-only colorschemes work transparently in terminal vim http://www.vim.org/scripts/script.php?script_id=2390
 Plug 'airblade/vim-gitgutter'                 " A Vim plugin which shows a git diff in the gutter (sign column) and stages/undoes hunks.
 Plug 'aklt/plantuml-syntax'                   " vim syntax file for plantuml
@@ -27,7 +22,6 @@ Plug 'bogado/file-line'                       " Plugin for vim to enabling openi
 Plug 'bronson/vim-trailing-whitespace'        " Highlights trailing whitespace in red and provides :FixWhitespace to fix it.
 Plug 'christoomey/vim-tmux-navigator'         " Seamless navigation between tmux panes and vim splits
 Plug 'crusoexia/vim-javascript-lib'           " companion of vim-javascript, provide syntax highlight of javascript libraries
-Plug 'ctrlpvim/ctrlp.vim'                     " Active fork of kien/ctrlp.vim—Fuzzy file, buffer, mru, tag, etc finder. http://ctrlpvim.github.com/ctrlp.vim
 Plug 'danro/rename.vim'                       " Rename the current file in the vim buffer + retain relative path. http://www.vim.org/scripts/script.php…
 Plug 'dbakker/vim-lint'                       " Check your .vimrc for errors
 Plug 'digitaltoad/vim-pug'                    " Vim Pug (formerly Jade) template engine syntax highlighting and indention
@@ -194,38 +188,6 @@ let g:xml_syntax_folding = 1
 
 let g:DirDiffExcludes = "*.un~,*.bak,*.sw?,.SyncIgnore,node_modules,.SyncArchive,.SyncID,.sync,results,Thumbs.db,uploads,*.orig,media,.DS_Store,staticConfig.json,edgesToRestart.json,201[4-9]-[0-9][0-9]-[0-9][0-9]-CL*-*[0-9],buildMap.json"
 let g:DirDiffAddArgs = "-w"
-if has("win32unix")
-    if executable('ag')
-        let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
-        let g:ctrlp_use_caching = 0
-    else
-        let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
-        let g:ctrlp_custom_ignore = {
-          \ 'dir':  '^(results|node_modules)$'
-          \ }
-        let g:ctrlp_clear_cache_on_exit = 1
-    endif
-elseif has("unix")
-    if executable('rg')
-        set grepprg=rg\ --color=never\ --vimgrep
-    endif
-    if executable('fd')
-        let g:ctrlp_user_command = 'fd -c never "" "%s"'
-        let g:ctrlp_use_caching = 0
-    elseif executable('rg')
-        let g:ctrlp_user_command = 'rg %s --files --color=never --glob ""'
-        let g:ctrlp_use_caching = 0
-    elseif executable('ag')
-        let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
-        let g:ctrlp_use_caching = 0
-    else
-        let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
-        let g:ctrlp_custom_ignore = {
-          \ 'dir':  '^(results|node_modules)$'
-          \ }
-        let g:ctrlp_clear_cache_on_exit = 1
-    endif
-endif
 
 set clipboard=unnamed
 if has("gui_gtk3")
@@ -337,6 +299,7 @@ imap <C-S-CR> <Plug>snipMateBack
 smap <C-S-CR> <Plug>snipMateBack
 imap <C-R><C-CR> <Plug>snipMateShow
 vmap <C-CR> <Plug>snipMateVisual
+nnoremap <silent> <C-p> :FZF -m<cr>
 
 autocmd FileType ruby,eruby set omnifunc=rubycomplete#Complete
 autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
