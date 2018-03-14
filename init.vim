@@ -18,9 +18,9 @@ if has('unix') && !has("win32unix")
       Plug 'Valloric/YouCompleteMe'
   endif
   Plug 'ternjs/tern_for_vim'
-  Plug 'vim-scripts/csapprox'               " Make gvim-only colorschemes work transparently in terminal vim http://www.vim.org/scripts/script.php?script_id=2390
 endif
 
+Plug 'vim-scripts/csapprox'               " Make gvim-only colorschemes work transparently in terminal vim http://www.vim.org/scripts/script.php?script_id=2390
 Plug 'airblade/vim-gitgutter'                 " A Vim plugin which shows a git diff in the gutter (sign column) and stages/undoes hunks.
 Plug 'aklt/plantuml-syntax'                   " vim syntax file for plantuml
 Plug 'bogado/file-line'                       " Plugin for vim to enabling opening a file in a given line http://www.vim.org/scripts/script.php?script_id=2184
@@ -194,11 +194,39 @@ let g:xml_syntax_folding = 1
 
 let g:DirDiffExcludes = "*.un~,*.bak,*.sw?,.SyncIgnore,node_modules,.SyncArchive,.SyncID,.sync,results,Thumbs.db,uploads,*.orig,media,.DS_Store,staticConfig.json,edgesToRestart.json,201[4-9]-[0-9][0-9]-[0-9][0-9]-CL*-*[0-9],buildMap.json"
 let g:DirDiffAddArgs = "-w"
-let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
-let g:ctrlp_custom_ignore = {
-  \ 'dir':  '^(results|node_modules)$'
-  \ }
-let g:ctrlp_clear_cache_on_exit = 1
+if has("win32unix")
+    if executable('ag')
+        let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+        let g:ctrlp_use_caching = 0
+    else
+        let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
+        let g:ctrlp_custom_ignore = {
+          \ 'dir':  '^(results|node_modules)$'
+          \ }
+        let g:ctrlp_clear_cache_on_exit = 1
+    endif
+elseif has("unix")
+    if executable('rg')
+        set grepprg=rg\ --color=never\ --vimgrep
+    endif
+    if executable('fd')
+        let g:ctrlp_user_command = 'fd -c never "" "%s"'
+        let g:ctrlp_use_caching = 0
+    elseif executable('rg')
+        let g:ctrlp_user_command = 'rg %s --files --color=never --glob ""'
+        let g:ctrlp_use_caching = 0
+    elseif executable('ag')
+        let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+        let g:ctrlp_use_caching = 0
+    else
+        let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
+        let g:ctrlp_custom_ignore = {
+          \ 'dir':  '^(results|node_modules)$'
+          \ }
+        let g:ctrlp_clear_cache_on_exit = 1
+    endif
+endif
+
 set clipboard=unnamed
 if has("gui_gtk3")
   set guifont=Anonymous\ Pro\ for\ Powerline\ 10
