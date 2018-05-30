@@ -13,9 +13,10 @@ endif
 
 call plug#begin()
 
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'junegunn/fzf.vim'
-Plug 'vim-scripts/csapprox'               " Make gvim-only colorschemes work transparently in terminal vim http://www.vim.org/scripts/script.php?script_id=2390
+if has('unix') && !has('win32unix')
+    Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+endif
+
 Plug 'airblade/vim-gitgutter'                 " A Vim plugin which shows a git diff in the gutter (sign column) and stages/undoes hunks.
 Plug 'aklt/plantuml-syntax'                   " vim syntax file for plantuml
 Plug 'bogado/file-line'                       " Plugin for vim to enabling opening a file in a given line http://www.vim.org/scripts/script.php?script_id=2184
@@ -33,6 +34,8 @@ Plug 'hallison/vim-markdown'                  " Markdown syntax highlight for Vi
 Plug 'jelera/vim-javascript-syntax'           " Enhanced javascript syntax file for Vim http://www.vim.org/scripts/script.php?script_id=3425
 Plug 'jlanzarotta/bufexplorer'                " BufExplorer Plugin for Vim
 Plug 'jremmen/vim-ripgrep'                    " Use RipGrep in Vim and display results in a quickfix list
+Plug 'junegunn/fzf.vim'
+Plug 'junegunn/gv.vim'                        " A git commit browser in Vim
 Plug 'junegunn/vim-easy-align'                " 🌻 A Vim alignment plugin
 Plug 'leshill/vim-json'                       " Syntax highlighting for JSON in Vim
 Plug 'luochen1990/rainbow'                    " rainbow parentheses improved, shorter code, no level limit, smooth and fast, powerful configuration.
@@ -64,6 +67,7 @@ Plug 'vim-airline/vim-airline'                " lean & mean status/tabline for v
 Plug 'vim-airline/vim-airline-themes'         " A collection of themes for vim-airline
 Plug 'vim-scripts/AnsiEsc.vim'                " ansi escape sequences concealed, but highlighted as specified (conceal) http://www.vim.org/scripts/script.php…
 Plug 'vim-scripts/bufonly.vim'                " Delete all the buffers except the current/named buffer http://www.vim.org/scripts/script.php?script_id=1071
+Plug 'vim-scripts/csapprox'                   " Make gvim-only colorschemes work transparently in terminal vim http://www.vim.org/scripts/script.php?script_id=2390
 Plug 'vim-scripts/csv.vim'                    " A Filetype plugin for csv files. http://www.vim.org/scripts/script.php?script_id=2830
 Plug 'vim-scripts/dirdiff.vim'                " A plugin to diff and merge two directories recursively. http://www.vim.org/scripts/script.php?script_id=102
 Plug 'vim-scripts/gundo'                      " Visualize your undo tree. http://www.vim.org/scripts/script.php?script_id=3304
@@ -92,6 +96,8 @@ Plug 'donearm/laederon'                 " A Vim color scheme with cold, tundra-l
 Plug 'donearm/ubaryd'                   " A Vim color scheme with warm, Mediterranean-like, colours
 Plug 'google/vim-colorscheme-primary'   " Primary, a Vim color scheme based on Google's colors
 Plug 'jacoborus/tender.vim'             " A 24bit colorscheme for Vim, Airline and Lightline
+Plug 'larsbs/vimterial'                 " A vim color scheme based on Material Theme http://equinusocio.github.io/material-theme
+Plug 'larsbs/vimterial_dark'            " A dark vim color scheme inspired by material design. Improved for web development.
 Plug 'lokaltog/vim-distinguished'       " A dark vim color scheme for 256-color terminals.
 Plug 'nanotech/jellybeans.vim'          " A colorful, dark color scheme for Vim. http://www.vim.org/scripts/script.php?script_id=2555
 Plug 'pychimp/vim-luna'                 " Touchdown on Lunar Surface ! :)
@@ -231,7 +237,7 @@ let g:airline_left_alt_sep                        = "\uE0B5"
 let g:airline_right_sep                           = "\uE0B6"
 let g:airline_right_alt_sep                       = "\uE0B7"
 let g:airline_powerline_fonts                     = 1
-let g:airline_theme                               = 'base16_monokai'
+" let g:airline_theme                               = 'base16_monokai'
 let g:airline#extensions#tabline#enabled          = 1
 let g:airline#extensions#tabline#fnamemod         = ':t'
 let g:airline#extensions#tabline#buffer_min_count = 1
@@ -239,6 +245,8 @@ let g:airline#extensions#tabline#tab_min_count    = 1
 let g:airline#extensions#tabline#buffer_idx_mode  = 1
 let g:airline#extensions#tabline#buffer_nr_show   = 0
 let g:airline#extensions#tabline#show_buffers     = 1
+
+let g:fzf_prefer_tmux = 1
 
 let g:tmuxline_separators = {
   \ 'left' : "\uE0B4",
@@ -333,6 +341,6 @@ nmap <silent> <leader>d <Plug>DashSearch
 
 set background=dark
 syntax on
-colorscheme monokai
+colorscheme vimterial_dark
 
 " vim: set et fenc=utf-8 ff=unix sts=4 sw=4 ts=4 :
