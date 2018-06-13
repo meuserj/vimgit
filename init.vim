@@ -199,7 +199,7 @@ set clipboard=unnamed
 if has("gui_gtk3")
   set guifont=Anonymous\ Pro\ for\ Powerline\ 10
 elseif has('gui_win32')
-  set guifont=MesloLGSDZ_Nerd_Font:h8:cANSI
+  set guifont=MesloLGSDZ_NF:h8:cANSI:qDRAFT
 else
   set guifont=Roboto\ Mono\ Medium\ Nerd\ Font\ Complete:h12
 endif
@@ -224,6 +224,9 @@ let g:session_autosave_periodic = 30
 let g:session_autosave_silent = 1
 let g:session_autoload = 'no'
 let g:session_default_to_last = 0
+if has('gui_win32')
+    let g:startify_custom_header =[]
+endif
 let g:startify_session_dir = vimhome."/sessions"
 let g:startify_list_order = ['sessions', 'files', 'dir', 'bookmarks', 'commands']
 
@@ -232,10 +235,13 @@ let g:indent_guides_exclude_filetypes = ['help', 'nerdtree', 'man']
 let g:indent_guides_color_change_percent = 2
 
 
-let g:airline_left_sep                            = "\uE0B4"
-let g:airline_left_alt_sep                        = "\uE0B5"
-let g:airline_right_sep                           = "\uE0B6"
-let g:airline_right_alt_sep                       = "\uE0B7"
+if !has('gui_win32')
+    let g:airline_left_sep                            = "\uE0B4"
+    let g:airline_left_alt_sep                        = "\uE0B5"
+    let g:airline_right_sep                           = "\uE0B6"
+    let g:airline_right_alt_sep                       = "\uE0B7"
+endif
+
 let g:airline_powerline_fonts                     = 1
 " let g:airline_theme                               = 'base16_monokai'
 let g:airline#extensions#tabline#enabled          = 1
