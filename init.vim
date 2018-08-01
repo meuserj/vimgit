@@ -31,6 +31,7 @@ Plug 'edkolev/tmuxline.vim'                   " Simple tmux statusline generator
 Plug 'ervandew/screen'                        " Simulate a split shell in vim using gnu screen or tmux
 Plug 'frioux/vim-lost'                        " Vim plugin to provide a command to help you orient yourself when editing a large chunk of code.
 Plug 'hallison/vim-markdown'                  " Markdown syntax highlight for Vim editor with snippets support http://www.vim.org/scripts/script.php?script_id=2882
+Plug 'herringtondarkholme/yats.vim'           " Yet Another TypeScript Syntax: The most advanced TypeScript Syntax Highlighting in Vim
 Plug 'jelera/vim-javascript-syntax'           " Enhanced javascript syntax file for Vim http://www.vim.org/scripts/script.php?script_id=3425
 Plug 'jlanzarotta/bufexplorer'                " BufExplorer Plugin for Vim
 Plug 'jremmen/vim-ripgrep'                    " Use RipGrep in Vim and display results in a quickfix list
@@ -47,6 +48,7 @@ Plug 'myusuf3/numbers.vim'                    " numbers.vim is a vim plugin for 
 Plug 'othree/javascript-libraries-syntax.vim' " Syntax for JavaScript libraries http://www.vim.org/scripts/script.php?script_id=4428
 Plug 'pangloss/vim-javascript'                " Vastly improved Javascript indentation and syntax support in Vim. http://www.vim.org/scripts/script.php?script_id=4452
 Plug 'pprovost/vim-ps1'                       " A Vim plugin for Windows PowerShell support
+Plug 'quramy/tsuquyomi'                       " A Vim plugin for TypeScript
 Plug 'rizzatti/dash.vim'                      " Search Dash.app from Vim
 Plug 'scrooloose/nerdtree'                    " A tree explorer plugin for vim.
 Plug 'scrooloose/syntastic'                   " Syntax checking hacks for vim
@@ -216,6 +218,7 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+let g:syntastic_typescript_checkers = ['tsuquyomi']
 
 let g:completor_node_binary = '/cygdrive/c/Program Files/nodejs/node.exe'
 
