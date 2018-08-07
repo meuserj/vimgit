@@ -88,7 +88,6 @@ Plug 'yggdroot/indentline'                    " A vim plugin to display the inde
 Plug 'ryanoasis/vim-devicons'                 " Adds file type glyphs/icons to many popular Vim plugins such as: NERDTree, vim-airline, unite, vim-startify and many more
 
 " Themes
-
 Plug 'altercation/vim-colors-solarized' " precision colorscheme for the vim text editor http://ethanschoonover.com/solarized
 Plug 'baskerville/bubblegum'            " A vim color scheme based on xoria256
 Plug 'chriskempson/base16-vim'          " Base16 for Vim https://github.com/chriskempson/base16
@@ -102,6 +101,7 @@ Plug 'larsbs/vimterial'                 " A vim color scheme based on Material T
 Plug 'larsbs/vimterial_dark'            " A dark vim color scheme inspired by material design. Improved for web development.
 Plug 'lokaltog/vim-distinguished'       " A dark vim color scheme for 256-color terminals.
 Plug 'nanotech/jellybeans.vim'          " A colorful, dark color scheme for Vim. http://www.vim.org/scripts/script.php?script_id=2555
+Plug 'nlknguyen/papercolor-theme'       " 🎨 Light & Dark Vim color schemes inspired by Google's Material Design
 Plug 'pychimp/vim-luna'                 " Touchdown on Lunar Surface ! :)
 Plug 'pychimp/vim-sol'                  " On the Path of Illumination ! :)
 Plug 'sjl/badwolf'                      " A Vim color scheme. http://stevelosh.com/projects/badwolf/
@@ -219,6 +219,7 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_typescript_checkers = ['tsuquyomi']
+let g:tsuquyomi_disable_quickfix = 1
 
 let g:completor_node_binary = '/cygdrive/c/Program Files/nodejs/node.exe'
 
@@ -327,6 +328,7 @@ autocmd FileType c,cpp set noet
 autocmd FileType javascript setlocal omnifunc=tern#Complete
 autocmd FileType xml setl sw=2 sts=2 et
 autocmd FileType jade setl sw=2 sts=2 et
+autocmd FileType typescript setl sw=4 sts=4 et
 
 vmap <Enter> <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
@@ -348,8 +350,9 @@ endif
 
 nmap <silent> <leader>d <Plug>DashSearch
 
+set t_Co=256   " This is may or may not needed.
 set background=dark
 syntax on
-colorscheme vimterial_dark
+colorscheme PaperColor
 
 " vim: set et fenc=utf-8 ff=unix sts=4 sw=4 ts=4 :
