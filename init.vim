@@ -29,6 +29,7 @@ Plug 'digitaltoad/vim-pug'                    " Vim Pug (formerly Jade) template
 Plug 'edkolev/promptline.vim'                 " Generate a fast shell prompt with powerline symbols and airline colors
 Plug 'edkolev/tmuxline.vim'                   " Simple tmux statusline generator with support for powerline symbols and statusline / airline / lightline integration
 Plug 'ervandew/screen'                        " Simulate a split shell in vim using gnu screen or tmux
+Plug 'ervandew/supertab'                      " Perform all your vim insert mode completions with Tab
 Plug 'frioux/vim-lost'                        " Vim plugin to provide a command to help you orient yourself when editing a large chunk of code.
 Plug 'hallison/vim-markdown'                  " Markdown syntax highlight for Vim editor with snippets support http://www.vim.org/scripts/script.php?script_id=2882
 Plug 'herringtondarkholme/yats.vim'           " Yet Another TypeScript Syntax: The most advanced TypeScript Syntax Highlighting in Vim
@@ -52,12 +53,14 @@ Plug 'quramy/tsuquyomi'                       " A Vim plugin for TypeScript
 Plug 'rizzatti/dash.vim'                      " Search Dash.app from Vim
 Plug 'scrooloose/nerdtree'                    " A tree explorer plugin for vim.
 Plug 'scrooloose/syntastic'                   " Syntax checking hacks for vim
+Plug 'tadaa/vimade'                           " An eye friendly plugin that fades your inactive buffers and preserves your syntax highlighting!
 Plug 'tmhedberg/matchit'                      " extended % matching for HTML, LaTeX, and many other languages http://www.vim.org/scripts/script.php?script_id=39
 Plug 'tmux-plugins/vim-tmux'                  " vim plugin for tmux.conf
 Plug 'tmux-plugins/vim-tmux-focus-events'     " Make terminal vim and tmux work better together.
 Plug 'tommcdo/vim-fubitive'                   " Add Bitbucket URL support to fugitive.vim's :Gbrowse command
 Plug 'tomtom/tlib_vim'                        " Some utility functions for VIM http://www.vim.org/scripts/script.php?script_id=1863
 Plug 'tpope/vim-commentary'                   " commentary.vim: comment stuff out http://www.vim.org/scripts/script.php?script_id=3695
+Plug 'tpope/vim-dispatch'                     " dispatch.vim: Asynchronous build and test dispatcher
 Plug 'tpope/vim-eunuch'                       " eunuch.vim: helpers for UNIX http://www.vim.org/scripts/script.php?script_id=4300
 Plug 'tpope/vim-fugitive'                     " fugitive.vim: a Git wrapper so awesome, it should be illegal http://www.vim.org/scripts/script.php?script_id=2975
 Plug 'tpope/vim-jdaddy'                       " jdaddy.vim: JSON manipulation and pretty printing http://www.vim.org/scripts/script.php?script_id=4863
