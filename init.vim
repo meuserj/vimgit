@@ -50,7 +50,7 @@ Plug 'pangloss/vim-javascript'                " Vastly improved Javascript inden
 Plug 'pprovost/vim-ps1'                       " A Vim plugin for Windows PowerShell support
 Plug 'quramy/tsuquyomi'                       " A Vim plugin for TypeScript
 Plug 'rizzatti/dash.vim'                      " Search Dash.app from Vim
-Plug 'scrooloose/nerdtree'                    " A tree explorer plugin for vim.
+" Plug 'scrooloose/nerdtree'                    " A tree explorer plugin for vim.
 Plug 'scrooloose/syntastic'                   " Syntax checking hacks for vim
 Plug 'tmhedberg/matchit'                      " extended % matching for HTML, LaTeX, and many other languages http://www.vim.org/scripts/script.php?script_id=39
 Plug 'tmux-plugins/vim-tmux'                  " vim plugin for tmux.conf
@@ -65,6 +65,7 @@ Plug 'tpope/vim-sensible'                     " sensible.vim: Defaults everyone 
 Plug 'tpope/vim-sleuth'                       " sleuth.vim: Heuristically set buffer options http://www.vim.org/scripts/script.php?script_id=4375
 Plug 'tpope/vim-speeddating'                  " speeddating.vim: use CTRL-A/CTRL-X to increment dates, times, and more http://www.vim.org/scripts/script.php?script_id=2120
 Plug 'tpope/vim-surround'                     " surround.vim: quoting/parenthesizing made simple
+Plug 'tpope/vim-vinegar'                      " vinegar.vim: Combine with netrw to create a delicious salad dressing
 Plug 'vim-airline/vim-airline'                " lean & mean status/tabline for vim that's light as air
 Plug 'vim-airline/vim-airline-themes'         " A collection of themes for vim-airline
 Plug 'vim-scripts/AnsiEsc.vim'                " ansi escape sequences concealed, but highlighted as specified (conceal) http://www.vim.org/scripts/script.php…
@@ -208,9 +209,17 @@ endif
 
 set hidden
 
-let g:loaded_netrw       = 1
-let g:loaded_netrwPlugin = 1
-let NERDTreeIgnore = ['\.bak$', '\.orig$']
+let g:netrw_liststyle = 3
+let g:netrw_browse_split = 4
+let g:netrw_winsize = 15
+let g:netrw_altv = 1
+augroup ProjectDrawer
+    autocmd!
+    autocmd VimEnter * :Vexplore
+augroup END
+" let g:loaded_netrw       = 1
+" let g:loaded_netrwPlugin = 1
+" let NERDTreeIgnore = ['\.bak$', '\.orig$']
 " let NERDTreeChDirMode = 2
 " let NERDTreeStatusline = -1
 
@@ -292,10 +301,10 @@ set undoreload=10000
 map y <Plug>(highlightedyank)
 nmap <F2> :w<CR>
 imap <F2> <ESC>:w<CR>a
-nmap <F4> :NERDTreeToggle<CR>
-imap <F4> <ESC>:NERDTreeToggle<CR>
-nmap <F3> :NERDTreeFind<CR>
-imap <F3> <ESC>:NERDTreeFind<CR>
+nmap <F4> :Lexplore<CR>
+imap <F4> <ESC>:Lexplore<CR>
+" nmap <F3> :NERDTreeFind<CR>
+" imap <F3> <ESC>:NERDTreeFind<CR>
 map <F5> <C-P><C-\>f<CR>
 map <F9> <C-j>-D
 map <F10> <C-j>jD
