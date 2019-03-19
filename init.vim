@@ -40,7 +40,6 @@ Plug 'junegunn/fzf.vim'
 Plug 'junegunn/gv.vim'                        " A git commit browser in Vim
 Plug 'junegunn/vim-easy-align'                " 🌻 A Vim alignment plugin
 Plug 'leshill/vim-json'                       " Syntax highlighting for JSON in Vim
-Plug 'luochen1990/rainbow'                    " rainbow parentheses improved, shorter code, no level limit, smooth and fast, powerful configuration.
 Plug 'machakann/vim-highlightedyank'          " Make the yanked region apparent!
 Plug 'marcweber/vim-addon-mw-utils'           " vim: interpret a file by function and cache file automatically
 Plug 'mhinz/vim-startify'                     " The fancy start screen for Vim.
@@ -51,7 +50,6 @@ Plug 'pangloss/vim-javascript'                " Vastly improved Javascript inden
 Plug 'pprovost/vim-ps1'                       " A Vim plugin for Windows PowerShell support
 Plug 'quramy/tsuquyomi'                       " A Vim plugin for TypeScript
 Plug 'rizzatti/dash.vim'                      " Search Dash.app from Vim
-" Plug 'scrooloose/nerdtree'                    " A tree explorer plugin for vim.
 Plug 'scrooloose/syntastic'                   " Syntax checking hacks for vim
 Plug 'tadaa/vimade'                           " An eye friendly plugin that fades your inactive buffers and preserves your syntax highlighting!
 Plug 'tmhedberg/matchit'                      " extended % matching for HTML, LaTeX, and many other languages http://www.vim.org/scripts/script.php?script_id=39
@@ -291,6 +289,10 @@ let g:indentLine_color_tty_dark = 1
 
 let g:SrcExpl_isUpdateTags = 0
 
+if executable('nc.openbsd')
+  call clipper#set_invocation('nc -N localhost 8377')
+endif
+
 set directory=~/.vim/swapdir
 set undodir=~/.vim/undodir
 set undofile
@@ -340,8 +342,6 @@ autocmd FileType typescript setl sw=4 sts=4 et
 
 vmap <Enter> <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
-
-let g:rainbow_active = 1
 
 " au GUIEnter * simalt ~x
 set nrformats=hex
