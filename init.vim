@@ -48,9 +48,10 @@ Plug 'myusuf3/numbers.vim'                    " numbers.vim is a vim plugin for 
 Plug 'othree/javascript-libraries-syntax.vim' " Syntax for JavaScript libraries http://www.vim.org/scripts/script.php?script_id=4428
 Plug 'pangloss/vim-javascript'                " Vastly improved Javascript indentation and syntax support in Vim. http://www.vim.org/scripts/script.php?script_id=4452
 Plug 'pprovost/vim-ps1'                       " A Vim plugin for Windows PowerShell support
-Plug 'quramy/tsuquyomi'                       " A Vim plugin for TypeScript
+Plug 'quramy/tsuquyomi'                       " A Vim plugin for TypeScript http://www.vim.org/scripts/script.php…
 Plug 'rizzatti/dash.vim'                      " Search Dash.app from Vim
 Plug 'scrooloose/syntastic'                   " Syntax checking hacks for vim
+Plug 'shougo/vimproc.vim'                     " Interactive command execution in Vim.
 Plug 'tadaa/vimade'                           " An eye friendly plugin that fades your inactive buffers and preserves your syntax highlighting!
 Plug 'tmhedberg/matchit'                      " extended % matching for HTML, LaTeX, and many other languages http://www.vim.org/scripts/script.php?script_id=39
 Plug 'tmux-plugins/vim-tmux'                  " vim plugin for tmux.conf
@@ -290,7 +291,7 @@ let g:indentLine_color_tty_dark = 1
 let g:SrcExpl_isUpdateTags = 0
 
 if executable('nc.openbsd')
-  call clipper#set_invocation('nc -N localhost 8377')
+  call clipper#set_invocation('nc.openbsd -N localhost 8377')
 endif
 
 set directory=~/.vim/swapdir
