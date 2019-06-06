@@ -17,6 +17,8 @@ if has('unix') && !has('win32unix')
     Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 endif
 
+Plug 'neoclide/coc.nvim', {'do': './install.sh nightly'} " Intellisense engine for vim8 & neovim, full language server protocol support as VSCode
+
 Plug 'airblade/vim-gitgutter'                 " A Vim plugin which shows a git diff in the gutter (sign column) and stages/undoes hunks.
 Plug 'aklt/plantuml-syntax'                   " vim syntax file for plantuml
 Plug 'bogado/file-line'                       " Plugin for vim to enabling opening a file in a given line http://www.vim.org/scripts/script.php?script_id=2184
