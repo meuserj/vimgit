@@ -17,11 +17,11 @@ if has('unix') && !has('win32unix')
     Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 endif
 
-Plug 'airblade/vim-gitgutter'                 " A Vim plugin which shows a git diff in the gutter (sign column) and stages/undoes hunks.
+" Plug 'airblade/vim-gitgutter'                 " A Vim plugin which shows a git diff in the gutter (sign column) and stages/undoes hunks.
 Plug 'aklt/plantuml-syntax'                   " vim syntax file for plantuml
 Plug 'bogado/file-line'                       " Plugin for vim to enabling opening a file in a given line http://www.vim.org/scripts/script.php?script_id=2184
 Plug 'bronson/vim-trailing-whitespace'        " Highlights trailing whitespace in red and provides :FixWhitespace to fix it.
-Plug 'chrisbra/csv.vim'                    " A Filetype plugin for csv files. http://www.vim.org/scripts/script.php?script_id=2830
+Plug 'chrisbra/csv.vim'                       " A Filetype plugin for csv files. http://www.vim.org/scripts/script.php?script_id=2830
 Plug 'christoomey/vim-tmux-navigator'         " Seamless navigation between tmux panes and vim splits
 Plug 'crusoexia/vim-javascript-lib'           " companion of vim-javascript, provide syntax highlight of javascript libraries
 Plug 'danro/rename.vim'                       " Rename the current file in the vim buffer + retain relative path. http://www.vim.org/scripts/script.php…
@@ -40,6 +40,7 @@ Plug 'jremmen/vim-ripgrep'                    " Use RipGrep in Vim and display r
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/gv.vim'                        " A git commit browser in Vim
 Plug 'junegunn/vim-easy-align'                " 🌻 A Vim alignment plugin
+Plug 'justincampbell/vim-eighties'            " Automatically resizes your windows
 Plug 'leshill/vim-json'                       " Syntax highlighting for JSON in Vim
 Plug 'machakann/vim-highlightedyank'          " Make the yanked region apparent!
 Plug 'marcweber/vim-addon-mw-utils'           " vim: interpret a file by function and cache file automatically
