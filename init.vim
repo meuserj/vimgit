@@ -15,6 +15,9 @@ call plug#begin()
 
 if has('unix') && !has('win32unix')
     Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+    Plug 'neoclide/coc.nvim', {'do': './install.sh nightly'} " Intellisense engine for vim8 & neovim, full language server protocol support as VSCode
+else
+    Plug 'scrooloose/syntastic'                   " Syntax checking hacks for vim
 endif
 
 
@@ -52,7 +55,6 @@ Plug 'pangloss/vim-javascript'                " Vastly improved Javascript inden
 Plug 'pprovost/vim-ps1'                       " A Vim plugin for Windows PowerShell support
 Plug 'quramy/tsuquyomi'                       " A Vim plugin for TypeScript http://www.vim.org/scripts/script.php…
 Plug 'rizzatti/dash.vim'                      " Search Dash.app from Vim
-Plug 'scrooloose/syntastic'                   " Syntax checking hacks for vim
 Plug 'shougo/vimproc.vim'                     " Interactive command execution in Vim.
 Plug 'tadaa/vimade'                           " An eye friendly plugin that fades your inactive buffers and preserves your syntax highlighting!
 Plug 'tmhedberg/matchit'                      " extended % matching for HTML, LaTeX, and many other languages http://www.vim.org/scripts/script.php?script_id=39
