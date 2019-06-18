@@ -88,7 +88,6 @@ Plug 'xolox/vim-session'                      " Extended session management for 
 Plug 'xolox/vim-shell'                        " Improved integration between Vim and its environment (fullscreen, open URL, background command execution) http://peterodding.com/code/vim/shell/
 Plug 'yegappan/mru'                           " Most Recently Used (MRU) Vim Plugin
 Plug 'yggdroot/indentline'                    " A vim plugin to display the indention levels with thin vertical lines
-Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
 " Load devicons last
 
 Plug 'ryanoasis/vim-devicons'                 " Adds file type glyphs/icons to many popular Vim plugins such as: NERDTree, vim-airline, unite, vim-startify and many more
