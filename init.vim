@@ -14,8 +14,13 @@ endif
 call plug#begin()
 
 if has('unix') && !has('win32unix')
-    Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
     Plug 'neoclide/coc.nvim', {'do': './install.sh nightly'} " Intellisense engine for vim8 & neovim, full language server protocol support as VSCode
+    Plug 'neoclide/coc-git', {'do': 'yarn install --frozen-lockfile'}
+    Plug 'neoclide/coc-css', {'do': 'yarn install --frozen-lockfile'}
+    Plug 'neoclide/coc-json', {'do': 'yarn install --frozen-lockfile'}
+    Plug 'neoclide/coc-tsserver', {'do': 'yarn install --frozen-lockfile'}
+    Plug 'neoclide/coc-eslint', {'do': 'yarn install --frozen-lockfile'}
+    Plug 'neoclide/coc-tabnine', {'do': 'yarn install --frozen-lockfile'}
 else
     Plug 'scrooloose/syntastic'                   " Syntax checking hacks for vim
 endif
@@ -39,7 +44,8 @@ Plug 'hallison/vim-markdown'                  " Markdown syntax highlight for Vi
 Plug 'herringtondarkholme/yats.vim'           " Yet Another TypeScript Syntax: The most advanced TypeScript Syntax Highlighting in Vim
 Plug 'jelera/vim-javascript-syntax'           " Enhanced javascript syntax file for Vim http://www.vim.org/scripts/script.php?script_id=3425
 Plug 'jlanzarotta/bufexplorer'                " BufExplorer Plugin for Vim
-Plug 'jremmen/vim-ripgrep'                    " Use RipGrep in Vim and display results in a quickfix list
+" Plug 'jremmen/vim-ripgrep'                    " Use RipGrep in Vim and display results in a quickfix list
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/gv.vim'                        " A git commit browser in Vim
 Plug 'junegunn/vim-easy-align'                " 🌻 A Vim alignment plugin
@@ -331,6 +337,8 @@ smap <C-S-CR> <Plug>snipMateBack
 imap <C-R><C-CR> <Plug>snipMateShow
 vmap <C-CR> <Plug>snipMateVisual
 nnoremap <silent> <C-p> :FZF -m<cr>
+nnoremap n nzz
+nnoremap N Nzz
 
 autocmd FileType ruby,eruby set omnifunc=rubycomplete#Complete
 autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
