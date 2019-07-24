@@ -23,6 +23,7 @@ if has('unix') && !has('win32unix')
     Plug 'neoclide/coc-tabnine', {'do': 'yarn install --frozen-lockfile'}
 else
     Plug 'scrooloose/syntastic'                   " Syntax checking hacks for vim
+    Plug 'airblade/vim-gitgutter'                 " A Vim plugin which shows a git diff in the gutter (sign column) and stages/undoes hunks.
 endif
 
 
@@ -44,7 +45,6 @@ Plug 'hallison/vim-markdown'                  " Markdown syntax highlight for Vi
 Plug 'herringtondarkholme/yats.vim'           " Yet Another TypeScript Syntax: The most advanced TypeScript Syntax Highlighting in Vim
 Plug 'jelera/vim-javascript-syntax'           " Enhanced javascript syntax file for Vim http://www.vim.org/scripts/script.php?script_id=3425
 Plug 'jlanzarotta/bufexplorer'                " BufExplorer Plugin for Vim
-" Plug 'jremmen/vim-ripgrep'                    " Use RipGrep in Vim and display results in a quickfix list
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/gv.vim'                        " A git commit browser in Vim
