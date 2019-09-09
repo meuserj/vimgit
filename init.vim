@@ -247,6 +247,9 @@ if has('gui_win32')
     let g:startify_custom_header =[]
 endif
 
+let g:SuperTabDefaultCompletionType = "<c-n>"
+let g:SuperTabContextDefaultCompletionType = "<c-n>"
+
 let g:startify_session_dir = vimhome."/sessions"
 let g:startify_list_order = ['sessions', 'files', 'dir', 'bookmarks', 'commands']
 let g:startify_custom_header = [
