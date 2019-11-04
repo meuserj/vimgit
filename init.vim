@@ -20,7 +20,6 @@ if has('unix') && !has('win32unix')
     Plug 'neoclide/coc-json', {'do': 'yarn install --frozen-lockfile'}
     Plug 'neoclide/coc-tsserver', {'do': 'yarn install --frozen-lockfile'}
     Plug 'neoclide/coc-eslint', {'do': 'yarn install --frozen-lockfile'}
-    Plug 'neoclide/coc-tabnine', {'do': 'yarn install --frozen-lockfile'}
 else
     Plug 'scrooloose/syntastic'                   " Syntax checking hacks for vim
     Plug 'airblade/vim-gitgutter'                 " A Vim plugin which shows a git diff in the gutter (sign column) and stages/undoes hunks.
@@ -62,7 +61,7 @@ Plug 'pprovost/vim-ps1'                       " A Vim plugin for Windows PowerSh
 Plug 'quramy/tsuquyomi'                       " A Vim plugin for TypeScript http://www.vim.org/scripts/script.php…
 Plug 'rizzatti/dash.vim'                      " Search Dash.app from Vim
 Plug 'shougo/vimproc.vim'                     " Interactive command execution in Vim.
-Plug 'tadaa/vimade'                           " An eye friendly plugin that fades your inactive buffers and preserves your syntax highlighting!
+" Plug 'tadaa/vimade'                           " An eye friendly plugin that fades your inactive buffers and preserves your syntax highlighting!
 Plug 'tmhedberg/matchit'                      " extended % matching for HTML, LaTeX, and many other languages http://www.vim.org/scripts/script.php?script_id=39
 Plug 'tmux-plugins/vim-tmux'                  " vim plugin for tmux.conf
 Plug 'tmux-plugins/vim-tmux-focus-events'     " Make terminal vim and tmux work better together.
