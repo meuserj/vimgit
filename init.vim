@@ -20,8 +20,6 @@ if has('unix') && !has('win32unix')
     Plug 'neoclide/coc-json', {'do': 'yarn install --frozen-lockfile'}
     Plug 'neoclide/coc-tsserver', {'do': 'yarn install --frozen-lockfile'}
     Plug 'neoclide/coc-eslint', {'do': 'yarn install --frozen-lockfile'}
-    Plug 'neoclide/coc-tabnine', {'do': 'yarn install --frozen-lockfile'}
-    Plug 'fannheyward/coc-xml', {'do': 'yarn install --frozen-lockfile'}
 else
     Plug 'scrooloose/syntastic'                   " Syntax checking hacks for vim
     Plug 'airblade/vim-gitgutter'                 " A Vim plugin which shows a git diff in the gutter (sign column) and stages/undoes hunks.
@@ -246,6 +244,9 @@ let g:session_default_to_last = 0
 if has('gui_win32')
     let g:startify_custom_header =[]
 endif
+
+let g:SuperTabDefaultCompletionType = "<c-n>"
+let g:SuperTabContextDefaultCompletionType = "<c-n>"
 
 let g:startify_session_dir = vimhome."/sessions"
 let g:startify_list_order = ['sessions', 'files', 'dir', 'bookmarks', 'commands']
