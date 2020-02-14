@@ -21,11 +21,11 @@ if has('unix') && !has('win32unix')
     Plug 'neoclide/coc-tsserver', {'do': 'yarn install --frozen-lockfile'}
     Plug 'neoclide/coc-eslint', {'do': 'yarn install --frozen-lockfile'}
     Plug 'neoclide/coc-tabnine', {'do': 'yarn install --frozen-lockfile'}
+    Plug 'fannheyward/coc-xml', {'do': 'yarn install --frozen-lockfile'}
 else
     Plug 'scrooloose/syntastic'                   " Syntax checking hacks for vim
     Plug 'airblade/vim-gitgutter'                 " A Vim plugin which shows a git diff in the gutter (sign column) and stages/undoes hunks.
 endif
-
 
 Plug 'aklt/plantuml-syntax'                   " vim syntax file for plantuml
 Plug 'bogado/file-line'                       " Plugin for vim to enabling opening a file in a given line http://www.vim.org/scripts/script.php?script_id=2184
@@ -62,7 +62,6 @@ Plug 'pprovost/vim-ps1'                       " A Vim plugin for Windows PowerSh
 Plug 'quramy/tsuquyomi'                       " A Vim plugin for TypeScript http://www.vim.org/scripts/script.php…
 Plug 'rizzatti/dash.vim'                      " Search Dash.app from Vim
 Plug 'shougo/vimproc.vim'                     " Interactive command execution in Vim.
-Plug 'tadaa/vimade'                           " An eye friendly plugin that fades your inactive buffers and preserves your syntax highlighting!
 Plug 'tmhedberg/matchit'                      " extended % matching for HTML, LaTeX, and many other languages http://www.vim.org/scripts/script.php?script_id=39
 Plug 'tmux-plugins/vim-tmux'                  " vim plugin for tmux.conf
 Plug 'tmux-plugins/vim-tmux-focus-events'     " Make terminal vim and tmux work better together.
@@ -78,6 +77,7 @@ Plug 'tpope/vim-sleuth'                       " sleuth.vim: Heuristically set bu
 Plug 'tpope/vim-speeddating'                  " speeddating.vim: use CTRL-A/CTRL-X to increment dates, times, and more http://www.vim.org/scripts/script.php?script_id=2120
 Plug 'tpope/vim-surround'                     " surround.vim: quoting/parenthesizing made simple
 Plug 'tpope/vim-vinegar'                      " vinegar.vim: Combine with netrw to create a delicious salad dressing
+Plug 'vifm/vifm.vim'                          " Vim plugin that allows use of vifm as a file picker
 Plug 'vim-airline/vim-airline'                " lean & mean status/tabline for vim that's light as air
 Plug 'vim-airline/vim-airline-themes'         " A collection of themes for vim-airline
 Plug 'vim-scripts/AnsiEsc.vim'                " ansi escape sequences concealed, but highlighted as specified (conceal) http://www.vim.org/scripts/script.php…
