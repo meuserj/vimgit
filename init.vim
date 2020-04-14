@@ -25,7 +25,6 @@ else
     Plug 'airblade/vim-gitgutter'                 " A Vim plugin which shows a git diff in the gutter (sign column) and stages/undoes hunks.
 endif
 
-
 Plug 'aklt/plantuml-syntax'                   " vim syntax file for plantuml
 Plug 'bogado/file-line'                       " Plugin for vim to enabling opening a file in a given line http://www.vim.org/scripts/script.php?script_id=2184
 Plug 'bronson/vim-trailing-whitespace'        " Highlights trailing whitespace in red and provides :FixWhitespace to fix it.
@@ -61,7 +60,6 @@ Plug 'pprovost/vim-ps1'                       " A Vim plugin for Windows PowerSh
 Plug 'quramy/tsuquyomi'                       " A Vim plugin for TypeScript http://www.vim.org/scripts/script.php…
 Plug 'rizzatti/dash.vim'                      " Search Dash.app from Vim
 Plug 'shougo/vimproc.vim'                     " Interactive command execution in Vim.
-" Plug 'tadaa/vimade'                           " An eye friendly plugin that fades your inactive buffers and preserves your syntax highlighting!
 Plug 'tmhedberg/matchit'                      " extended % matching for HTML, LaTeX, and many other languages http://www.vim.org/scripts/script.php?script_id=39
 Plug 'tmux-plugins/vim-tmux'                  " vim plugin for tmux.conf
 Plug 'tmux-plugins/vim-tmux-focus-events'     " Make terminal vim and tmux work better together.
@@ -87,6 +85,7 @@ Plug 'vim-scripts/gundo'                      " Visualize your undo tree. http:/
 Plug 'vim-scripts/l9'                         " Vim-script library http://www.vim.org/scripts/script.php?script_id=3252
 Plug 'vim-scripts/vim-coffee-script'          " CoffeeScript support for vim http://www.vim.org/scripts/script.php?script_id=3590
 Plug 'vim-utils/vim-man'                      " View and grep man pages in vim
+Plug 'voldikss/vim-floaterm'                  " Play with nvim/vim's builtin terminal
 Plug 'wincent/vim-clipper'                    " Clipper integration for Vim
 Plug 'xolox/vim-misc'                         " Miscellaneous auto-load Vim scripts http://peterodding.com/code/vim/misc/
 Plug 'xolox/vim-session'                      " Extended session management for Vim (:mksession on steroids) http://peterodding.com/code/vim/session/
