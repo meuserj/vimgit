@@ -75,6 +75,7 @@ Plug 'tpope/vim-sleuth'                       " sleuth.vim: Heuristically set bu
 Plug 'tpope/vim-speeddating'                  " speeddating.vim: use CTRL-A/CTRL-X to increment dates, times, and more http://www.vim.org/scripts/script.php?script_id=2120
 Plug 'tpope/vim-surround'                     " surround.vim: quoting/parenthesizing made simple
 Plug 'tpope/vim-vinegar'                      " vinegar.vim: Combine with netrw to create a delicious salad dressing
+Plug 'vifm/vifm.vim'                          " Vim plugin that allows use of vifm as a file picker
 Plug 'vim-airline/vim-airline'                " lean & mean status/tabline for vim that's light as air
 Plug 'vim-airline/vim-airline-themes'         " A collection of themes for vim-airline
 Plug 'vim-scripts/AnsiEsc.vim'                " ansi escape sequences concealed, but highlighted as specified (conceal) http://www.vim.org/scripts/script.php…
