@@ -86,7 +86,6 @@ Plug 'vim-scripts/gundo'                      " Visualize your undo tree. http:/
 Plug 'vim-scripts/l9'                         " Vim-script library http://www.vim.org/scripts/script.php?script_id=3252
 Plug 'vim-scripts/vim-coffee-script'          " CoffeeScript support for vim http://www.vim.org/scripts/script.php?script_id=3590
 Plug 'vim-utils/vim-man'                      " View and grep man pages in vim
-Plug 'voldikss/vim-floaterm'                  " Play with nvim/vim's builtin terminal
 Plug 'wincent/vim-clipper'                    " Clipper integration for Vim
 Plug 'xolox/vim-misc'                         " Miscellaneous auto-load Vim scripts http://peterodding.com/code/vim/misc/
 Plug 'xolox/vim-session'                      " Extended session management for Vim (:mksession on steroids) http://peterodding.com/code/vim/session/
