@@ -34,6 +34,7 @@ Plug 'crusoexia/vim-javascript-lib'           " companion of vim-javascript, pro
 Plug 'danro/rename.vim'                       " Rename the current file in the vim buffer + retain relative path. http://www.vim.org/scripts/script.php…
 Plug 'dbakker/vim-lint'                       " Check your .vimrc for errors
 Plug 'digitaltoad/vim-pug'                    " Vim Pug (formerly Jade) template engine syntax highlighting and indention
+Plug 'dylanaraps/fff.vim'                     " A plugin for vim/neovim which allows you to use fff as a file opener.
 Plug 'edkolev/promptline.vim'                 " Generate a fast shell prompt with powerline symbols and airline colors
 Plug 'edkolev/tmuxline.vim'                   " Simple tmux statusline generator with support for powerline symbols and statusline / airline / lightline integration
 Plug 'ervandew/screen'                        " Simulate a split shell in vim using gnu screen or tmux
@@ -75,7 +76,6 @@ Plug 'tpope/vim-sleuth'                       " sleuth.vim: Heuristically set bu
 Plug 'tpope/vim-speeddating'                  " speeddating.vim: use CTRL-A/CTRL-X to increment dates, times, and more http://www.vim.org/scripts/script.php?script_id=2120
 Plug 'tpope/vim-surround'                     " surround.vim: quoting/parenthesizing made simple
 Plug 'tpope/vim-vinegar'                      " vinegar.vim: Combine with netrw to create a delicious salad dressing
-Plug 'vifm/vifm.vim'                          " Vim plugin that allows use of vifm as a file picker
 Plug 'vim-airline/vim-airline'                " lean & mean status/tabline for vim that's light as air
 Plug 'vim-airline/vim-airline-themes'         " A collection of themes for vim-airline
 Plug 'vim-scripts/AnsiEsc.vim'                " ansi escape sequences concealed, but highlighted as specified (conceal) http://www.vim.org/scripts/script.php…
@@ -92,6 +92,7 @@ Plug 'xolox/vim-session'                      " Extended session management for 
 Plug 'xolox/vim-shell'                        " Improved integration between Vim and its environment (fullscreen, open URL, background command execution) http://peterodding.com/code/vim/shell/
 Plug 'yegappan/mru'                           " Most Recently Used (MRU) Vim Plugin
 Plug 'yggdroot/indentline'                    " A vim plugin to display the indention levels with thin vertical lines
+
 " Load devicons last
 
 Plug 'ryanoasis/vim-devicons'                 " Adds file type glyphs/icons to many popular Vim plugins such as: NERDTree, vim-airline, unite, vim-startify and many more
@@ -221,6 +222,8 @@ let g:netrw_liststyle = 3
 let g:netrw_browse_split = 4
 let g:netrw_winsize = 15
 let g:netrw_altv = 1
+let g:fff#split = "30vnew"
+let g:fff#split_direction = "nosplitbelow nosplitright"
 " let g:loaded_netrw       = 1
 " let g:loaded_netrwPlugin = 1
 " let NERDTreeIgnore = ['\.bak$', '\.orig$']
@@ -354,8 +357,12 @@ set undoreload=10000
 map y <Plug>(highlightedyank)
 nmap <F2> :w<CR>
 imap <F2> <ESC>:w<CR>a
-nmap <F4> :Lexplore<CR>
-imap <F4> <ESC>:Lexplore<CR>
+nmap <F4> :F<CR>
+imap <F4> <ESC>:F<CR>
+nmap <F3> :F %:p:h<CR>
+imap <F3> <ESC>:F %:p:h<CR>
+" nmap <F4> :Lexplore<CR>
+" imap <F4> <ESC>:Lexplore<CR>
 " nmap <F3> :NERDTreeFind<CR>
 " imap <F3> <ESC>:NERDTreeFind<CR>
 map <F5> <C-P><C-\>f<CR>
