@@ -14,6 +14,8 @@ endif
 call plug#begin()
 
 if has('unix') && !has('win32unix')
+    Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+    Plug 'junegunn/fzf.vim'
     Plug 'neoclide/coc.nvim', {'do': './install.sh nightly'} " Intellisense engine for vim8 & neovim, full language server protocol support as VSCode
     Plug 'neoclide/coc-git', {'do': 'yarn install --frozen-lockfile'}
     Plug 'neoclide/coc-css', {'do': 'yarn install --frozen-lockfile'}
@@ -21,8 +23,10 @@ if has('unix') && !has('win32unix')
     Plug 'neoclide/coc-tsserver', {'do': 'yarn install --frozen-lockfile'}
     Plug 'neoclide/coc-eslint', {'do': 'yarn install --frozen-lockfile'}
 else
-    Plug 'scrooloose/syntastic'                   " Syntax checking hacks for vim
-    Plug 'airblade/vim-gitgutter'                 " A Vim plugin which shows a git diff in the gutter (sign column) and stages/undoes hunks.
+    Plug 'scrooloose/syntastic'   " Syntax checking hacks for vim
+    Plug 'airblade/vim-gitgutter' " A Vim plugin which shows a git diff in the gutter (sign column) and stages/undoes hunks.
+    Plug 'jremmen/vim-ripgrep'    " Use RipGrep in Vim and display results in a quickfix list
+    Plug 'ctrlpvim/ctrlp.vim'     " Active fork of kien/ctrlp.vim—Fuzzy file, buffer, mru, tag, etc finder. http://ctrlpvim.github.com/ctrlp.vim
 endif
 
 Plug 'aklt/plantuml-syntax'                   " vim syntax file for plantuml
@@ -44,8 +48,6 @@ Plug 'hallison/vim-markdown'                  " Markdown syntax highlight for Vi
 Plug 'herringtondarkholme/yats.vim'           " Yet Another TypeScript Syntax: The most advanced TypeScript Syntax Highlighting in Vim
 Plug 'jelera/vim-javascript-syntax'           " Enhanced javascript syntax file for Vim http://www.vim.org/scripts/script.php?script_id=3425
 Plug 'jlanzarotta/bufexplorer'                " BufExplorer Plugin for Vim
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'junegunn/fzf.vim'
 Plug 'junegunn/gv.vim'                        " A git commit browser in Vim
 Plug 'junegunn/vim-easy-align'                " 🌻 A Vim alignment plugin
 Plug 'justincampbell/vim-eighties'            " Automatically resizes your windows
@@ -343,6 +345,7 @@ let g:indentLine_color_gui = '#333333'
 let g:indentLine_color_tty_dark = 1
 
 let g:SrcExpl_isUpdateTags = 0
+let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
 
 if executable('nc.openbsd')
   call clipper#set_invocation('nc.openbsd -N localhost 8377')
@@ -386,7 +389,9 @@ imap <C-S-CR> <Plug>snipMateBack
 smap <C-S-CR> <Plug>snipMateBack
 imap <C-R><C-CR> <Plug>snipMateShow
 vmap <C-CR> <Plug>snipMateVisual
-nnoremap <silent> <C-p> :FZF -m<cr>
+if has('unix') && !has('win32unix')
+  nnoremap <silent> <C-p> :FZF -m<cr>
+endif
 nnoremap n nzz
 nnoremap N Nzz
 
