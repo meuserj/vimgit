@@ -344,6 +344,8 @@ autocmd FileType javascript setlocal omnifunc=tern#Complete
 autocmd FileType xml setl sw=2 sts=2 et
 autocmd FileType jade setl sw=2 sts=2 et
 autocmd FileType typescript setl sw=4 sts=4 et
+au FileType ps1 let &makeprg="cd /cygdrive/c && powershell.exe 'Invoke-ScriptAnalyzer " . substitute(expand("%:p"), "/cygdrive/c/", "C:\\", "") . ' -EA SilentlyContinue \| ForEach-Object { (\"/cygdrive/c$((Split-Path -NoQualifier $_.ScriptPath) -replace \"\\\\\", \"/\")\", $_.Line, $_.Column, $_.Severity.ToString()[0], \"[$($_.RuleName)] $($_.Message)$(If ($_.SuggestedCorrections.Description) { \" FIX: $($_.SuggestedCorrections.Description)\" })\") -join \":\"}' . "'"
+au FileType ps1 set errorformat=%f:%l:%c:%t:%m
 
 vmap <Enter> <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
