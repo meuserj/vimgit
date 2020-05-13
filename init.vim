@@ -112,6 +112,7 @@ Plug 'jacoborus/tender.vim'             " A 24bit colorscheme for Vim, Airline a
 Plug 'larsbs/vimterial'                 " A vim color scheme based on Material Theme http://equinusocio.github.io/material-theme
 Plug 'larsbs/vimterial_dark'            " A dark vim color scheme inspired by material design. Improved for web development.
 Plug 'lokaltog/vim-distinguished'       " A dark vim color scheme for 256-color terminals.
+Plug 'morhetz/gruvbox'                  " Retro groove color scheme for Vim
 Plug 'nanotech/jellybeans.vim'          " A colorful, dark color scheme for Vim. http://www.vim.org/scripts/script.php?script_id=2555
 Plug 'nlknguyen/papercolor-theme'       " 🎨 Light & Dark Vim color schemes inspired by Google's Material Design
 Plug 'pychimp/vim-luna'                 " Touchdown on Lunar Surface ! :)
@@ -250,6 +251,8 @@ if has('gui_win32')
     let g:startify_custom_header =[]
 endif
 
+let g:gruvbox_italic=1
+
 let g:SuperTabDefaultCompletionType = "<c-n>"
 let g:SuperTabContextDefaultCompletionType = "<c-n>"
 
@@ -310,7 +313,7 @@ if !has('gui_win32')
 endif
 
 let g:airline_powerline_fonts                     = 1
-" let g:airline_theme                               = 'base16_monokai'
+let g:airline_theme                               = 'base16_gruvbox_dark_hard'
 let g:airline#extensions#tabline#enabled          = 1
 let g:airline#extensions#tabline#fnamemod         = ':t'
 let g:airline#extensions#tabline#buffer_min_count = 1
@@ -429,7 +432,7 @@ nmap <silent> <leader>d <Plug>DashSearch
 set t_Co=256   " This is may or may not needed.
 set background=dark
 syntax on
-colorscheme PaperColor
+colorscheme gruvbox
 highlight StartifyHeader ctermfg=2
 
 " vim: set et fenc=utf-8 ff=unix sts=4 sw=4 ts=4 :
