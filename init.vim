@@ -57,6 +57,7 @@ Plug 'marcweber/vim-addon-mw-utils'           " vim: interpret a file by functio
 Plug 'mhinz/vim-startify'                     " The fancy start screen for Vim.
 Plug 'moll/vim-node'                          " Tools and environment to make Vim superb for developing with Node.js. Like Rails.vim for Node. http://www.vim.org/scripts/script.php?script_id=4674
 Plug 'myusuf3/numbers.vim'                    " numbers.vim is a vim plugin for better line numbers http://myusuf3.github.com/numbers.vim/
+Plug 'neoclide/jsonc.vim'                     " jsonc syntax support for vim
 Plug 'othree/javascript-libraries-syntax.vim' " Syntax for JavaScript libraries http://www.vim.org/scripts/script.php?script_id=4428
 Plug 'pangloss/vim-javascript'                " Vastly improved Javascript indentation and syntax support in Vim. http://www.vim.org/scripts/script.php?script_id=4452
 Plug 'pprovost/vim-ps1'                       " A Vim plugin for Windows PowerShell support
