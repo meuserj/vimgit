@@ -22,6 +22,7 @@ if has('unix') && !has('win32unix')
     Plug 'neoclide/coc-json', {'do': 'yarn install --frozen-lockfile'}
     Plug 'neoclide/coc-tsserver', {'do': 'yarn install --frozen-lockfile'}
     Plug 'neoclide/coc-eslint', {'do': 'yarn install --frozen-lockfile'}
+    Plug 'neoclide/coc-rls', {'do': 'yarn install --frozen-lockfile'}
 else
     Plug 'scrooloose/syntastic'   " Syntax checking hacks for vim
     Plug 'airblade/vim-gitgutter' " A Vim plugin which shows a git diff in the gutter (sign column) and stages/undoes hunks.
@@ -63,6 +64,7 @@ Plug 'pangloss/vim-javascript'                " Vastly improved Javascript inden
 Plug 'pprovost/vim-ps1'                       " A Vim plugin for Windows PowerShell support
 Plug 'quramy/tsuquyomi'                       " A Vim plugin for TypeScript http://www.vim.org/scripts/script.php…
 Plug 'rizzatti/dash.vim'                      " Search Dash.app from Vim
+Plug 'rust-lang/rust.vim'                     " Vim configuration for Rust.
 Plug 'shougo/vimproc.vim'                     " Interactive command execution in Vim.
 Plug 'tmhedberg/matchit'                      " extended % matching for HTML, LaTeX, and many other languages http://www.vim.org/scripts/script.php?script_id=39
 Plug 'tmux-plugins/vim-tmux'                  " vim plugin for tmux.conf
