@@ -32,6 +32,7 @@ else
 endif
 
 Plug 'aklt/plantuml-syntax'                   " vim syntax file for plantuml
+Plug 'andrewradev/exercism.vim'
 Plug 'bogado/file-line'                       " Plugin for vim to enabling opening a file in a given line http://www.vim.org/scripts/script.php?script_id=2184
 Plug 'bronson/vim-trailing-whitespace'        " Highlights trailing whitespace in red and provides :FixWhitespace to fix it.
 Plug 'chrisbra/csv.vim'                       " A Filetype plugin for csv files. http://www.vim.org/scripts/script.php?script_id=2830
@@ -223,7 +224,7 @@ else
 endif
 
 set hidden
-
+cnoreabbrev exercism Exercism
 let g:netrw_liststyle = 3
 let g:netrw_browse_split = 4
 let g:netrw_winsize = 15
