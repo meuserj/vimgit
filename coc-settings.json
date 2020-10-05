@@ -3,5 +3,7 @@
     "javascript.suggest.enabled": false,
     "git.realtimeGutters": false,
     "eslint.run": "onSave",
-    "javascript.showUnused": false
+    "javascript.showUnused": false,
+    "explorer.icon.enableNerdfont": true,
+    "explorer.previewAction.onHover": false
 }

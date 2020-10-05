@@ -23,24 +23,25 @@ if has('unix') && !has('win32unix')
     Plug 'neoclide/coc-tsserver', {'do': 'yarn install --frozen-lockfile'}
     Plug 'neoclide/coc-eslint', {'do': 'yarn install --frozen-lockfile'}
     Plug 'neoclide/coc-rls', {'do': 'yarn install --frozen-lockfile'}
+    Plug 'weirongxu/coc-explorer', {'do': 'yarn install --frozen-lockfile'}
 else
     Plug 'scrooloose/syntastic'   " Syntax checking hacks for vim
     Plug 'airblade/vim-gitgutter' " A Vim plugin which shows a git diff in the gutter (sign column) and stages/undoes hunks.
     Plug 'jremmen/vim-ripgrep'    " Use RipGrep in Vim and display results in a quickfix list
     Plug 'ctrlpvim/ctrlp.vim'     " Active fork of kien/ctrlp.vim—Fuzzy file, buffer, mru, tag, etc finder. http://ctrlpvim.github.com/ctrlp.vim
+    Plug 'dylanaraps/fff.vim'     " A plugin for vim/neovim which allows you to use fff as a file opener.
     Plug 'ervandew/supertab'      " Perform all your vim insert mode completions with Tab
 endif
 
 Plug 'aklt/plantuml-syntax'                   " vim syntax file for plantuml
 Plug 'bogado/file-line'                       " Plugin for vim to enabling opening a file in a given line http://www.vim.org/scripts/script.php?script_id=2184
-Plug 'bronson/vim-trailing-whitespace'        " Highlights trailing whitespace in red and provides :FixWhitespace to fix it.
+" Plug 'bronson/vim-trailing-whitespace'        " Highlights trailing whitespace in red and provides :FixWhitespace to fix it.
 Plug 'chrisbra/csv.vim'                       " A Filetype plugin for csv files. http://www.vim.org/scripts/script.php?script_id=2830
 Plug 'christoomey/vim-tmux-navigator'         " Seamless navigation between tmux panes and vim splits
 Plug 'crusoexia/vim-javascript-lib'           " companion of vim-javascript, provide syntax highlight of javascript libraries
 Plug 'danro/rename.vim'                       " Rename the current file in the vim buffer + retain relative path. http://www.vim.org/scripts/script.php…
 Plug 'dbakker/vim-lint'                       " Check your .vimrc for errors
 Plug 'digitaltoad/vim-pug'                    " Vim Pug (formerly Jade) template engine syntax highlighting and indention
-Plug 'dylanaraps/fff.vim'                     " A plugin for vim/neovim which allows you to use fff as a file opener.
 Plug 'edkolev/promptline.vim'                 " Generate a fast shell prompt with powerline symbols and airline colors
 Plug 'edkolev/tmuxline.vim'                   " Simple tmux statusline generator with support for powerline symbols and statusline / airline / lightline integration
 Plug 'ervandew/screen'                        " Simulate a split shell in vim using gnu screen or tmux
@@ -81,12 +82,14 @@ Plug 'tpope/vim-surround'                     " surround.vim: quoting/parenthesi
 Plug 'vim-airline/vim-airline'                " lean & mean status/tabline for vim that's light as air
 Plug 'vim-airline/vim-airline-themes'         " A collection of themes for vim-airline
 Plug 'vim-scripts/AnsiEsc.vim'                " ansi escape sequences concealed, but highlighted as specified (conceal) http://www.vim.org/scripts/script.php…
+Plug 'vim-scripts/DirDiff.vim'
 Plug 'vim-scripts/bufonly.vim'                " Delete all the buffers except the current/named buffer http://www.vim.org/scripts/script.php?script_id=1071
 Plug 'vim-scripts/csapprox'                   " Make gvim-only colorschemes work transparently in terminal vim http://www.vim.org/scripts/script.php?script_id=2390
 Plug 'vim-scripts/gundo'                      " Visualize your undo tree. http://www.vim.org/scripts/script.php?script_id=3304
 Plug 'vim-scripts/l9'                         " Vim-script library http://www.vim.org/scripts/script.php?script_id=3252
 Plug 'vim-scripts/vim-coffee-script'          " CoffeeScript support for vim http://www.vim.org/scripts/script.php?script_id=3590
 Plug 'vim-utils/vim-man'                      " View and grep man pages in vim
+Plug 'wfxr/minimap.vim'                      " Minimap
 Plug 'wincent/vim-clipper'                    " Clipper integration for Vim
 Plug 'xolox/vim-misc'                         " Miscellaneous auto-load Vim scripts http://peterodding.com/code/vim/misc/
 Plug 'xolox/vim-session'                      " Extended session management for Vim (:mksession on steroids) http://peterodding.com/code/vim/session/
@@ -224,6 +227,8 @@ endif
 
 set hidden
 
+let g:minimap_auto_start = 1
+let g:minimap_width = 20
 let g:netrw_liststyle = 3
 let g:netrw_browse_split = 4
 let g:netrw_winsize = 15
@@ -366,10 +371,14 @@ set undoreload=10000
 map y <Plug>(highlightedyank)
 nmap <F2> :w<CR>
 imap <F2> <ESC>:w<CR>a
-nmap <F4> :F<CR>
-imap <F4> <ESC>:F<CR>
-nmap <F3> :F %:p:h<CR>
-imap <F3> <ESC>:F %:p:h<CR>
+nmap <F4> :CocCommand explorer --toggle<CR>
+imap <F4> <ESC>:CocCommand explorer --toggle<CR>
+nmap <F3> :CocCommand explorer --toggle %:p:h<CR>
+imap <F3> <ESC>:CocCommand explorer --toggle %:p:h<CR>
+" nmap <F4> :F<CR>
+" imap <F4> <ESC>:F<CR>
+" nmap <F3> :F %:p:h<CR>
+" imap <F3> <ESC>:F %:p:h<CR>
 " nmap <F4> :Lexplore<CR>
 " imap <F4> <ESC>:Lexplore<CR>
 " nmap <F3> :NERDTreeFind<CR>
