@@ -33,10 +33,13 @@ else
     Plug 'ervandew/supertab'      " Perform all your vim insert mode completions with Tab
 endif
 
+if executable('code-minimap') && (has('nvim-0.5') || v:version >= 802)
+    Plug 'wfxr/minimap.vim'                   " Minimap
+endif
+
 Plug 'aklt/plantuml-syntax'                   " vim syntax file for plantuml
 Plug 'andrewradev/exercism.vim'
 Plug 'bogado/file-line'                       " Plugin for vim to enabling opening a file in a given line http://www.vim.org/scripts/script.php?script_id=2184
-" Plug 'bronson/vim-trailing-whitespace'        " Highlights trailing whitespace in red and provides :FixWhitespace to fix it.
 Plug 'chrisbra/csv.vim'                       " A Filetype plugin for csv files. http://www.vim.org/scripts/script.php?script_id=2830
 Plug 'christoomey/vim-tmux-navigator'         " Seamless navigation between tmux panes and vim splits
 Plug 'crusoexia/vim-javascript-lib'           " companion of vim-javascript, provide syntax highlight of javascript libraries
@@ -61,6 +64,7 @@ Plug 'mhinz/vim-startify'                     " The fancy start screen for Vim.
 Plug 'moll/vim-node'                          " Tools and environment to make Vim superb for developing with Node.js. Like Rails.vim for Node. http://www.vim.org/scripts/script.php?script_id=4674
 Plug 'myusuf3/numbers.vim'                    " numbers.vim is a vim plugin for better line numbers http://myusuf3.github.com/numbers.vim/
 Plug 'neoclide/jsonc.vim'                     " jsonc syntax support for vim
+Plug 'ntpeters/vim-better-whitespace'         " Vim Better Whitespace Plugin
 Plug 'othree/javascript-libraries-syntax.vim' " Syntax for JavaScript libraries http://www.vim.org/scripts/script.php?script_id=4428
 Plug 'pangloss/vim-javascript'                " Vastly improved Javascript indentation and syntax support in Vim. http://www.vim.org/scripts/script.php?script_id=4452
 Plug 'pprovost/vim-ps1'                       " A Vim plugin for Windows PowerShell support
@@ -90,7 +94,6 @@ Plug 'vim-scripts/gundo'                      " Visualize your undo tree. http:/
 Plug 'vim-scripts/l9'                         " Vim-script library http://www.vim.org/scripts/script.php?script_id=3252
 Plug 'vim-scripts/vim-coffee-script'          " CoffeeScript support for vim http://www.vim.org/scripts/script.php?script_id=3590
 Plug 'vim-utils/vim-man'                      " View and grep man pages in vim
-Plug 'wfxr/minimap.vim'                      " Minimap
 Plug 'wincent/vim-clipper'                    " Clipper integration for Vim
 Plug 'xolox/vim-misc'                         " Miscellaneous auto-load Vim scripts http://peterodding.com/code/vim/misc/
 Plug 'xolox/vim-session'                      " Extended session management for Vim (:mksession on steroids) http://peterodding.com/code/vim/session/
@@ -249,6 +252,8 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_typescript_checkers = ['tsuquyomi']
 let g:tsuquyomi_disable_quickfix = 1
+let g:better_whitespace_enabled = 0
+let g:strip_whitespace_on_save = 1
 
 let g:completor_node_binary = '/cygdrive/c/Program Files/nodejs/node.exe'
 
