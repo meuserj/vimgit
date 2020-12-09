@@ -65,6 +65,7 @@ Plug 'moll/vim-node'                          " Tools and environment to make Vi
 Plug 'myusuf3/numbers.vim'                    " numbers.vim is a vim plugin for better line numbers http://myusuf3.github.com/numbers.vim/
 Plug 'neoclide/jsonc.vim'                     " jsonc syntax support for vim
 Plug 'ntpeters/vim-better-whitespace'         " Vim Better Whitespace Plugin
+Plug 'ojroques/vim-oscyank'
 Plug 'othree/javascript-libraries-syntax.vim' " Syntax for JavaScript libraries http://www.vim.org/scripts/script.php?script_id=4428
 Plug 'pangloss/vim-javascript'                " Vastly improved Javascript indentation and syntax support in Vim. http://www.vim.org/scripts/script.php?script_id=4452
 Plug 'pprovost/vim-ps1'                       " A Vim plugin for Windows PowerShell support
@@ -94,7 +95,7 @@ Plug 'vim-scripts/gundo'                      " Visualize your undo tree. http:/
 Plug 'vim-scripts/l9'                         " Vim-script library http://www.vim.org/scripts/script.php?script_id=3252
 Plug 'vim-scripts/vim-coffee-script'          " CoffeeScript support for vim http://www.vim.org/scripts/script.php?script_id=3590
 Plug 'vim-utils/vim-man'                      " View and grep man pages in vim
-Plug 'wincent/vim-clipper'                    " Clipper integration for Vim
+" Plug 'wincent/vim-clipper'                    " Clipper integration for Vim
 Plug 'xolox/vim-misc'                         " Miscellaneous auto-load Vim scripts http://peterodding.com/code/vim/misc/
 Plug 'xolox/vim-session'                      " Extended session management for Vim (:mksession on steroids) http://peterodding.com/code/vim/session/
 Plug 'yegappan/mru'                           " Most Recently Used (MRU) Vim Plugin
