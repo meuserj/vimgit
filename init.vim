@@ -33,7 +33,7 @@ else
     Plug 'ervandew/supertab'      " Perform all your vim insert mode completions with Tab
 endif
 
-if executable('code-minimap') && (has('nvim-0.5') || v:version >= 802)
+if executable('/usr/local/bin/code-minimap') && (has('nvim-0.5') || v:version >= 802)
     Plug 'wfxr/minimap.vim'                   " Minimap
 endif
 
@@ -95,7 +95,6 @@ Plug 'vim-scripts/gundo'                      " Visualize your undo tree. http:/
 Plug 'vim-scripts/l9'                         " Vim-script library http://www.vim.org/scripts/script.php?script_id=3252
 Plug 'vim-scripts/vim-coffee-script'          " CoffeeScript support for vim http://www.vim.org/scripts/script.php?script_id=3590
 Plug 'vim-utils/vim-man'                      " View and grep man pages in vim
-" Plug 'wincent/vim-clipper'                    " Clipper integration for Vim
 Plug 'xolox/vim-misc'                         " Miscellaneous auto-load Vim scripts http://peterodding.com/code/vim/misc/
 Plug 'xolox/vim-session'                      " Extended session management for Vim (:mksession on steroids) http://peterodding.com/code/vim/session/
 Plug 'yegappan/mru'                           " Most Recently Used (MRU) Vim Plugin
@@ -365,10 +364,6 @@ let g:indentLine_color_tty_dark = 1
 
 let g:SrcExpl_isUpdateTags = 0
 let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
-
-if executable('nc.openbsd')
-  call clipper#set_invocation('nc.openbsd -N localhost 8377')
-endif
 
 set directory=~/.vim/swapdir
 set undodir=~/.vim/undodir
