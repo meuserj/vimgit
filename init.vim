@@ -65,7 +65,7 @@ Plug 'moll/vim-node'                          " Tools and environment to make Vi
 Plug 'myusuf3/numbers.vim'                    " numbers.vim is a vim plugin for better line numbers http://myusuf3.github.com/numbers.vim/
 Plug 'neoclide/jsonc.vim'                     " jsonc syntax support for vim
 Plug 'ntpeters/vim-better-whitespace'         " Vim Better Whitespace Plugin
-Plug 'ojroques/vim-oscyank'
+Plug 'ojroques/vim-oscyank', { 'branch': 'main' }
 Plug 'othree/javascript-libraries-syntax.vim' " Syntax for JavaScript libraries http://www.vim.org/scripts/script.php?script_id=4428
 Plug 'pangloss/vim-javascript'                " Vastly improved Javascript indentation and syntax support in Vim. http://www.vim.org/scripts/script.php?script_id=4452
 Plug 'pprovost/vim-ps1'                       " A Vim plugin for Windows PowerShell support
