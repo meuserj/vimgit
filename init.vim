@@ -24,6 +24,7 @@ if has('unix') && !has('win32unix')
     Plug 'neoclide/coc-eslint', {'do': 'yarn install --frozen-lockfile'}
     Plug 'neoclide/coc-rls', {'do': 'yarn install --frozen-lockfile'}
     Plug 'weirongxu/coc-explorer', {'do': 'yarn install --frozen-lockfile'}
+    Plug 'fannheyward/coc-markdownlint', {'do': 'yarn install --frozen-lockfile'}
 else
     Plug 'scrooloose/syntastic'   " Syntax checking hacks for vim
     Plug 'airblade/vim-gitgutter' " A Vim plugin which shows a git diff in the gutter (sign column) and stages/undoes hunks.
