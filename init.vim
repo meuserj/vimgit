@@ -38,43 +38,33 @@ if executable('/usr/local/bin/code-minimap') && (has('nvim-0.5') || v:version >=
     Plug 'wfxr/minimap.vim'                   " Minimap
 endif
 
-Plug 'aklt/plantuml-syntax'                   " vim syntax file for plantuml
 Plug 'andrewradev/exercism.vim'
 Plug 'bogado/file-line'                       " Plugin for vim to enabling opening a file in a given line http://www.vim.org/scripts/script.php?script_id=2184
-Plug 'chrisbra/csv.vim'                       " A Filetype plugin for csv files. http://www.vim.org/scripts/script.php?script_id=2830
 Plug 'christoomey/vim-tmux-navigator'         " Seamless navigation between tmux panes and vim splits
 Plug 'crusoexia/vim-javascript-lib'           " companion of vim-javascript, provide syntax highlight of javascript libraries
 Plug 'danro/rename.vim'                       " Rename the current file in the vim buffer + retain relative path. http://www.vim.org/scripts/script.php…
 Plug 'dbakker/vim-lint'                       " Check your .vimrc for errors
-Plug 'digitaltoad/vim-pug'                    " Vim Pug (formerly Jade) template engine syntax highlighting and indention
 Plug 'edkolev/promptline.vim'                 " Generate a fast shell prompt with powerline symbols and airline colors
 Plug 'edkolev/tmuxline.vim'                   " Simple tmux statusline generator with support for powerline symbols and statusline / airline / lightline integration
 Plug 'ervandew/screen'                        " Simulate a split shell in vim using gnu screen or tmux
 Plug 'frioux/vim-lost'                        " Vim plugin to provide a command to help you orient yourself when editing a large chunk of code.
-Plug 'hallison/vim-markdown'                  " Markdown syntax highlight for Vim editor with snippets support http://www.vim.org/scripts/script.php?script_id=2882
-Plug 'herringtondarkholme/yats.vim'           " Yet Another TypeScript Syntax: The most advanced TypeScript Syntax Highlighting in Vim
 Plug 'jelera/vim-javascript-syntax'           " Enhanced javascript syntax file for Vim http://www.vim.org/scripts/script.php?script_id=3425
 Plug 'jlanzarotta/bufexplorer'                " BufExplorer Plugin for Vim
 Plug 'junegunn/gv.vim'                        " A git commit browser in Vim
 Plug 'junegunn/vim-easy-align'                " 🌻 A Vim alignment plugin
-Plug 'junegunn/vim-peekaboo'                  " 👀 / @ / CTRL-R
-Plug 'leshill/vim-json'                       " Syntax highlighting for JSON in Vim
 Plug 'machakann/vim-highlightedyank'          " Make the yanked region apparent!
 Plug 'marcweber/vim-addon-mw-utils'           " vim: interpret a file by function and cache file automatically
 Plug 'mhinz/vim-startify'                     " The fancy start screen for Vim.
 Plug 'moll/vim-node'                          " Tools and environment to make Vim superb for developing with Node.js. Like Rails.vim for Node. http://www.vim.org/scripts/script.php?script_id=4674
 Plug 'myusuf3/numbers.vim'                    " numbers.vim is a vim plugin for better line numbers http://myusuf3.github.com/numbers.vim/
-Plug 'neoclide/jsonc.vim'                     " jsonc syntax support for vim
 Plug 'ntpeters/vim-better-whitespace'         " Vim Better Whitespace Plugin
 Plug 'ojroques/vim-oscyank', { 'branch': 'main' }
 Plug 'othree/javascript-libraries-syntax.vim' " Syntax for JavaScript libraries http://www.vim.org/scripts/script.php?script_id=4428
-Plug 'pangloss/vim-javascript'                " Vastly improved Javascript indentation and syntax support in Vim. http://www.vim.org/scripts/script.php?script_id=4452
-Plug 'pprovost/vim-ps1'                       " A Vim plugin for Windows PowerShell support
 Plug 'quramy/tsuquyomi'                       " A Vim plugin for TypeScript http://www.vim.org/scripts/script.php…
 Plug 'rust-lang/rust.vim'                     " Vim configuration for Rust.
+Plug 'sheerun/vim-polyglot'                   " A collection of language packs for Vim.
 Plug 'shougo/vimproc.vim'                     " Interactive command execution in Vim.
 Plug 'tmhedberg/matchit'                      " extended % matching for HTML, LaTeX, and many other languages http://www.vim.org/scripts/script.php?script_id=39
-Plug 'tmux-plugins/vim-tmux'                  " vim plugin for tmux.conf
 Plug 'tmux-plugins/vim-tmux-focus-events'     " Make terminal vim and tmux work better together.
 Plug 'tommcdo/vim-fubitive'                   " Add Bitbucket URL support to fugitive.vim's :Gbrowse command
 Plug 'tomtom/tlib_vim'                        " Some utility functions for VIM http://www.vim.org/scripts/script.php?script_id=1863
@@ -94,7 +84,6 @@ Plug 'vim-scripts/bufonly.vim'                " Delete all the buffers except th
 Plug 'vim-scripts/csapprox'                   " Make gvim-only colorschemes work transparently in terminal vim http://www.vim.org/scripts/script.php?script_id=2390
 Plug 'vim-scripts/gundo'                      " Visualize your undo tree. http://www.vim.org/scripts/script.php?script_id=3304
 Plug 'vim-scripts/l9'                         " Vim-script library http://www.vim.org/scripts/script.php?script_id=3252
-Plug 'vim-scripts/vim-coffee-script'          " CoffeeScript support for vim http://www.vim.org/scripts/script.php?script_id=3590
 Plug 'vim-utils/vim-man'                      " View and grep man pages in vim
 Plug 'xolox/vim-misc'                         " Miscellaneous auto-load Vim scripts http://peterodding.com/code/vim/misc/
 Plug 'xolox/vim-session'                      " Extended session management for Vim (:mksession on steroids) http://peterodding.com/code/vim/session/
