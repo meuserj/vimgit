@@ -112,6 +112,7 @@ Plug 'nanotech/jellybeans.vim'          " A colorful, dark color scheme for Vim.
 Plug 'nlknguyen/papercolor-theme'       " 🎨 Light & Dark Vim color schemes inspired by Google's Material Design
 Plug 'pychimp/vim-luna'                 " Touchdown on Lunar Surface ! :)
 Plug 'pychimp/vim-sol'                  " On the Path of Illumination ! :)
+Plug 'sainnhe/sonokai'
 Plug 'sjl/badwolf'                      " A Vim color scheme. http://stevelosh.com/projects/badwolf/
 Plug 'tomasr/molokai'                   " Molokai color scheme for Vim
 Plug 'tpope/vim-vividchalk'             " vividchalk.vim: a colorscheme strangely reminiscent of Vibrant Ink for a certain OS X editor http://www.vim.org/scripts/script.php?script_id=1891
@@ -318,7 +319,7 @@ if !has('gui_win32')
 endif
 
 let g:airline_powerline_fonts                     = 1
-let g:airline_theme                               = 'base16_gruvbox_dark_hard'
+" let g:airline_theme                               = 'base16_gruvbox_dark_hard'
 let g:airline#extensions#tabline#enabled          = 1
 let g:airline#extensions#tabline#fnamemod         = ':t'
 let g:airline#extensions#tabline#buffer_min_count = 1
@@ -566,7 +567,7 @@ nmap <silent> <leader>d <Plug>DashSearch
 set t_Co=256   " This is may or may not needed.
 set background=dark
 syntax on
-colorscheme gruvbox
+colorscheme sonokai
 highlight StartifyHeader ctermfg=2
 
 " vim: set et fenc=utf-8 ff=unix sts=4 sw=4 ts=4 :
