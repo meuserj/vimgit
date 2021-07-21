@@ -22,23 +22,18 @@ if has('unix') && !has('win32unix')
     Plug 'neoclide/coc-json', {'do': 'yarn install --frozen-lockfile'}
     Plug 'neoclide/coc-tsserver', {'do': 'yarn install --frozen-lockfile'}
     Plug 'neoclide/coc-eslint', {'do': 'yarn install --frozen-lockfile'}
-    Plug 'neoclide/coc-rls', {'do': 'yarn install --frozen-lockfile'}
-    Plug 'weirongxu/coc-explorer', {'do': 'yarn install --frozen-lockfile'}
+    " Plug 'neoclide/coc-rls', {'do': 'yarn install --frozen-lockfile'}
     Plug 'fannheyward/coc-markdownlint', {'do': 'yarn install --frozen-lockfile'}
 else
     Plug 'scrooloose/syntastic'   " Syntax checking hacks for vim
     Plug 'airblade/vim-gitgutter' " A Vim plugin which shows a git diff in the gutter (sign column) and stages/undoes hunks.
     Plug 'jremmen/vim-ripgrep'    " Use RipGrep in Vim and display results in a quickfix list
     Plug 'ctrlpvim/ctrlp.vim'     " Active fork of kien/ctrlp.vim—Fuzzy file, buffer, mru, tag, etc finder. http://ctrlpvim.github.com/ctrlp.vim
-    Plug 'dylanaraps/fff.vim'     " A plugin for vim/neovim which allows you to use fff as a file opener.
     Plug 'ervandew/supertab'      " Perform all your vim insert mode completions with Tab
 endif
 
-if executable('/usr/local/bin/code-minimap') && (has('nvim-0.5') || v:version >= 802)
-    Plug 'wfxr/minimap.vim'                   " Minimap
-endif
-
 Plug 'andrewradev/exercism.vim'
+Plug 'antoinemadec/FixCursorHold.nvim'        " This will result in more snappiness for plugins using those events
 Plug 'bogado/file-line'                       " Plugin for vim to enabling opening a file in a given line http://www.vim.org/scripts/script.php?script_id=2184
 Plug 'christoomey/vim-tmux-navigator'         " Seamless navigation between tmux panes and vim splits
 Plug 'crusoexia/vim-javascript-lib'           " companion of vim-javascript, provide syntax highlight of javascript libraries
@@ -52,8 +47,15 @@ Plug 'jelera/vim-javascript-syntax'           " Enhanced javascript syntax file 
 Plug 'jlanzarotta/bufexplorer'                " BufExplorer Plugin for Vim
 Plug 'junegunn/gv.vim'                        " A git commit browser in Vim
 Plug 'junegunn/vim-easy-align'                " 🌻 A Vim alignment plugin
+Plug 'lambdalisue/fern-git-status.vim'        " 🌿 Add Git status badge integration on file:// scheme on fern.vim
+Plug 'lambdalisue/fern-hijack.vim'            " Make fern.vim as a default file explorer instead of Netrw
+Plug 'lambdalisue/fern-renderer-nerdfont.vim' " 🌿 fern-renderer-nerdfont.vim fern.vim plugin which add file type icons through lambdalisue/nerdfont.vim
+Plug 'lambdalisue/glyph-palette.vim'          " 🎨 glyph-palette glyph-palette (Glyph palette) is a plugin to universally apply colors on Nerd Fonts.
+Plug 'lambdalisue/fern-ssh'                   " 🌿 A scheme plugin for fern.vim which show file system tree of a remote machine via SSH.
+Plug 'lambdalisue/fern.vim'                   " Fern (furn) is a general purpose asynchronous tree viewer written in pure Vim script.
 Plug 'machakann/vim-highlightedyank'          " Make the yanked region apparent!
 Plug 'marcweber/vim-addon-mw-utils'           " vim: interpret a file by function and cache file automatically
+Plug 'mbbill/undotree'                        " visualizes undo history and makes it easier to browse and switch between different undo branches.
 Plug 'mhinz/vim-startify'                     " The fancy start screen for Vim.
 Plug 'moll/vim-node'                          " Tools and environment to make Vim superb for developing with Node.js. Like Rails.vim for Node. http://www.vim.org/scripts/script.php?script_id=4674
 Plug 'myusuf3/numbers.vim'                    " numbers.vim is a vim plugin for better line numbers http://myusuf3.github.com/numbers.vim/
@@ -82,9 +84,9 @@ Plug 'vim-scripts/AnsiEsc.vim'                " ansi escape sequences concealed,
 Plug 'vim-scripts/DirDiff.vim'
 Plug 'vim-scripts/bufonly.vim'                " Delete all the buffers except the current/named buffer http://www.vim.org/scripts/script.php?script_id=1071
 Plug 'vim-scripts/csapprox'                   " Make gvim-only colorschemes work transparently in terminal vim http://www.vim.org/scripts/script.php?script_id=2390
-Plug 'vim-scripts/gundo'                      " Visualize your undo tree. http://www.vim.org/scripts/script.php?script_id=3304
 Plug 'vim-scripts/l9'                         " Vim-script library http://www.vim.org/scripts/script.php?script_id=3252
 Plug 'vim-utils/vim-man'                      " View and grep man pages in vim
+Plug 'wfxr/minimap.vim'                       " Minimap
 Plug 'xolox/vim-misc'                         " Miscellaneous auto-load Vim scripts http://peterodding.com/code/vim/misc/
 Plug 'xolox/vim-session'                      " Extended session management for Vim (:mksession on steroids) http://peterodding.com/code/vim/session/
 Plug 'yegappan/mru'                           " Most Recently Used (MRU) Vim Plugin
@@ -93,6 +95,7 @@ Plug 'yggdroot/indentline'                    " A vim plugin to display the inde
 " Load devicons last
 
 Plug 'ryanoasis/vim-devicons'                 " Adds file type glyphs/icons to many popular Vim plugins such as: NERDTree, vim-airline, unite, vim-startify and many more
+Plug 'lambdalisue/nerdfont.vim'               " 👓 nerdfont.vim A simplified version of vim-devicons
 
 " Themes
 Plug 'altercation/vim-colors-solarized' " precision colorscheme for the vim text editor http://ethanschoonover.com/solarized
@@ -224,6 +227,8 @@ set hidden
 
 let g:minimap_auto_start = 1
 let g:minimap_width = 20
+let g:minimap_highlight_range = 1
+let g:minimap_highlight_search = 1
 cnoreabbrev exercism Exercism
 let g:netrw_liststyle = 3
 let g:netrw_browse_split = 4
@@ -236,6 +241,7 @@ let g:fff#split_direction = "nosplitbelow nosplitright"
 " let NERDTreeIgnore = ['\.bak$', '\.orig$']
 " let NERDTreeChDirMode = 2
 " let NERDTreeStatusline = -1
+let g:fern#renderer = "nerdfont"
 
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
@@ -365,10 +371,10 @@ set undoreload=10000
 map y <Plug>(highlightedyank)
 nmap <F2> :w<CR>
 imap <F2> <ESC>:w<CR>a
-nmap <F4> :CocCommand explorer --toggle<CR>
-imap <F4> <ESC>:CocCommand explorer --toggle<CR>
-nmap <F3> :CocCommand explorer --toggle %:p:h<CR>
-imap <F3> <ESC>:CocCommand explorer --toggle %:p:h<CR>
+nmap <F4> :Fern . -drawer -width=40 -toggle<CR>:MinimapToggle<CR>
+imap <F4> <ESC>:Fern . -drawer -width=40 -toggle<CR>:MinimapToggle<CR>
+nmap <F3> :Fern . -reveal=% -drawer -width=40 -toggle<CR>:MinimapToggle<CR>
+imap <F3> <ESC>:Fern . -reveal=% -drawer -width=40 -toggle<CR>:MinimapToggle<CR>
 " nmap <F4> :F<CR>
 " imap <F4> <ESC>:F<CR>
 " nmap <F3> :F %:p:h<CR>
