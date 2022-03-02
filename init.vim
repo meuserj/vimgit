@@ -248,6 +248,7 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_typescript_checkers = ['tsuquyomi']
+let g:syntastic_javascript_checkers = ['eslint']
 let g:tsuquyomi_disable_quickfix = 1
 let g:better_whitespace_enabled = 0
 let g:strip_whitespace_on_save = 1
