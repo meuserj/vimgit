@@ -20,7 +20,7 @@ if has('unix') && !has('win32unix')
     Plug 'neoclide/coc-git', {'do': 'yarn install --frozen-lockfile'}
     Plug 'neoclide/coc-css', {'do': 'yarn install --frozen-lockfile'}
     Plug 'neoclide/coc-json', {'do': 'yarn install --frozen-lockfile'}
-    Plug 'neoclide/coc-tsserver', {'do': 'yarn install --frozen-lockfile'}
+    " Plug 'neoclide/coc-tsserver', {'do': 'yarn install --frozen-lockfile'}
     Plug 'neoclide/coc-eslint', {'do': 'yarn install --frozen-lockfile'}
     " Plug 'neoclide/coc-rls', {'do': 'yarn install --frozen-lockfile'}
     Plug 'fannheyward/coc-markdownlint', {'do': 'yarn install --frozen-lockfile'}
@@ -42,7 +42,7 @@ Plug 'dbakker/vim-lint'                       " Check your .vimrc for errors
 Plug 'edkolev/promptline.vim'                 " Generate a fast shell prompt with powerline symbols and airline colors
 Plug 'edkolev/tmuxline.vim'                   " Simple tmux statusline generator with support for powerline symbols and statusline / airline / lightline integration
 Plug 'ervandew/screen'                        " Simulate a split shell in vim using gnu screen or tmux
-Plug 'frioux/vim-lost'                        " Vim plugin to provide a command to help you orient yourself when editing a large chunk of code.
+Plug 'frioux/vim-lost', { 'branch': 'main' }  " Vim plugin to provide a command to help you orient yourself when editing a large chunk of code.
 Plug 'jelera/vim-javascript-syntax'           " Enhanced javascript syntax file for Vim http://www.vim.org/scripts/script.php?script_id=3425
 Plug 'jlanzarotta/bufexplorer'                " BufExplorer Plugin for Vim
 Plug 'junegunn/gv.vim'                        " A git commit browser in Vim
