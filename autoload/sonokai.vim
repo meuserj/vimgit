@@ -1,0 +1,1 @@
+../plugged/sonokai/autoload/sonokai.vim
