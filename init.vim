@@ -20,12 +20,9 @@ if has('unix') && !has('win32unix')
     Plug 'neoclide/coc-git', {'do': 'yarn install --frozen-lockfile'}
     Plug 'neoclide/coc-css', {'do': 'yarn install --frozen-lockfile'}
     Plug 'neoclide/coc-json', {'do': 'yarn install --frozen-lockfile'}
-    " Plug 'neoclide/coc-tsserver', {'do': 'yarn install --frozen-lockfile'}
     Plug 'neoclide/coc-eslint', {'do': 'yarn install --frozen-lockfile'}
-    " Plug 'neoclide/coc-rls', {'do': 'yarn install --frozen-lockfile'}
     Plug 'fannheyward/coc-markdownlint', {'do': 'yarn install --frozen-lockfile'}
 else
-    Plug 'scrooloose/syntastic'   " Syntax checking hacks for vim
     Plug 'airblade/vim-gitgutter' " A Vim plugin which shows a git diff in the gutter (sign column) and stages/undoes hunks.
     Plug 'jremmen/vim-ripgrep'    " Use RipGrep in Vim and display results in a quickfix list
     Plug 'ctrlpvim/ctrlp.vim'     " Active fork of kien/ctrlp.vim—Fuzzy file, buffer, mru, tag, etc finder. http://ctrlpvim.github.com/ctrlp.vim
@@ -50,9 +47,9 @@ Plug 'junegunn/vim-easy-align'                " 🌻 A Vim alignment plugin
 Plug 'lambdalisue/fern-git-status.vim'        " 🌿 Add Git status badge integration on file:// scheme on fern.vim
 Plug 'lambdalisue/fern-hijack.vim'            " Make fern.vim as a default file explorer instead of Netrw
 Plug 'lambdalisue/fern-renderer-nerdfont.vim' " 🌿 fern-renderer-nerdfont.vim fern.vim plugin which add file type icons through lambdalisue/nerdfont.vim
-Plug 'lambdalisue/glyph-palette.vim'          " 🎨 glyph-palette glyph-palette (Glyph palette) is a plugin to universally apply colors on Nerd Fonts.
 Plug 'lambdalisue/fern-ssh'                   " 🌿 A scheme plugin for fern.vim which show file system tree of a remote machine via SSH.
 Plug 'lambdalisue/fern.vim'                   " Fern (furn) is a general purpose asynchronous tree viewer written in pure Vim script.
+Plug 'lambdalisue/glyph-palette.vim'          " 🎨 glyph-palette glyph-palette (Glyph palette) is a plugin to universally apply colors on Nerd Fonts.
 Plug 'machakann/vim-highlightedyank'          " Make the yanked region apparent!
 Plug 'marcweber/vim-addon-mw-utils'           " vim: interpret a file by function and cache file automatically
 Plug 'mbbill/undotree'                        " visualizes undo history and makes it easier to browse and switch between different undo branches.
@@ -64,6 +61,7 @@ Plug 'ojroques/vim-oscyank', { 'branch': 'main' }
 Plug 'othree/javascript-libraries-syntax.vim' " Syntax for JavaScript libraries http://www.vim.org/scripts/script.php?script_id=4428
 Plug 'quramy/tsuquyomi'                       " A Vim plugin for TypeScript http://www.vim.org/scripts/script.php…
 Plug 'rust-lang/rust.vim'                     " Vim configuration for Rust.
+Plug 'scrooloose/syntastic'                   " Syntax checking hacks for vim
 Plug 'sheerun/vim-polyglot'                   " A collection of language packs for Vim.
 Plug 'shougo/vimproc.vim'                     " Interactive command execution in Vim.
 Plug 'tmhedberg/matchit'                      " extended % matching for HTML, LaTeX, and many other languages http://www.vim.org/scripts/script.php?script_id=39
