@@ -16,18 +16,19 @@ call plug#begin()
 if has('unix') && !has('win32unix')
     Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
     Plug 'junegunn/fzf.vim'
-    Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'} " Intellisense engine for vim8 & neovim, full language server protocol support as VSCode
-    Plug 'neoclide/coc-git', {'do': 'yarn install --frozen-lockfile'}
-    Plug 'neoclide/coc-css', {'do': 'yarn install --frozen-lockfile'}
-    Plug 'neoclide/coc-json', {'do': 'yarn install --frozen-lockfile'}
-    Plug 'neoclide/coc-eslint', {'do': 'yarn install --frozen-lockfile'}
-    Plug 'fannheyward/coc-markdownlint', {'do': 'yarn install --frozen-lockfile'}
 else
-    Plug 'airblade/vim-gitgutter' " A Vim plugin which shows a git diff in the gutter (sign column) and stages/undoes hunks.
+"     Plug 'airblade/vim-gitgutter' " A Vim plugin which shows a git diff in the gutter (sign column) and stages/undoes hunks.
     Plug 'jremmen/vim-ripgrep'    " Use RipGrep in Vim and display results in a quickfix list
     Plug 'ctrlpvim/ctrlp.vim'     " Active fork of kien/ctrlp.vim—Fuzzy file, buffer, mru, tag, etc finder. http://ctrlpvim.github.com/ctrlp.vim
-    Plug 'ervandew/supertab'      " Perform all your vim insert mode completions with Tab
+"     Plug 'ervandew/supertab'      " Perform all your vim insert mode completions with Tab
 endif
+
+Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'} " Intellisense engine for vim8 & neovim, full language server protocol support as VSCode
+Plug 'neoclide/coc-eslint', {'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc-git', {'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc-css', {'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc-json', {'do': 'yarn install --frozen-lockfile'}
+Plug 'fannheyward/coc-markdownlint', {'do': 'yarn install --frozen-lockfile'}
 
 Plug 'andrewradev/exercism.vim'
 Plug 'bogado/file-line'                       " Plugin for vim to enabling opening a file in a given line http://www.vim.org/scripts/script.php?script_id=2184
@@ -402,14 +403,14 @@ imap <C-S-CR> <Plug>snipMateBack
 smap <C-S-CR> <Plug>snipMateBack
 imap <C-R><C-CR> <Plug>snipMateShow
 vmap <C-CR> <Plug>snipMateVisual
-if has('unix') && !has('win32unix')
+" if has('unix') && !has('win32unix')
   nnoremap <silent> <C-p> :FZF -m<cr>
-endif
+" endif
 nnoremap n nzz
 nnoremap N Nzz
 
 "----- Begin CoC Settings -----"
-if has('unix') && !has('win32unix')
+" if has('unix') && !has('win32unix')
     let g:coc_disable_startup_warning = 1
     " Use tab for trigger completion with characters ahead and navigate.
     " NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
@@ -533,7 +534,7 @@ if has('unix') && !has('win32unix')
     nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
     " Resume latest coc list.
     nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
-endif
+" endif
 "------ End CoC Settings ------"
 
 
