@@ -1,6 +1,12 @@
 {
-    "javascript.suggestionActions.enabled": false,
-    "javascript.suggest.enabled": false,
     "git.realtimeGutters": false,
-    "eslint.run": "onSave"
+    "eslint.run": "onSave",
+    "eslint.alwaysShowStatus": true,
+    "eslint.probe": [
+        "javascript",
+        "pug",
+        "typescript",
+        "html",
+        "markdown"
+    ]
 }
