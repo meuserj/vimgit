@@ -30,7 +30,6 @@ else
 endif
 
 Plug 'andrewradev/exercism.vim'
-Plug 'antoinemadec/FixCursorHold.nvim'        " This will result in more snappiness for plugins using those events
 Plug 'bogado/file-line'                       " Plugin for vim to enabling opening a file in a given line http://www.vim.org/scripts/script.php?script_id=2184
 Plug 'christoomey/vim-tmux-navigator'         " Seamless navigation between tmux panes and vim splits
 Plug 'crusoexia/vim-javascript-lib'           " companion of vim-javascript, provide syntax highlight of javascript libraries
