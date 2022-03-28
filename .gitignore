@@ -2,3 +2,4 @@ sessions
 .netrwhist
 plugged
 autoload/plug.vim.old
+shada/
