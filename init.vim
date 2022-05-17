@@ -217,7 +217,7 @@ if has("gui_gtk3")
 elseif has('gui_win32')
   set guifont=MesloLGSDZ_NF:h8:cANSI:qDRAFT
 else
-  set guifont=Roboto\ Mono\ Medium\ Nerd\ Font\ Complete:h12
+  set guifont=GoMono\ Nerd\ Font\ Mono:h12
 endif
 
 set hidden
@@ -340,6 +340,14 @@ let g:tmuxline_separators = {
   \ 'right' : "\uE0B6",
   \ 'right_alt' : "\uE0B7",
   \ 'space' : ' '}
+
+let g:tmuxline_preset = {
+      \'a'    : '#S',
+      \'b'    : '#(curl wttr.in/Indianapolis?format=2\\\\&u)',
+      \'win'  : ['#I', '#W'],
+      \'cwin'  : ['#I', '#W'],
+      \'y'    : ['%Y-%m-%d', '%H:%M'],
+      \'z'    : '#h'}
 
 let g:promptline_symbols = {
   \ 'left'           : "\uE0B4",
