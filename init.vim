@@ -342,14 +342,6 @@ let g:tmuxline_separators = {
   \ 'right_alt' : "\uE0B7",
   \ 'space' : ' '}
 
-let g:tmuxline_preset = {
-      \'a'    : '#S',
-      \'b'    : '#(curl wttr.in/Indianapolis?format=2\\\\&u)',
-      \'win'  : ['#I', '#W'],
-      \'cwin'  : ['#I', '#W'],
-      \'y'    : ['%Y-%m-%d', '%H:%M'],
-      \'z'    : '#h'}
-
 let g:promptline_symbols = {
   \ 'left'           : "\uE0B4",
   \ 'right'          : "\uE0B6",
