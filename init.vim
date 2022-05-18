@@ -32,10 +32,11 @@ Plug 'dbakker/vim-lint'                                                       " 
 Plug 'edkolev/promptline.vim'                                                 " Generate a fast shell prompt with powerline symbols and airline colors
 Plug 'edkolev/tmuxline.vim'                                                   " Simple tmux statusline generator with support for powerline symbols and statusline / airline / lightline integration
 Plug 'ervandew/screen'                                                        " Simulate a split shell in vim using gnu screen or tmux
-Plug 'fannheyward/coc-markdownlint', {'do': 'yarn install --frozen-lockfile'} " markdownlint for Vim/Neovim, works as coc.nvim extension.
+Plug 'fannheyward/coc-markdownlint', {'do': 'yarn install --frozen-lockfile'} " MarkDown Lint for CoC
 Plug 'frioux/vim-lost', { 'branch': 'main' }                                  " Vim plugin to provide a command to help you orient yourself when editing a large chunk of code.
 Plug 'jelera/vim-javascript-syntax'                                           " Enhanced javascript syntax file for Vim http://www.vim.org/scripts/script.php?script_id=3425
 Plug 'jlanzarotta/bufexplorer'                                                " BufExplorer Plugin for Vim
+Plug 'jonsmithers/vim-html-template-literals'                                 " Syntax highlighting and indentation for html inside of tagged template literals
 Plug 'junegunn/gv.vim'                                                        " A git commit browser in Vim
 Plug 'junegunn/vim-easy-align'                                                " 🌻 A Vim alignment plugin
 Plug 'lambdalisue/fern-git-status.vim'                                        " 🌿 Add Git status badge integration on file:// scheme on fern.vim
@@ -50,14 +51,15 @@ Plug 'mbbill/undotree'                                                        " 
 Plug 'mhinz/vim-startify'                                                     " The fancy start screen for Vim.
 Plug 'moll/vim-node'                                                          " Tools and environment to make Vim superb for developing with Node.js. Like Rails.vim for Node. http://www.vim.org/scripts/script.php?script_id=4674
 Plug 'myusuf3/numbers.vim'                                                    " numbers.vim is a vim plugin for better line numbers http://myusuf3.github.com/numbers.vim/
-Plug 'neoclide/coc-css', {'do': 'yarn install --frozen-lockfile'}             " Css language server extension for coc.nvim.
-Plug 'neoclide/coc-eslint', {'do': 'yarn install --frozen-lockfile'}          " Eslint language server extension for coc.nvim.
-Plug 'neoclide/coc-git', {'do': 'yarn install --frozen-lockfile'}             " Git integration of coc.nvim.
-Plug 'neoclide/coc-json', {'do': 'yarn install --frozen-lockfile'}            " Json language server extension for coc.nvim.
+Plug 'neoclide/coc-css', {'do': 'yarn install --frozen-lockfile'}             " Css language server extension for CoC
+Plug 'neoclide/coc-eslint', {'do': 'yarn install --frozen-lockfile'}          " ECMAScript Linting for CoC
+Plug 'neoclide/coc-git', {'do': 'yarn install --frozen-lockfile'}             " Git integration for CoC
+Plug 'neoclide/coc-json', {'do': 'yarn install --frozen-lockfile'}            " Json language server extension for CoC
 Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}            " Intellisense engine for vim8 & neovim, full language server protocol support as VSCode
 Plug 'ntpeters/vim-better-whitespace'                                         " Vim Better Whitespace Plugin
-Plug 'ojroques/vim-oscyank', { 'branch': 'main' }
+Plug 'ojroques/vim-oscyank', { 'branch': 'main' }                             " A Vim / Neovim plugin to copy text to the system clipboard from anywhere using the ANSI OSC52 sequence.
 Plug 'othree/javascript-libraries-syntax.vim'                                 " Syntax for JavaScript libraries http://www.vim.org/scripts/script.php?script_id=4428
+Plug 'pangloss/vim-javascript'                                                " JavaScript bundle for vim, this bundle provides syntax highlighting and improved indentation.
 Plug 'quramy/tsuquyomi'                                                       " A Vim plugin for TypeScript http://www.vim.org/scripts/script.php…
 Plug 'rust-lang/rust.vim'                                                     " Vim configuration for Rust.
 Plug 'scrooloose/syntastic'                                                   " Syntax checking hacks for vim
@@ -78,7 +80,7 @@ Plug 'tpope/vim-surround'                                                     " 
 Plug 'vim-airline/vim-airline'                                                " lean & mean status/tabline for vim that's light as air
 Plug 'vim-airline/vim-airline-themes'                                         " A collection of themes for vim-airline
 Plug 'vim-scripts/AnsiEsc.vim'                                                " ansi escape sequences concealed, but highlighted as specified (conceal) http://www.vim.org/scripts/script.php…
-Plug 'vim-scripts/DirDiff.vim'
+Plug 'vim-scripts/DirDiff.vim'                                                " A plugin to diff and merge two directories recursively.
 Plug 'vim-scripts/bufonly.vim'                                                " Delete all the buffers except the current/named buffer http://www.vim.org/scripts/script.php?script_id=1071
 Plug 'vim-scripts/csapprox'                                                   " Make gvim-only colorschemes work transparently in terminal vim http://www.vim.org/scripts/script.php?script_id=2390
 Plug 'vim-scripts/l9'                                                         " Vim-script library http://www.vim.org/scripts/script.php?script_id=3252
