@@ -131,6 +131,7 @@ set backspace=indent,eol,start  " more powerful backspacing
 set textwidth=0     " Don't wrap words by default
 set nobackup        " Don't keep a backup file
 set nowritebackup
+set termguicolors
 "Make p in Visual mode replace the selected text with the "" register.
 xnoremap p <Esc>:let current_reg = @"<CR>gvdi<C-R>=current_reg<CR><Esc>
 
@@ -342,14 +343,6 @@ let g:tmuxline_separators = {
   \ 'right' : "\uE0B6",
   \ 'right_alt' : "\uE0B7",
   \ 'space' : ' '}
-
-let g:tmuxline_preset = {
-      \'a'    : '#S',
-      \'b'    : '#(curl wttr.in/Indianapolis?format=2\\\\&u)',
-      \'win'  : ['#I', '#W'],
-      \'cwin'  : ['#I', '#W'],
-      \'y'    : ['%Y-%m-%d', '%H:%M'],
-      \'z'    : '#h'}
 
 let g:promptline_symbols = {
   \ 'left'           : "\uE0B4",
@@ -581,7 +574,7 @@ nmap <silent> <leader>d <Plug>DashSearch
 set t_Co=256   " This is may or may not needed.
 set background=dark
 syntax on
-colorscheme sonokai
+colorscheme luna
 highlight StartifyHeader ctermfg=2
 
 " vim: set et fenc=utf-8 ff=unix sts=4 sw=4 ts=4 :
