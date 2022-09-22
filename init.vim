@@ -223,7 +223,7 @@ elseif exists('g:neovide')
   if has('macunix')
     set guifont=GoMono\ Nerd\ Font\ Mono:h12
   elseif has('unix')
-    set guifont=GoMono\ Nerd\ Font\ Mono:h10
+    set guifont=GoMono\ Nerd\ Font\ Mono:h9
   endif
 endif
 
