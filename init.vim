@@ -374,6 +374,9 @@ set undofile
 set undolevels=1000
 set undoreload=10000
 
+vnoremap <silent> <s-J> :m '>+1<CR>gv
+vnoremap <silent> <s-K> :m '<-2<CR>gv
+
 map y <Plug>(highlightedyank)
 nmap <F2> :w<CR>
 imap <F2> <ESC>:w<CR>a
