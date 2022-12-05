@@ -23,6 +23,17 @@ else
 "     Plug 'ervandew/supertab'      " Perform all your vim insert mode completions with Tab
 endif
 
+if has('nvim')
+    Plug 'nvim-tree/nvim-tree.lua'
+    Plug 'nvim-tree/nvim-web-devicons' " optional, for file icons
+else
+    Plug 'lambdalisue/fern-git-status.vim'                                        " 🌿 Add Git status badge integration on file:// scheme on fern.vim
+    Plug 'lambdalisue/fern-hijack.vim'                                            " Make fern.vim as a default file explorer instead of Netrw
+    Plug 'lambdalisue/fern-renderer-nerdfont.vim'                                 " 🌿 fern-renderer-nerdfont.vim fern.vim plugin which add file type icons through lambdalisue/nerdfont.vim
+    Plug 'lambdalisue/fern-ssh'                                                   " 🌿 A scheme plugin for fern.vim which show file system tree of a remote machine via SSH.
+    Plug 'lambdalisue/fern.vim', { 'branch': 'main' }                             " Fern (furn) is a general purpose asynchronous tree viewer written in pure Vim script.
+endif
+
 Plug 'andrewradev/exercism.vim'
 Plug 'bogado/file-line'                                                       " Plugin for vim to enabling opening a file in a given line http://www.vim.org/scripts/script.php?script_id=2184
 Plug 'christoomey/vim-tmux-navigator'                                         " Seamless navigation between tmux panes and vim splits
@@ -39,11 +50,6 @@ Plug 'jlanzarotta/bufexplorer'                                                " 
 Plug 'jonsmithers/vim-html-template-literals'                                 " Syntax highlighting and indentation for html inside of tagged template literals
 Plug 'junegunn/gv.vim'                                                        " A git commit browser in Vim
 Plug 'junegunn/vim-easy-align'                                                " 🌻 A Vim alignment plugin
-Plug 'lambdalisue/fern-git-status.vim'                                        " 🌿 Add Git status badge integration on file:// scheme on fern.vim
-Plug 'lambdalisue/fern-hijack.vim'                                            " Make fern.vim as a default file explorer instead of Netrw
-Plug 'lambdalisue/fern-renderer-nerdfont.vim'                                 " 🌿 fern-renderer-nerdfont.vim fern.vim plugin which add file type icons through lambdalisue/nerdfont.vim
-Plug 'lambdalisue/fern-ssh'                                                   " 🌿 A scheme plugin for fern.vim which show file system tree of a remote machine via SSH.
-Plug 'lambdalisue/fern.vim', { 'branch': 'main' }                             " Fern (furn) is a general purpose asynchronous tree viewer written in pure Vim script.
 Plug 'lambdalisue/glyph-palette.vim'                                          " 🎨 glyph-palette glyph-palette (Glyph palette) is a plugin to universally apply colors on Nerd Fonts.
 Plug 'machakann/vim-highlightedyank'                                          " Make the yanked region apparent!
 Plug 'marcweber/vim-addon-mw-utils'                                           " vim: interpret a file by function and cache file automatically
@@ -380,10 +386,17 @@ vnoremap <silent> <s-K> :m '<-2<CR>gv
 map y <Plug>(highlightedyank)
 nmap <F2> :w<CR>
 imap <F2> <ESC>:w<CR>a
-nmap <F4> :Fern . -drawer -width=40 -toggle<CR>:MinimapToggle<CR>
-imap <F4> <ESC>:Fern . -drawer -width=40 -toggle<CR>:MinimapToggle<CR>
-nmap <F3> :Fern . -reveal=% -drawer -width=40 -toggle<CR>:MinimapToggle<CR>
-imap <F3> <ESC>:Fern . -reveal=% -drawer -width=40 -toggle<CR>:MinimapToggle<CR>
+if has('nvim')
+    nmap <F4> :NvimTreeToggle<CR>
+    imap <F4> <ESC>:NvimTreeToggle<CR>
+    nmap <F3> :NvimTreeFindFile<CR>
+    imap <F3> <ESC>:NvimTreeFindFile<CR>
+else
+    nmap <F4> :Fern . -drawer -width=40 -toggle<CR>:MinimapToggle<CR>
+    imap <F4> <ESC>:Fern . -drawer -width=40 -toggle<CR>:MinimapToggle<CR>
+    nmap <F3> :Fern . -reveal=% -drawer -width=40 -toggle<CR>:MinimapToggle<CR>
+    imap <F3> <ESC>:Fern . -reveal=% -drawer -width=40 -toggle<CR>:MinimapToggle<CR>
+endif
 " nmap <F4> :F<CR>
 " imap <F4> <ESC>:F<CR>
 " nmap <F3> :F %:p:h<CR>
@@ -446,6 +459,11 @@ else
   inoremap <silent><expr> <c-@> coc#refresh()
 endif
 
+if has('nvim')
+lua << EOF
+  require("nvim-tree").setup()
+EOF
+endif
 " Use `[g` and `]g` to navigate diagnostics
 " Use `:CocDiagnostics` to get all diagnostics of current buffer in location list.
 nmap <silent> [g <Plug>(coc-diagnostic-prev)
