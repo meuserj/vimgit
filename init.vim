@@ -222,14 +222,14 @@ let g:DirDiffAddArgs = "-w"
 
 set clipboard=unnamed
 if has("gui_gtk3")
-  set guifont=GoMono\ Nerd\ Font\ Mono\ h10
+  set guifont=Iosevka\ Nerd\ Font\ Mono:h12
 elseif has('gui_win32')
   set guifont=MesloLGSDZ_NF:h8:cANSI:qDRAFT
 elseif exists('g:neovide')
   if has('macunix')
-    set guifont=GoMono\ Nerd\ Font\ Mono:h12
+    set guifont=Iosevka\ Nerd\ Font\ Mono:h12
   elseif has('unix')
-    set guifont=GoMono\ Nerd\ Font\ Mono:h9
+    set guifont=Iosevka\ Nerd\ Font\ Mono:h12
   endif
 endif
 
@@ -382,6 +382,7 @@ set undoreload=10000
 
 vnoremap <silent> <s-J> :m '>+1<CR>gv
 vnoremap <silent> <s-K> :m '<-2<CR>gv
+xnoremap * "zy/\V<C-r>=escape(@z, '\/')<CR><CR>
 
 map y <Plug>(highlightedyank)
 nmap <F2> :w<CR>
