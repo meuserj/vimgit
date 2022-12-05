@@ -223,7 +223,7 @@ elseif exists('g:neovide')
   if has('macunix')
     set guifont=GoMono\ Nerd\ Font\ Mono:h12
   elseif has('unix')
-    set guifont=GoMono\ Nerd\ Font\ Mono:h10
+    set guifont=GoMono\ Nerd\ Font\ Mono:h9
   endif
 endif
 
@@ -373,6 +373,9 @@ set undodir=~/.vim/undodir
 set undofile
 set undolevels=1000
 set undoreload=10000
+
+vnoremap <silent> <s-J> :m '>+1<CR>gv
+vnoremap <silent> <s-K> :m '<-2<CR>gv
 
 map y <Plug>(highlightedyank)
 nmap <F2> :w<CR>
