@@ -1,1 +1,0 @@
-../plugged/vim-monokai/colors/monokai.vim

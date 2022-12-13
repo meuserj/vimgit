@@ -26,6 +26,7 @@ endif
 if has('nvim')
     Plug 'nvim-tree/nvim-tree.lua'
     Plug 'nvim-tree/nvim-web-devicons' " optional, for file icons
+    " Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
 else
     Plug 'lambdalisue/fern-git-status.vim'                                        " 🌿 Add Git status badge integration on file:// scheme on fern.vim
     Plug 'lambdalisue/fern-hijack.vim'                                            " Make fern.vim as a default file explorer instead of Netrw
@@ -33,6 +34,7 @@ else
     Plug 'lambdalisue/fern-ssh'                                                   " 🌿 A scheme plugin for fern.vim which show file system tree of a remote machine via SSH.
     Plug 'lambdalisue/fern.vim', { 'branch': 'main' }                             " Fern (furn) is a general purpose asynchronous tree viewer written in pure Vim script.
 endif
+Plug 'ghifarit53/tokyonight-vim'
 
 Plug 'andrewradev/exercism.vim'
 Plug 'bogado/file-line'                                                       " Plugin for vim to enabling opening a file in a given line http://www.vim.org/scripts/script.php?script_id=2184
@@ -277,6 +279,9 @@ endif
 
 let g:gruvbox_italic=1
 
+let g:tokyonight_style = 'night'
+let g:tokyonight_enable_italic = 1
+
 let g:SuperTabDefaultCompletionType = "<c-n>"
 let g:SuperTabContextDefaultCompletionType = "<c-n>"
 
@@ -388,10 +393,10 @@ map y <Plug>(highlightedyank)
 nmap <F2> :w<CR>
 imap <F2> <ESC>:w<CR>a
 if has('nvim')
-    nmap <F4> :NvimTreeToggle<CR>
-    imap <F4> <ESC>:NvimTreeToggle<CR>
-    nmap <F3> :NvimTreeFindFile<CR>
-    imap <F3> <ESC>:NvimTreeFindFile<CR>
+    nmap <F4> :NvimTreeToggle<CR>:MinimapToggle<CR>
+    imap <F4> <ESC>:NvimTreeToggle<CR>:MinimapToggle<CR>
+    nmap <F3> :NvimTreeFindFile<CR>:MinimapToggle<CR>
+    imap <F3> <ESC>:NvimTreeFindFile<CR>:MinimapToggle<CR>
 else
     nmap <F4> :Fern . -drawer -width=40 -toggle<CR>:MinimapToggle<CR>
     imap <F4> <ESC>:Fern . -drawer -width=40 -toggle<CR>:MinimapToggle<CR>
@@ -612,7 +617,7 @@ nmap <silent> <leader>d <Plug>DashSearch
 set t_Co=256   " This is may or may not needed.
 set background=dark
 syntax on
-colorscheme luna
+colorscheme tokyonight
 highlight StartifyHeader ctermfg=2
 
 " vim: set et fenc=utf-8 ff=unix sts=4 sw=4 ts=4 :

@@ -1,1 +1,0 @@
-../plugged/sonokai/colors/sonokai.vim

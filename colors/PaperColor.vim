@@ -1,1 +1,0 @@
-../plugged/papercolor-theme/colors/PaperColor.vim
