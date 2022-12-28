@@ -26,7 +26,7 @@ endif
 if has('nvim')
     Plug 'nvim-tree/nvim-tree.lua'
     Plug 'nvim-tree/nvim-web-devicons' " optional, for file icons
-    " Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
+    Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } }
 else
     Plug 'lambdalisue/fern-git-status.vim'                                        " 🌿 Add Git status badge integration on file:// scheme on fern.vim
     Plug 'lambdalisue/fern-hijack.vim'                                            " Make fern.vim as a default file explorer instead of Netrw
