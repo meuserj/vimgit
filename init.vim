@@ -167,10 +167,13 @@ augroup filetype
   au BufNewFile,BufRead *.sj    set ft=javascript
   au BufNewFile,BufRead *.scs   set ft=javascript
   au BufNewFile,BufRead *.json  set ft=json
-  au BufNewFile,BufRead *.mkd   set ft=mkd
-  au BufNewFile,BufRead *.mdown set ft=mkd
+  au BufNewFile,BufRead *.mkd   set ft=markdown
+  au BufNewFile,BufRead *.md    set ft=markdown
+  au BufNewFile,BufRead *.mdown set ft=markdown
   au BufNewFile,BufRead *.vala  set ft=vala
   au BufNewFile,BufRead *.xaml  set ft=xml
+  au BufEnter inindca.atlassian.net_*.txt set ft=markdown
+  au BufEnter apps.mypurecloud.com_*.txt set ft=markdown
 augroup END
 
 "set shell=bash\ -i
@@ -199,9 +202,7 @@ set equalalways
 set cmdheight=2
 set updatetime=300
 set shortmess+=c
-set signcolumn=yes
 
-set popt=paper:letter,syntax:y
 set foldmethod=indent
 set nofen
 set wildmenu
@@ -237,11 +238,34 @@ endif
 
 set hidden
 
-let g:minimap_auto_start = 1
-let g:minimap_width = 20
-let g:minimap_highlight_range = 1
-let g:minimap_highlight_search = 1
+if exists('g:started_by_firenvim')
+    let g:minimap_auto_start = 0
+else
+    let g:minimap_auto_start = 1
+    let g:minimap_width = 20
+    let g:minimap_highlight_range = 1
+    let g:minimap_highlight_search = 1
+endif
+
+let g:firenvim_config = {
+    \ 'globalSettings': {
+        \ 'alt': 'all',
+    \  },
+    \ 'localSettings': {
+        \ '.*': {
+            \ 'cmdline': 'firenvim',
+            \ 'content': 'text',
+            \ 'priority': 0,
+            \ 'selector': 'textarea',
+            \ 'takeover': 'always',
+        \ },
+    \ }
+\ }
+let fc = g:firenvim_config['localSettings']
+let fc['https://web\.snapchat\.com/'] = { 'takeover': 'never', 'priority': 1 }
+
 cnoreabbrev exercism Exercism
+cnoreabbrev git Git
 let g:netrw_liststyle = 3
 let g:netrw_browse_split = 4
 let g:netrw_winsize = 15
@@ -343,13 +367,17 @@ endif
 
 let g:airline_powerline_fonts                     = 1
 " let g:airline_theme                               = 'base16_gruvbox_dark_hard'
-let g:airline#extensions#tabline#enabled          = 1
-let g:airline#extensions#tabline#fnamemod         = ':t'
-let g:airline#extensions#tabline#buffer_min_count = 1
-let g:airline#extensions#tabline#tab_min_count    = 1
-let g:airline#extensions#tabline#buffer_idx_mode  = 1
-let g:airline#extensions#tabline#buffer_nr_show   = 0
-let g:airline#extensions#tabline#show_buffers     = 1
+if exists('g:started_by_firenvim')
+    let g:airline#extensions#tabline#enabled          = 0
+else
+    let g:airline#extensions#tabline#enabled          = 1
+    let g:airline#extensions#tabline#fnamemod         = ':t'
+    let g:airline#extensions#tabline#buffer_min_count = 1
+    let g:airline#extensions#tabline#tab_min_count    = 1
+    let g:airline#extensions#tabline#buffer_idx_mode  = 1
+    let g:airline#extensions#tabline#buffer_nr_show   = 0
+    let g:airline#extensions#tabline#show_buffers     = 1
+endif
 
 let g:fzf_prefer_tmux = 1
 
@@ -465,11 +493,6 @@ else
   inoremap <silent><expr> <c-@> coc#refresh()
 endif
 
-if has('nvim')
-lua << EOF
-  require("nvim-tree").setup()
-EOF
-endif
 " Use `[g` and `]g` to navigate diagnostics
 " Use `:CocDiagnostics` to get all diagnostics of current buffer in location list.
 nmap <silent> [g <Plug>(coc-diagnostic-prev)
@@ -619,5 +642,40 @@ set background=dark
 syntax on
 colorscheme tokyonight
 highlight StartifyHeader ctermfg=2
+
+let s:hidden_all = 0
+function! ToggleHiddenAll()
+    if s:hidden_all  == 0
+        let s:hidden_all = 1
+        set noshowmode
+        set noruler
+        set laststatus=0
+        set noshowcmd
+    else
+        let s:hidden_all = 0
+        set showmode
+        set ruler
+        set laststatus=2
+        set showcmd
+    endif
+endfunction
+nnoremap <S-h> :call ToggleHiddenAll()<CR>
+
+function! OnUIEnter(event) abort
+  if 'Firenvim' ==# get(get(nvim_get_chan_info(a:event.chan), 'client', {}), 'name', '')
+    let s:hidden_all = 1
+    set noshowmode
+    set noruler
+    set laststatus=0
+    set noshowcmd
+  endif
+endfunction
+autocmd UIEnter * call OnUIEnter(deepcopy(v:event))
+
+if has('nvim')
+lua << EOF
+  require("nvim-tree").setup()
+EOF
+endif
 
 " vim: set et fenc=utf-8 ff=unix sts=4 sw=4 ts=4 :
