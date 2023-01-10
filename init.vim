@@ -173,7 +173,6 @@ augroup filetype
   au BufNewFile,BufRead *.vala  set ft=vala
   au BufNewFile,BufRead *.xaml  set ft=xml
   au BufEnter inindca.atlassian.net_*.txt set ft=markdown
-  au BufEnter apps.mypurecloud.com_*.txt set ft=markdown
 augroup END
 
 "set shell=bash\ -i
@@ -256,13 +255,18 @@ let g:firenvim_config = {
             \ 'cmdline': 'firenvim',
             \ 'content': 'text',
             \ 'priority': 0,
-            \ 'selector': 'textarea',
             \ 'takeover': 'always',
         \ },
     \ }
 \ }
 let fc = g:firenvim_config['localSettings']
 let fc['https://web\.snapchat\.com/'] = { 'takeover': 'never', 'priority': 1 }
+let fc['https://www\.messenger\.com/'] = { 'takeover': 'never', 'priority': 1 }
+let fc['https://www\.facebook\.com/'] = { 'takeover': 'never', 'priority': 1 }
+let fc['https://discord\.com/'] = { 'takeover': 'never', 'priority': 1 }
+let fc['https://apps\.mypurecloud\.com/'] = { 'takeover': 'never', 'priority': 1 }
+let fc['https://messages\.google\.com/'] = { 'takeover': 'never', 'priority': 1 }
+let fc['https://.*\.amazon\.com/'] = { 'takeover': 'never', 'priority': 1 }
 
 cnoreabbrev exercism Exercism
 cnoreabbrev git Git
