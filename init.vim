@@ -266,6 +266,7 @@ let fc['https://www\.facebook\.com/'] = { 'takeover': 'never', 'priority': 1 }
 let fc['https://discord\.com/'] = { 'takeover': 'never', 'priority': 1 }
 let fc['https://apps\.mypurecloud\.com/'] = { 'takeover': 'never', 'priority': 1 }
 let fc['https://messages\.google\.com/'] = { 'takeover': 'never', 'priority': 1 }
+let fc['https://keep\.google\.com/'] = { 'takeover': 'never', 'priority': 1 }
 let fc['https://.*\.amazon\.com/'] = { 'takeover': 'never', 'priority': 1 }
 
 cnoreabbrev exercism Exercism
