@@ -666,16 +666,18 @@ function! ToggleHiddenAll()
 endfunction
 nnoremap <S-h> :call ToggleHiddenAll()<CR>
 
-function! OnUIEnter(event) abort
-  if 'Firenvim' ==# get(get(nvim_get_chan_info(a:event.chan), 'client', {}), 'name', '')
-    let s:hidden_all = 1
-    set noshowmode
-    set noruler
-    set laststatus=0
-    set noshowcmd
-  endif
-endfunction
-autocmd UIEnter * call OnUIEnter(deepcopy(v:event))
+if has('nvim')
+    function! OnUIEnter(event) abort
+      if 'Firenvim' ==# get(get(nvim_get_chan_info(a:event.chan), 'client', {}), 'name', '')
+        let s:hidden_all = 1
+        set noshowmode
+        set noruler
+        set laststatus=0
+        set noshowcmd
+      endif
+    endfunction
+    autocmd UIEnter * call OnUIEnter(deepcopy(v:event))
+endif
 
 if has('nvim')
 lua << EOF
