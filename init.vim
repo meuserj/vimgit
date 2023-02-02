@@ -255,19 +255,12 @@ let g:firenvim_config = {
             \ 'cmdline': 'firenvim',
             \ 'content': 'text',
             \ 'priority': 0,
-            \ 'takeover': 'always',
+            \ 'takeover': 'never',
         \ },
     \ }
 \ }
 let fc = g:firenvim_config['localSettings']
-let fc['https://web\.snapchat\.com/'] = { 'takeover': 'never', 'priority': 1 }
-let fc['https://www\.messenger\.com/'] = { 'takeover': 'never', 'priority': 1 }
-let fc['https://www\.facebook\.com/'] = { 'takeover': 'never', 'priority': 1 }
-let fc['https://discord\.com/'] = { 'takeover': 'never', 'priority': 1 }
-let fc['https://apps\.mypurecloud\.com/'] = { 'takeover': 'never', 'priority': 1 }
-let fc['https://messages\.google\.com/'] = { 'takeover': 'never', 'priority': 1 }
-let fc['https://keep\.google\.com/'] = { 'takeover': 'never', 'priority': 1 }
-let fc['https://.*\.amazon\.com/'] = { 'takeover': 'never', 'priority': 1 }
+let fc['https?://ci\.qfun\.com'] = { 'takeover': 'always', 'priority': 1 }
 
 cnoreabbrev exercism Exercism
 cnoreabbrev git Git
