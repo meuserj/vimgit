@@ -24,12 +24,14 @@ else
 endif
 
 if has('nvim')
-    Plug 'nvim-tree/nvim-tree.lua'
-    Plug 'nvim-tree/nvim-web-devicons' " optional, for file icons
-    Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } }
-    Plug 'nvim-lua/plenary.nvim'
     Plug 'MunifTanjim/nui.nvim'
     Plug 'dpayne/CodeGPT.nvim'
+    Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } }
+    Plug 'nosduco/remote-sshfs.nvim'
+    Plug 'nvim-lua/plenary.nvim'
+    Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.1' }
+    Plug 'nvim-tree/nvim-tree.lua'
+    Plug 'nvim-tree/nvim-web-devicons' " optional, for file icons
 else
     Plug 'lambdalisue/fern-git-status.vim'                                        " 🌿 Add Git status badge integration on file:// scheme on fern.vim
     Plug 'lambdalisue/fern-hijack.vim'                                            " Make fern.vim as a default file explorer instead of Netrw
@@ -37,7 +39,6 @@ else
     Plug 'lambdalisue/fern-ssh'                                                   " 🌿 A scheme plugin for fern.vim which show file system tree of a remote machine via SSH.
     Plug 'lambdalisue/fern.vim', { 'branch': 'main' }                             " Fern (furn) is a general purpose asynchronous tree viewer written in pure Vim script.
 endif
-Plug 'ghifarit53/tokyonight-vim'
 
 
 Plug 'andrewradev/exercism.vim'
@@ -116,6 +117,7 @@ Plug 'ciaranm/inkpot'                   " Inkpot 88/256 Colour Scheme for Vim
 Plug 'crusoexia/vim-monokai'            " Refined Monokai color scheme for vim
 Plug 'donearm/laederon'                 " A Vim color scheme with cold, tundra-like, colours
 Plug 'donearm/ubaryd'                   " A Vim color scheme with warm, Mediterranean-like, colours
+Plug 'ghifarit53/tokyonight-vim'
 Plug 'google/vim-colorscheme-primary'   " Primary, a Vim color scheme based on Google's colors
 Plug 'jacoborus/tender.vim'             " A 24bit colorscheme for Vim, Airline and Lightline
 Plug 'larsbs/vimterial'                 " A vim color scheme based on Material Theme http://equinusocio.github.io/material-theme
@@ -679,6 +681,8 @@ endif
 if has('nvim')
 lua << EOF
   require("nvim-tree").setup()
+  require('remote-sshfs').setup({})
+  require('telescope').load_extension 'remote-sshfs'
 EOF
 endif
 
