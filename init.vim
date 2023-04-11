@@ -118,12 +118,12 @@ Plug 'crusoexia/vim-monokai'            " Refined Monokai color scheme for vim
 Plug 'donearm/laederon'                 " A Vim color scheme with cold, tundra-like, colours
 Plug 'donearm/ubaryd'                   " A Vim color scheme with warm, Mediterranean-like, colours
 Plug 'ghifarit53/tokyonight-vim'
+Plug 'ellisonleao/gruvbox.nvim'         " A port of gruvbox community theme to lua with treesitter support!
 Plug 'google/vim-colorscheme-primary'   " Primary, a Vim color scheme based on Google's colors
 Plug 'jacoborus/tender.vim'             " A 24bit colorscheme for Vim, Airline and Lightline
 Plug 'larsbs/vimterial'                 " A vim color scheme based on Material Theme http://equinusocio.github.io/material-theme
 Plug 'larsbs/vimterial_dark'            " A dark vim color scheme inspired by material design. Improved for web development.
 Plug 'lokaltog/vim-distinguished'       " A dark vim color scheme for 256-color terminals.
-Plug 'morhetz/gruvbox'                  " Retro groove color scheme for Vim
 Plug 'nanotech/jellybeans.vim'          " A colorful, dark color scheme for Vim. http://www.vim.org/scripts/script.php?script_id=2555
 Plug 'nlknguyen/papercolor-theme'       " 🎨 Light & Dark Vim color schemes inspired by Google's Material Design
 Plug 'pychimp/vim-luna'                 " Touchdown on Lunar Surface ! :)
@@ -305,8 +305,6 @@ if has('gui_win32')
     let g:startify_custom_header =[]
 endif
 
-let g:gruvbox_italic=1
-
 let g:tokyonight_style = 'night'
 let g:tokyonight_enable_italic = 1
 
@@ -370,7 +368,6 @@ if !has('gui_win32')
 endif
 
 let g:airline_powerline_fonts                     = 1
-" let g:airline_theme                               = 'base16_gruvbox_dark_hard'
 if exists('g:started_by_firenvim')
     let g:airline#extensions#tabline#enabled          = 0
 else
@@ -644,7 +641,7 @@ nmap <silent> <leader>d <Plug>DashSearch
 set t_Co=256   " This is may or may not needed.
 set background=dark
 syntax on
-colorscheme tokyonight
+colorscheme gruvbox
 highlight StartifyHeader ctermfg=2
 
 let s:hidden_all = 0
