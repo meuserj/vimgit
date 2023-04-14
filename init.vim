@@ -118,7 +118,11 @@ Plug 'crusoexia/vim-monokai'            " Refined Monokai color scheme for vim
 Plug 'donearm/laederon'                 " A Vim color scheme with cold, tundra-like, colours
 Plug 'donearm/ubaryd'                   " A Vim color scheme with warm, Mediterranean-like, colours
 Plug 'ghifarit53/tokyonight-vim'
-Plug 'ellisonleao/gruvbox.nvim'         " A port of gruvbox community theme to lua with treesitter support!
+if has('nvim')
+    Plug 'ellisonleao/gruvbox.nvim'     " A port of gruvbox community theme to lua with treesitter support!
+else
+    Plug 'morhetz/gruvbox'              " Retro groove color scheme for Vim
+endif
 Plug 'google/vim-colorscheme-primary'   " Primary, a Vim color scheme based on Google's colors
 Plug 'jacoborus/tender.vim'             " A 24bit colorscheme for Vim, Airline and Lightline
 Plug 'larsbs/vimterial'                 " A vim color scheme based on Material Theme http://equinusocio.github.io/material-theme
