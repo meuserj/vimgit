@@ -364,6 +364,7 @@ let g:indent_guides_exclude_filetypes = ['help', 'nerdtree', 'man']
 let g:indent_guides_color_change_percent = 2
 
 
+let g:airline_theme = 'base16_gruvbox_dark_hard'
 if !has('gui_win32')
     let g:airline_left_sep                            = "\uE0B4"
     let g:airline_left_alt_sep                        = "\uE0B5"
