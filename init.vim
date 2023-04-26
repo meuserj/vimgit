@@ -27,9 +27,7 @@ if has('nvim')
     Plug 'MunifTanjim/nui.nvim'
     Plug 'dpayne/CodeGPT.nvim'
     Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } }
-    Plug 'nosduco/remote-sshfs.nvim'
     Plug 'nvim-lua/plenary.nvim'
-    Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.1' }
     Plug 'nvim-tree/nvim-tree.lua'
     Plug 'nvim-tree/nvim-web-devicons' " optional, for file icons
 else
@@ -70,7 +68,6 @@ Plug 'neoclide/coc-git', {'do': 'yarn install --frozen-lockfile'}             " 
 Plug 'neoclide/coc-json', {'do': 'yarn install --frozen-lockfile'}            " Json language server extension for CoC
 Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}            " Intellisense engine for vim8 & neovim, full language server protocol support as VSCode
 Plug 'ntpeters/vim-better-whitespace'                                         " Vim Better Whitespace Plugin
-Plug 'ojroques/vim-oscyank', { 'branch': 'main' }                             " A Vim / Neovim plugin to copy text to the system clipboard from anywhere using the ANSI OSC52 sequence.
 Plug 'othree/javascript-libraries-syntax.vim'                                 " Syntax for JavaScript libraries http://www.vim.org/scripts/script.php?script_id=4428
 Plug 'pangloss/vim-javascript'                                                " JavaScript bundle for vim, this bundle provides syntax highlighting and improved indentation.
 Plug 'quramy/tsuquyomi'                                                       " A Vim plugin for TypeScript http://www.vim.org/scripts/script.php…
@@ -99,6 +96,7 @@ Plug 'vim-scripts/csapprox'                                                   " 
 Plug 'vim-scripts/l9'                                                         " Vim-script library http://www.vim.org/scripts/script.php?script_id=3252
 Plug 'vim-utils/vim-man'                                                      " View and grep man pages in vim
 Plug 'wfxr/minimap.vim'                                                       " Minimap
+Plug 'wincent/vim-clipper', { 'branch': 'main' }                              " Clipper plug-in for Vim
 Plug 'xolox/vim-misc'                                                         " Miscellaneous auto-load Vim scripts http://peterodding.com/code/vim/misc/
 Plug 'xolox/vim-session'                                                      " Extended session management for Vim (:mksession on steroids) http://peterodding.com/code/vim/session/
 Plug 'yegappan/mru'                                                           " Most Recently Used (MRU) Vim Plugin
@@ -683,8 +681,6 @@ endif
 if has('nvim')
 lua << EOF
   require("nvim-tree").setup()
-  require('remote-sshfs').setup({})
-  require('telescope').load_extension 'remote-sshfs'
 EOF
 endif
 
