@@ -28,8 +28,9 @@ if has('nvim')
     Plug 'dpayne/CodeGPT.nvim'
     Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } }
     Plug 'nvim-lua/plenary.nvim'
-    Plug 'nvim-tree/nvim-tree.lua'
+    Plug 'nvim-neo-tree/neo-tree.nvim'
     Plug 'nvim-tree/nvim-web-devicons' " optional, for file icons
+    Plug 'MunifTanjim/nui.nvim'
 else
     Plug 'lambdalisue/fern-git-status.vim'                                        " 🌿 Add Git status badge integration on file:// scheme on fern.vim
     Plug 'lambdalisue/fern-hijack.vim'                                            " Make fern.vim as a default file explorer instead of Netrw
@@ -425,10 +426,14 @@ map y <Plug>(highlightedyank)
 nmap <F2> :w<CR>
 imap <F2> <ESC>:w<CR>a
 if has('nvim')
-    nmap <F4> :NvimTreeToggle<CR>:MinimapToggle<CR>
-    imap <F4> <ESC>:NvimTreeToggle<CR>:MinimapToggle<CR>
-    nmap <F3> :NvimTreeFindFile<CR>:MinimapToggle<CR>
-    imap <F3> <ESC>:NvimTreeFindFile<CR>:MinimapToggle<CR>
+    nmap <F3> :Neotree filesystem reveal<CR>
+    imap <F3> <ESC>:Neotree filesystem reveal<CR>
+    nmap <F4> :Neotree filesystem<CR>
+    imap <F4> <ESC>:Neotree filesystem<CR>
+    nmap <F5> :Neotree buffers float<CR>
+    imap <F5> <ESC>:Neotree buffers float<CR>
+    nmap <F6> :Neotree git_status float<CR>
+    imap <F6> <ESC>:Neotree git_status float<CR>
 else
     nmap <F4> :Fern . -drawer -width=40 -toggle<CR>:MinimapToggle<CR>
     imap <F4> <ESC>:Fern . -drawer -width=40 -toggle<CR>:MinimapToggle<CR>
@@ -443,7 +448,6 @@ endif
 " imap <F4> <ESC>:Lexplore<CR>
 " nmap <F3> :NERDTreeFind<CR>
 " imap <F3> <ESC>:NERDTreeFind<CR>
-map <F5> <C-P><C-\>f<CR>
 map <F9> <C-j>-D
 map <F10> <C-j>jD
 
@@ -676,12 +680,6 @@ if has('nvim')
       endif
     endfunction
     autocmd UIEnter * call OnUIEnter(deepcopy(v:event))
-endif
-
-if has('nvim')
-lua << EOF
-  require("nvim-tree").setup()
-EOF
 endif
 
 " vim: set et fenc=utf-8 ff=unix sts=4 sw=4 ts=4 :
