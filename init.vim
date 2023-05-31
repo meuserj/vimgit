@@ -95,7 +95,6 @@ Plug 'vim-scripts/bufonly.vim'                                                " 
 Plug 'vim-scripts/csapprox'                                                   " Make gvim-only colorschemes work transparently in terminal vim http://www.vim.org/scripts/script.php?script_id=2390
 Plug 'vim-scripts/l9'                                                         " Vim-script library http://www.vim.org/scripts/script.php?script_id=3252
 Plug 'vim-utils/vim-man'                                                      " View and grep man pages in vim
-Plug 'wfxr/minimap.vim'                                                       " Minimap
 Plug 'wincent/vim-clipper', { 'branch': 'main' }                              " Clipper plug-in for Vim
 Plug 'xolox/vim-misc'                                                         " Miscellaneous auto-load Vim scripts http://peterodding.com/code/vim/misc/
 Plug 'xolox/vim-session'                                                      " Extended session management for Vim (:mksession on steroids) http://peterodding.com/code/vim/session/
@@ -244,15 +243,6 @@ elseif exists('g:neovide')
 endif
 
 set hidden
-
-if exists('g:started_by_firenvim')
-    let g:minimap_auto_start = 0
-else
-    let g:minimap_auto_start = 1
-    let g:minimap_width = 20
-    let g:minimap_highlight_range = 1
-    let g:minimap_highlight_search = 1
-endif
 
 let g:firenvim_config = {
     \ 'globalSettings': {
@@ -425,15 +415,15 @@ map y <Plug>(highlightedyank)
 nmap <F2> :w<CR>
 imap <F2> <ESC>:w<CR>a
 if has('nvim')
-    nmap <F4> :NvimTreeToggle<CR>:MinimapToggle<CR>
-    imap <F4> <ESC>:NvimTreeToggle<CR>:MinimapToggle<CR>
-    nmap <F3> :NvimTreeFindFile<CR>:MinimapToggle<CR>
-    imap <F3> <ESC>:NvimTreeFindFile<CR>:MinimapToggle<CR>
+    nmap <F4> :NvimTreeToggle<CR>
+    imap <F4> <ESC>:NvimTreeToggle<CR>
+    nmap <F3> :NvimTreeFindFile<CR>
+    imap <F3> <ESC>:NvimTreeFindFile<CR>
 else
-    nmap <F4> :Fern . -drawer -width=40 -toggle<CR>:MinimapToggle<CR>
-    imap <F4> <ESC>:Fern . -drawer -width=40 -toggle<CR>:MinimapToggle<CR>
-    nmap <F3> :Fern . -reveal=% -drawer -width=40 -toggle<CR>:MinimapToggle<CR>
-    imap <F3> <ESC>:Fern . -reveal=% -drawer -width=40 -toggle<CR>:MinimapToggle<CR>
+    nmap <F4> :Fern . -drawer -width=40 -toggle<CR>
+    imap <F4> <ESC>:Fern . -drawer -width=40 -toggle<CR>
+    nmap <F3> :Fern . -reveal=% -drawer -width=40 -toggle<CR>
+    imap <F3> <ESC>:Fern . -reveal=% -drawer -width=40 -toggle<CR>
 endif
 " nmap <F4> :F<CR>
 " imap <F4> <ESC>:F<CR>
