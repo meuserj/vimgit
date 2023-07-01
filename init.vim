@@ -39,13 +39,13 @@ else
     Plug 'lambdalisue/fern.vim', { 'branch': 'main' }                             " Fern (furn) is a general purpose asynchronous tree viewer written in pure Vim script.
 endif
 
-
-Plug 'andrewradev/exercism.vim'
+Plug 'andrewradev/exercism.vim'                                               " Exercism
 Plug 'bogado/file-line'                                                       " Plugin for vim to enabling opening a file in a given line http://www.vim.org/scripts/script.php?script_id=2184
 Plug 'christoomey/vim-tmux-navigator'                                         " Seamless navigation between tmux panes and vim splits
 Plug 'crusoexia/vim-javascript-lib'                                           " companion of vim-javascript, provide syntax highlight of javascript libraries
 Plug 'danro/rename.vim'                                                       " Rename the current file in the vim buffer + retain relative path. http://www.vim.org/scripts/script.php…
 Plug 'dbakker/vim-lint'                                                       " Check your .vimrc for errors
+Plug 'dsawardekar/wordpress.vim'                                              " Vim Plugin for WordPress Development
 Plug 'edkolev/promptline.vim'                                                 " Generate a fast shell prompt with powerline symbols and airline colors
 Plug 'edkolev/tmuxline.vim'                                                   " Simple tmux statusline generator with support for powerline symbols and statusline / airline / lightline integration
 Plug 'ervandew/screen'                                                        " Simulate a split shell in vim using gnu screen or tmux
@@ -74,8 +74,10 @@ Plug 'pangloss/vim-javascript'                                                " 
 Plug 'quramy/tsuquyomi'                                                       " A Vim plugin for TypeScript http://www.vim.org/scripts/script.php…
 Plug 'rust-lang/rust.vim'                                                     " Vim configuration for Rust.
 Plug 'scrooloose/syntastic'                                                   " Syntax checking hacks for vim
+Plug 'shawncplus/phpcomplete.vim'                                             " Improved PHP omni-completion. Based on the default phpcomplete.vim.
 Plug 'sheerun/vim-polyglot'                                                   " A collection of language packs for Vim.
 Plug 'shougo/vimproc.vim'                                                     " Interactive command execution in Vim.
+Plug 'stanangeloff/php.vim'                                                   " An up-to-date Vim syntax for PHP.
 Plug 'tmhedberg/matchit'                                                      " extended % matching for HTML, LaTeX, and many other languages http://www.vim.org/scripts/script.php?script_id=39
 Plug 'tmux-plugins/vim-tmux-focus-events'                                     " Make terminal vim and tmux work better together.
 Plug 'tommcdo/vim-fubitive'                                                   " Add Bitbucket URL support to fugitive.vim's :Gbrowse command
