@@ -416,10 +416,10 @@ xnoremap * "zy/\V<C-r>=escape(@z, '\/')<CR><CR>
 nmap <F2> :w<CR>
 imap <F2> <ESC>:w<CR>a
 if has('nvim')
-    nmap <F3> :Neotree filesystem reveal<CR>
-    imap <F3> <ESC>:Neotree filesystem reveal<CR>
-    nmap <F4> :Neotree filesystem<CR>
-    imap <F4> <ESC>:Neotree filesystem<CR>
+    nmap <F3> :Neotree filesystem reveal float<CR>
+    imap <F3> <ESC>:Neotree filesystem reveal float<CR>
+    nmap <F4> :Neotree filesystem float<CR>
+    imap <F4> <ESC>:Neotree filesystem float<CR>
     nmap <F5> :Neotree buffers float<CR>
     imap <F5> <ESC>:Neotree buffers float<CR>
     nmap <F6> :Neotree git_status float<CR>
