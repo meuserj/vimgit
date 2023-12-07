@@ -57,7 +57,6 @@ Plug 'jonsmithers/vim-html-template-literals'                                 " 
 Plug 'junegunn/gv.vim'                                                        " A git commit browser in Vim
 Plug 'junegunn/vim-easy-align'                                                " 🌻 A Vim alignment plugin
 Plug 'lambdalisue/glyph-palette.vim'                                          " 🎨 glyph-palette glyph-palette (Glyph palette) is a plugin to universally apply colors on Nerd Fonts.
-Plug 'machakann/vim-highlightedyank'                                          " Make the yanked region apparent!
 Plug 'marcweber/vim-addon-mw-utils'                                           " vim: interpret a file by function and cache file automatically
 Plug 'mbbill/undotree'                                                        " visualizes undo history and makes it easier to browse and switch between different undo branches.
 Plug 'mhinz/vim-startify'                                                     " The fancy start screen for Vim.
@@ -414,7 +413,6 @@ vnoremap <silent> <s-J> :m '>+1<CR>gv
 vnoremap <silent> <s-K> :m '<-2<CR>gv
 xnoremap * "zy/\V<C-r>=escape(@z, '\/')<CR><CR>
 
-map y <Plug>(highlightedyank)
 nmap <F2> :w<CR>
 imap <F2> <ESC>:w<CR>a
 if has('nvim')
