@@ -26,7 +26,6 @@ endif
 if has('nvim')
     Plug 'MunifTanjim/nui.nvim'
     Plug 'dpayne/CodeGPT.nvim'
-    Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } }
     Plug 'nvim-lua/plenary.nvim'
     Plug 'nvim-neo-tree/neo-tree.nvim'
     Plug 'nvim-tree/nvim-web-devicons' " optional, for file icons
@@ -248,22 +247,6 @@ endif
 
 set hidden
 
-let g:firenvim_config = {
-    \ 'globalSettings': {
-        \ 'alt': 'all',
-    \  },
-    \ 'localSettings': {
-        \ '.*': {
-            \ 'cmdline': 'firenvim',
-            \ 'content': 'text',
-            \ 'priority': 0,
-            \ 'takeover': 'never',
-        \ },
-    \ }
-\ }
-let fc = g:firenvim_config['localSettings']
-let fc['https?://ci\.qfun\.com'] = { 'takeover': 'always', 'priority': 1 }
-
 cnoreabbrev exercism Exercism
 cnoreabbrev git Git
 let g:netrw_liststyle = 3
@@ -365,17 +348,13 @@ if !has('gui_win32')
 endif
 
 let g:airline_powerline_fonts                     = 1
-if exists('g:started_by_firenvim')
-    let g:airline#extensions#tabline#enabled          = 0
-else
-    let g:airline#extensions#tabline#enabled          = 1
-    let g:airline#extensions#tabline#fnamemod         = ':t'
-    let g:airline#extensions#tabline#buffer_min_count = 1
-    let g:airline#extensions#tabline#tab_min_count    = 1
-    let g:airline#extensions#tabline#buffer_idx_mode  = 1
-    let g:airline#extensions#tabline#buffer_nr_show   = 0
-    let g:airline#extensions#tabline#show_buffers     = 1
-endif
+let g:airline#extensions#tabline#enabled          = 1
+let g:airline#extensions#tabline#fnamemod         = ':t'
+let g:airline#extensions#tabline#buffer_min_count = 1
+let g:airline#extensions#tabline#tab_min_count    = 1
+let g:airline#extensions#tabline#buffer_idx_mode  = 1
+let g:airline#extensions#tabline#buffer_nr_show   = 0
+let g:airline#extensions#tabline#show_buffers     = 1
 
 let g:fzf_prefer_tmux = 1
 
@@ -661,18 +640,5 @@ function! ToggleHiddenAll()
     endif
 endfunction
 nnoremap <S-h> :call ToggleHiddenAll()<CR>
-
-if has('nvim')
-    function! OnUIEnter(event) abort
-      if 'Firenvim' ==# get(get(nvim_get_chan_info(a:event.chan), 'client', {}), 'name', '')
-        let s:hidden_all = 1
-        set noshowmode
-        set noruler
-        set laststatus=0
-        set noshowcmd
-      endif
-    endfunction
-    autocmd UIEnter * call OnUIEnter(deepcopy(v:event))
-endif
 
 " vim: set et fenc=utf-8 ff=unix sts=4 sw=4 ts=4 :
