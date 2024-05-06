@@ -29,6 +29,7 @@ if has('nvim')
     Plug 'nvim-neo-tree/neo-tree.nvim'
     Plug 'nvim-tree/nvim-web-devicons' " optional, for file icons
     Plug 'MunifTanjim/nui.nvim'
+    Plug 'neovim/nvim-lspconfig'
 else
     Plug 'lambdalisue/fern-git-status.vim'                                        " 🌿 Add Git status badge integration on file:// scheme on fern.vim
     Plug 'lambdalisue/fern-hijack.vim'                                            " Make fern.vim as a default file explorer instead of Netrw
@@ -37,10 +38,6 @@ else
     Plug 'lambdalisue/fern.vim', { 'branch': 'main' }                             " Fern (furn) is a general purpose asynchronous tree viewer written in pure Vim script.
 endif
 
-Plug 'prabirshrestha/vim-lsp'
-Plug 'mattn/vim-lsp-settings'
-Plug 'prabirshrestha/asyncomplete.vim'
-Plug 'prabirshrestha/asyncomplete-lsp.vim'
 
 Plug 'andrewradev/exercism.vim'                                               " Exercism
 Plug 'bogado/file-line'                                                       " Plugin for vim to enabling opening a file in a given line http://www.vim.org/scripts/script.php?script_id=2184
@@ -139,6 +136,12 @@ Plug 'zeis/vim-kolor'                   " Vim color scheme.
 
 call plug#end()
 filetype plugin indent on
+
+if has('nvim')
+lua << EOF
+require'lspconfig'.tsserver.setup{}
+EOF
+endif
 
 set backspace=indent,eol,start  " more powerful backspacing
 
