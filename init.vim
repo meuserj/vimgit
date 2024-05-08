@@ -144,7 +144,7 @@ filetype plugin indent on
 
 if has('nvim')
 lua << EOF
-require'lspconfig'.tsserver.setup{}
+require'lspconfig'.eslint.setup{}
 require'lspconfig'.marksman.setup{}
 EOF
 endif
