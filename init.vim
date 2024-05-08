@@ -30,6 +30,11 @@ if has('nvim')
     Plug 'nvim-tree/nvim-web-devicons' " optional, for file icons
     Plug 'MunifTanjim/nui.nvim'
     Plug 'neovim/nvim-lspconfig'
+    Plug 'hrsh7th/cmp-nvim-lsp'
+    Plug 'hrsh7th/cmp-buffer'
+    Plug 'hrsh7th/cmp-path'
+    Plug 'hrsh7th/cmp-cmdline'
+    Plug 'hrsh7th/nvim-cmp'
 else
     Plug 'lambdalisue/fern-git-status.vim'                                        " 🌿 Add Git status badge integration on file:// scheme on fern.vim
     Plug 'lambdalisue/fern-hijack.vim'                                            " Make fern.vim as a default file explorer instead of Netrw
@@ -136,12 +141,6 @@ Plug 'zeis/vim-kolor'                   " Vim color scheme.
 
 call plug#end()
 filetype plugin indent on
-
-if has('nvim')
-lua << EOF
-require'lspconfig'.tsserver.setup{}
-EOF
-endif
 
 set backspace=indent,eol,start  " more powerful backspacing
 
@@ -495,5 +494,37 @@ function! ToggleHiddenAll()
     endif
 endfunction
 nnoremap <S-h> :call ToggleHiddenAll()<CR>
+
+if has('nvim')
+lua << EOF
+require'lspconfig'.eslint.setup{}
+
+local cmp = require'cmp'
+
+cmp.setup({
+  snippet = {
+    expand = function(args)
+      vim.snippet.expand(args.body)
+    end,
+  },
+  window = {
+    completion = cmp.config.window.bordered(),
+    documentation = cmp.config.window.bordered(),
+  },
+  mapping = cmp.mapping.preset.insert({
+    ['<C-b>'] = cmp.mapping.scroll_docs(-4),
+    ['<C-f>'] = cmp.mapping.scroll_docs(4),
+    ['<C-Space>'] = cmp.mapping.complete(),
+    ['<C-e>'] = cmp.mapping.abort(),
+    ['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+  }),
+  sources = cmp.config.sources({
+    { name = 'nvim_lsp' },
+  }, {
+    { name = 'buffer' },
+  })
+})
+EOF
+endif
 
 " vim: set et fenc=utf-8 ff=unix sts=4 sw=4 ts=4 :
