@@ -142,6 +142,13 @@ Plug 'zeis/vim-kolor'                   " Vim color scheme.
 call plug#end()
 filetype plugin indent on
 
+if has('nvim')
+lua << EOF
+require'lspconfig'.tsserver.setup{}
+require'lspconfig'.marksman.setup{}
+EOF
+endif
+
 set backspace=indent,eol,start  " more powerful backspacing
 
 " Now we set some defaults for the editor
