@@ -72,7 +72,6 @@ Plug 'othree/javascript-libraries-syntax.vim'                                 " 
 Plug 'pangloss/vim-javascript'                                                " JavaScript bundle for vim, this bundle provides syntax highlighting and improved indentation.
 Plug 'quramy/tsuquyomi'                                                       " A Vim plugin for TypeScript http://www.vim.org/scripts/script.php…
 Plug 'rust-lang/rust.vim'                                                     " Vim configuration for Rust.
-Plug 'scrooloose/syntastic'                                                   " Syntax checking hacks for vim
 Plug 'shawncplus/phpcomplete.vim'                                             " Improved PHP omni-completion. Based on the default phpcomplete.vim.
 Plug 'sheerun/vim-polyglot'                                                   " A collection of language packs for Vim.
 Plug 'shougo/vimproc.vim'                                                     " Interactive command execution in Vim.
@@ -141,6 +140,13 @@ Plug 'zeis/vim-kolor'                   " Vim color scheme.
 
 call plug#end()
 filetype plugin indent on
+
+if has('nvim')
+lua << EOF
+require'lspconfig'.eslint.setup{}
+require'lspconfig'.marksman.setup{}
+EOF
+endif
 
 set backspace=indent,eol,start  " more powerful backspacing
 
