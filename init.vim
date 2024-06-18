@@ -51,6 +51,7 @@ Plug 'crusoexia/vim-javascript-lib'                                           " 
 Plug 'danro/rename.vim'                                                       " Rename the current file in the vim buffer + retain relative path. http://www.vim.org/scripts/script.php…
 Plug 'dbakker/vim-lint'                                                       " Check your .vimrc for errors
 Plug 'dsawardekar/wordpress.vim'                                              " Vim Plugin for WordPress Development
+Plug 'editorconfig/editorconfig-vim'                                          " EditorConfig plugin for Vim
 Plug 'edkolev/promptline.vim'                                                 " Generate a fast shell prompt with powerline symbols and airline colors
 Plug 'edkolev/tmuxline.vim'                                                   " Simple tmux statusline generator with support for powerline symbols and statusline / airline / lightline integration
 Plug 'ervandew/screen'                                                        " Simulate a split shell in vim using gnu screen or tmux
