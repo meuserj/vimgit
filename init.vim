@@ -43,7 +43,6 @@ else
     Plug 'lambdalisue/fern.vim', { 'branch': 'main' }                             " Fern (furn) is a general purpose asynchronous tree viewer written in pure Vim script.
 endif
 
-
 Plug 'andrewradev/exercism.vim'                                               " Exercism
 Plug 'bogado/file-line'                                                       " Plugin for vim to enabling opening a file in a given line http://www.vim.org/scripts/script.php?script_id=2184
 Plug 'christoomey/vim-tmux-navigator'                                         " Seamless navigation between tmux panes and vim splits
@@ -499,6 +498,7 @@ nnoremap <S-h> :call ToggleHiddenAll()<CR>
 if has('nvim')
 lua << EOF
 require'lspconfig'.eslint.setup{}
+require'lspconfig'.emmet_language_server.setup{}
 
 local cmp = require'cmp'
 
