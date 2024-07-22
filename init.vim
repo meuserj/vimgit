@@ -145,6 +145,9 @@ if has('nvim')
 lua << EOF
 require'lspconfig'.eslint.setup{}
 require'lspconfig'.marksman.setup{}
+require'lspconfig'.powershell_es.setup{
+  bundle_path = '~/.vimgit/pses'
+}
 EOF
 endif
 
