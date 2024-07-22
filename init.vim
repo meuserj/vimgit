@@ -43,7 +43,6 @@ else
     Plug 'lambdalisue/fern.vim', { 'branch': 'main' }                             " Fern (furn) is a general purpose asynchronous tree viewer written in pure Vim script.
 endif
 
-
 Plug 'andrewradev/exercism.vim'                                               " Exercism
 Plug 'bogado/file-line'                                                       " Plugin for vim to enabling opening a file in a given line http://www.vim.org/scripts/script.php?script_id=2184
 Plug 'christoomey/vim-tmux-navigator'                                         " Seamless navigation between tmux panes and vim splits
@@ -51,6 +50,7 @@ Plug 'crusoexia/vim-javascript-lib'                                           " 
 Plug 'danro/rename.vim'                                                       " Rename the current file in the vim buffer + retain relative path. http://www.vim.org/scripts/script.php…
 Plug 'dbakker/vim-lint'                                                       " Check your .vimrc for errors
 Plug 'dsawardekar/wordpress.vim'                                              " Vim Plugin for WordPress Development
+Plug 'editorconfig/editorconfig-vim'                                          " EditorConfig plugin for Vim
 Plug 'edkolev/promptline.vim'                                                 " Generate a fast shell prompt with powerline symbols and airline colors
 Plug 'edkolev/tmuxline.vim'                                                   " Simple tmux statusline generator with support for powerline symbols and statusline / airline / lightline integration
 Plug 'ervandew/screen'                                                        " Simulate a split shell in vim using gnu screen or tmux
@@ -507,6 +507,7 @@ nnoremap <S-h> :call ToggleHiddenAll()<CR>
 if has('nvim')
 lua << EOF
 require'lspconfig'.eslint.setup{}
+require'lspconfig'.emmet_language_server.setup{}
 
 local cmp = require'cmp'
 
