@@ -141,6 +141,17 @@ Plug 'zeis/vim-kolor'                   " Vim color scheme.
 call plug#end()
 filetype plugin indent on
 
+if has('nvim')
+lua << EOF
+require'lspconfig'.eslint.setup{}
+require'lspconfig'.marksman.setup{}
+require'lspconfig'.pug.setup{}
+require'lspconfig'.powershell_es.setup{
+  bundle_path = '~/.vimgit/pses'
+}
+EOF
+endif
+
 set backspace=indent,eol,start  " more powerful backspacing
 
 " Now we set some defaults for the editor
@@ -496,9 +507,6 @@ nnoremap <S-h> :call ToggleHiddenAll()<CR>
 
 if has('nvim')
 lua << EOF
-require'lspconfig'.eslint.setup{}
-require'lspconfig'.marksman.setup{}
-require'lspconfig'.pug.setup{}
 
 local cmp = require'cmp'
 
