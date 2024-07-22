@@ -145,6 +145,7 @@ if has('nvim')
 lua << EOF
 require'lspconfig'.eslint.setup{}
 require'lspconfig'.marksman.setup{}
+require'lspconfig'.jsonls.setup{}
 EOF
 endif
 
