@@ -148,6 +148,7 @@ require'lspconfig'.jsonls.setup{}
 require'lspconfig'.marksman.setup{}
 require'lspconfig'.powershell_es.setup{ bundle_path = '~/.vimgit/pses' }
 require'lspconfig'.pug.setup{}
+require'lspconfig'.tsserver.setup{}
 EOF
 endif
 
