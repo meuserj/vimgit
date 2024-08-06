@@ -150,6 +150,11 @@ require'lspconfig'.jsonls.setup{}
 require'lspconfig'.marksman.setup{}
 require'lspconfig'.powershell_es.setup{ bundle_path = '~/.vimgit/pses' }
 require'lspconfig'.pug.setup{}
+<<<<<<< Updated upstream
+=======
+require'lspconfig'.tsserver.setup{}
+require'lspconfig'.marksman.setup{}
+>>>>>>> Stashed changes
 EOF
 endif
 
