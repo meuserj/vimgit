@@ -38,6 +38,7 @@ if has('nvim')
     Plug 'hrsh7th/nvim-cmp'
     Plug 'OXY2DEV/markview.nvim'
     Plug 'OXY2DEV/helpview.nvim'
+    Plug 'chipsenkbeil/distant.nvim', { 'branch': 'v0.3', 'do': ':lua require("distant"):setup()' }
 else
     Plug 'lambdalisue/fern-git-status.vim'                                        " 🌿 Add Git status badge integration on file:// scheme on fern.vim
     Plug 'lambdalisue/fern-hijack.vim'                                            " Make fern.vim as a default file explorer instead of Netrw
